@@ -56,6 +56,7 @@ require __DIR__.'/auth.php';
 //admin routes
 
 Route::resource('admin/users' , 'App\Http\Controllers\UsersController');
+Route::resource('admin/donations' , 'App\Http\Controllers\PackageController');
 Route::resource('admin/categories' , 'App\Http\Controllers\CategoryController');
 Route::resource('admin/cities' , 'App\Http\Controllers\CityController');
 
@@ -71,3 +72,5 @@ Route::get('/users/view', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
