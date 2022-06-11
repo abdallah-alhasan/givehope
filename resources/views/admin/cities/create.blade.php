@@ -11,7 +11,7 @@
         <label class="form-label" for="basic-icon-default-fullname">City Name</label>
         <div class="input-group input-group-merge">
           <span id="basic-icon-default-fullname2" class="input-group-text"
-            ><i class="bx bx-user"></i
+            ><i class="bx bx-pin"></i
           ></span>
           <input type="text" class="form-control" id="basic-icon-default-fullname"  aria-describedby="basic-icon-default-fullname2"  name="name"
 

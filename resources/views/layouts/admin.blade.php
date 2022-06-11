@@ -32,7 +32,8 @@ data-template="vertical-menu-template-free"
 <meta name="description" content="" />
 
 <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="/assets/img/favicon/favicon.ico" />
+<link rel="icon" href="public/images/up-arrow.png"/>
+
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -106,22 +107,22 @@ data-template="vertical-menu-template-free"
                         <mask id="mask-2" fill="white">
                         <use xlink:href="#path-1"></use>
                         </mask>
-                        <use fill="#696cff" xlink:href="#path-1"></use>
+                        <use fill="#f7ca44" xlink:href="#path-1"></use>
                         <g id="Path-3" mask="url(#mask-2)">
-                        <use fill="#696cff" xlink:href="#path-3"></use>
-                        <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-3"></use>
+                        <use fill="#f7ca44" xlink:href="#path-3"></use>
+                        <use fill-opacity="0.2" fill="#f7ca44" xlink:href="#path-3"></use>
                         </g>
                         <g id="Path-4" mask="url(#mask-2)">
-                        <use fill="#696cff" xlink:href="#path-4"></use>
-                        <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-4"></use>
+                        <use fill="#f7ca44" xlink:href="#path-4"></use>
+                        <use fill-opacity="0.2" fill="#f7ca44" xlink:href="#path-4"></use>
                         </g>
                     </g>
                     <g
                         id="Triangle"
                         transform="translate(19.000000, 11.000000) rotate(-300.000000) translate(-19.000000, -11.000000) "
                     >
-                        <use fill="#696cff" xlink:href="#path-5"></use>
-                        <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-5"></use>
+                        <use fill="#f7ca44" xlink:href="#path-5"></use>
+                        <use fill-opacity="0.2" fill="#f7ca44" xlink:href="#path-5"></use>
                     </g>
                     </g>
                 </g>
@@ -402,7 +403,7 @@ data-template="vertical-menu-template-free"
             <script>
             document.write(new Date().getFullYear());
             </script>
-            , made with ❤️ by
+            ,
             <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">GIVEHOPE</a>
         </div>
 
