@@ -1,22 +1,34 @@
 @extends('layouts.master')
 
+
+
 @section('content')
 <div class="block-31" style="position: relative;">
     <div class="owl-carousel loop-block-31 ">
-      <div class="block-30 block-30-sm item" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+      <div class="block-30 block-30-sm item" style="background-image: url('images/child.png');" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-7">
-              <h2 class="heading mb-5">Free Website Template for Charity Websites.</h2>
+              <h2 class="heading mb-5">For It Is In Giving That We Receive.</h2>
               <p style="display: inline-block;"><a href="https://vimeo.com/channels/staffpicks/93951774"  data-fancybox class="ftco-play-video d-flex"><span class="play-icon-wrap align-self-center mr-4"><span class="ion-ios-play"></span></span> <span class="align-self-center">Watch Video</span></a></p>
             </div>
           </div>
         </div>
       </div>
-      
+
     </div>
   </div>
-  
+
+{{-- hero slider --}}
+
+
+
+
+
+{{-- end of hero slider --}}
+
+
+
   <div class="site-section section-counter">
     <div class="container">
       <div class="row">
@@ -38,6 +50,70 @@
     </div>
   </div>
 
+
+
+  <div class="site-section bg-light">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-12">
+          <h2>Our Donations</h2>
+        </div>
+      </div>
+
+      <div class="row">
+
+      @foreach($data as $values)
+ <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="post-entry text-center">
+            <a href="#" class="mb-3 img-wrap">
+
+              <img src="{{ url('Image/'.$values->image) }}" alt="Image placeholder" width ="400" height="250" >
+            </a>
+            <h3><a href="#">{{$values->desc}}</a></h3>
+            <span class="date mb-4 d-block text-muted" style="font-size: 20px">{{$values->name}}</span>
+
+
+          </div>
+        </div>
+        @endforeach
+
+        {{-- <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="post-entry text-center">
+            <a href="#" class="mb-3 img-wrap">
+              <img src="images/Mattress-on-floor.jpg" alt="Image placeholder" class="img-fluid">
+            </a>
+            <h3><a href="#">Lets Give Them A Bed To Sleep On </a></h3>
+            <span class="date mb-4 d-block text-muted" style="font-size: 20px">Beds</span>
+
+
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="post-entry text-center">
+            <a href="#" class="mb-3 img-wrap">
+              <img src="images/couch.jpg" alt="Image placeholder" class="img-fluid">
+            </a>
+            <h3 class=""><a href="#">A Chance to Live A Decent Life</a></h3>
+            <span class="date mb-4 d-block text-muted" style="font-size: 20px">Couches</span>
+
+
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="post-entry text-center">
+            <a href="#" class="mb-3 img-wrap">
+              <img src="images/clothes.jpg" alt="Image placeholder" class="img-fluid">
+            </a>
+            <h3><a href="#">Children That Needs Care</a></h3>
+            <span class="date mb-4 d-block text-muted" style="font-size: 20px">Wardrobes</span> --}}
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- .section -->
+
   <div class="site-section border-top">
     <div class="container">
       <div class="row">
@@ -50,7 +126,7 @@
               <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
               <p><a href="#" class="link-underline">Learn More</a></p>
             </div>
-          </div>     
+          </div>
         </div>
 
         <div class="col-md-4">
@@ -61,7 +137,7 @@
               <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
               <p><a href="#" class="link-underline">Learn More</a></p>
             </div>
-          </div>  
+          </div>
         </div>
 
         <div class="col-md-4">
@@ -72,7 +148,7 @@
               <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
               <p><a href="#" class="link-underline">Learn More</a></p>
             </div>
-          </div> 
+          </div>
         </div>
 
       </div>
@@ -81,7 +157,7 @@
 
 
 
-  
+
 
   <div class="site-section fund-raisers bg-light">
     <div class="container">
@@ -97,7 +173,7 @@
     <div class="container-fluid">
 
       <!-- <div class="row"> -->
-        
+
         <div class="col-md-12 block-11">
           <div class="nonloop-block-11 owl-carousel">
 
@@ -114,7 +190,7 @@
               </div>
             </div>
 
-            
+
             <div class="card fundraise-item">
               <a href="#"><img class="card-img-top" src="images/img_7.jpg" alt="Image placeholder"></a>
               <div class="card-body">
@@ -127,7 +203,7 @@
                 <span class="fund-raised d-block">$12,000 raised of $30,000</span>
               </div>
             </div>
-            
+
             <div class="card fundraise-item">
               <a href="#"><img class="card-img-top" src="images/img_3.jpg" alt="Image placeholder"></a>
               <div class="card-body">
@@ -155,7 +231,7 @@
               </div>
             </div>
 
-            
+
             <div class="card fundraise-item">
               <a href="#"><img class="card-img-top" src="images/img_6.jpg" alt="Image placeholder"></a>
               <div class="card-body">
@@ -168,7 +244,7 @@
                 <span class="fund-raised d-block">$12,000 raised of $30,000</span>
               </div>
             </div>
-            
+
             <div class="card fundraise-item">
               <a href="#"><img class="card-img-top" src="images/img_3.jpg" alt="Image placeholder"></a>
               <div class="card-body">
@@ -181,7 +257,7 @@
                 <span class="fund-raised d-block">$12,000 raised of $30,000</span>
               </div>
             </div>
-           
+
           </div>
         </div>
       <!-- </div> -->
@@ -208,7 +284,7 @@
               <span class="time d-block mb-3">Donated Just now</span>
               <p>Donated <span class="text-success">$252</span> <br> <em>for</em> <a href="#" class="link-underline fundraise-item">Water Is Life. Clean Water In Urban Area</a></p>
             </div>
-          </div>    
+          </div>
         </div>
 
         <div class="col-md-6 col-lg-3 mb-5">
@@ -219,7 +295,7 @@
               <span class="time d-block mb-3">Donated 1 hour ago</span>
               <p>Donated <span class="text-success">$400</span> <br> <em>for</em> <a href="#" class="link-underline fundraise-item">Children Needs Education</a></p>
             </div>
-          </div>    
+          </div>
         </div>
 
         <div class="col-md-6 col-lg-3 mb-5">
@@ -230,7 +306,7 @@
               <span class="time d-block mb-3">Donated 4 hours ago</span>
               <p>Donated <span class="text-success">$1,200</span> <br> <em>for</em> <a href="#" class="link-underline fundraise-item">Need Shelter for Children in Africa</a></p>
             </div>
-          </div>    
+          </div>
         </div>
 
         <div class="col-md-6 col-lg-3 mb-5">
@@ -241,14 +317,14 @@
               <span class="time d-block mb-3">Donated 9 hours ago</span>
               <p>Donated <span class="text-success">$100</span> <br> <em>for</em> <a href="#" class="link-underline fundraise-item">Water Is Life. Clean Water In Urban Area</a></p>
             </div>
-          </div>    
+          </div>
         </div>
       </div>
     </div>
   </div> <!-- .section -->
 
   <div class="featured-section overlay-color-2" style="background-image: url('images/bg_3.jpg');">
-    
+
     <div class="container">
       <div class="row">
 
@@ -264,95 +340,18 @@
 
           <p><a href="#" class="btn btn-success btn-hover-white py-3 px-5">Read The Full Story</a></p>
         </div>
-        
+
       </div>
     </div>
 
   </div> <!-- .featured-donate -->
 
-  <div class="site-section bg-light">
-    <div class="container">
-      <div class="row mb-5">
-        <div class="col-md-12">
-          <h2>Latest News</h2>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
-          <div class="post-entry">
-            <a href="#" class="mb-3 img-wrap">
-              <img src="images/img_4.jpg" alt="Image placeholder" class="img-fluid">
-            </a>
-            <h3><a href="#">Be A Volunteer Today</a></h3>
-            <span class="date mb-4 d-block text-muted">July 26, 2018</span>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-            <p><a href="#" class="link-underline">Read More</a></p>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
-          <div class="post-entry">
-            <a href="#" class="mb-3 img-wrap">
-              <img src="images/img_5.jpg" alt="Image placeholder" class="img-fluid">
-            </a>
-            <h3><a href="#">You May Save The Life of A Child</a></h3>
-            <span class="date mb-4 d-block text-muted">July 26, 2018</span>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-            <p><a href="#" class="link-underline">Read More</a></p>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
-          <div class="post-entry">
-            <a href="#" class="mb-3 img-wrap">
-              <img src="images/img_6.jpg" alt="Image placeholder" class="img-fluid">
-            </a>
-            <h3><a href="#">Children That Needs Care</a></h3>
-            <span class="date mb-4 d-block text-muted">July 26, 2018</span>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-            <p><a href="#" class="link-underline">Read More</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> <!-- .section -->
 
   <div class="featured-section overlay-color-2" style="background-image: url('images/bg_2.jpg');">
-    
-    <div class="container">
-      <div class="row">
 
-        <div class="col-md-6 mb-5 mb-md-0">
-          <img src="images/bg_2.jpg" alt="Image placeholder" class="img-fluid">
-        </div>
 
-        <div class="col-md-6 pl-md-5">
-
-          <div class="form-volunteer">
-            
-            <h2>Be A Volunteer Today</h2>
-            <form action="#" method="post">
-              <div class="form-group">
-                <!-- <label for="name">Name</label> -->
-                <input type="text" class="form-control py-2" id="name" placeholder="Enter your name">
-              </div>
-              <div class="form-group">
-                <!-- <label for="email">Email</label> -->
-                <input type="text" class="form-control py-2" id="email" placeholder="Enter your email">
-              </div>
-              <div class="form-group">
-                <!-- <label for="v_message">Email</label> -->
-                <textarea name="v_message" id="" cols="30" rows="3" class="form-control py-2" placeholder="Write your message"></textarea>
-                <!-- <input type="text" class="form-control py-2" id="email"> -->
-              </div>
-              <div class="form-group">
-                <input type="submit" class="btn btn-white px-5 py-2" value="Send">
-              </div>
-            </form>
-          </div>
-        </div>
-        
-      </div>
-    </div>
 
   </div> <!-- .featured-donate -->
 @endsection
+

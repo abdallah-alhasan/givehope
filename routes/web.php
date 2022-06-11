@@ -14,9 +14,6 @@ use App\Http\Controllers\UsersController;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.index');
-});
 
 Route::get('/about', function () {
     return view('pages.about');
@@ -60,6 +57,13 @@ require __DIR__.'/auth.php';
 
 Route::resource('admin/users' , 'App\Http\Controllers\UsersController');
 Route::resource('admin/donations' , 'App\Http\Controllers\PackageController');
+Route::resource('admin/categories' , 'App\Http\Controllers\CategoryController');
+Route::resource('admin/cities' , 'App\Http\Controllers\CityController');
+
+
+
+Route::get('' , 'App\Http\Controllers\CategoryController@showCategory');
+
 
 Route::get('/users/view', function () {
     return view('admin.users');

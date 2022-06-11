@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+
               <!-- Hoverable Table rows -->
               @if(session()->has('message'))
                 <div class="alert alert-success ">
@@ -13,34 +14,22 @@
                     <thead>
                       <tr>
                         <th>Name</th>
-                        <th>Email</th>
-                        <th>City</th>
-                        <th>Role</th>
+                        <th>Description</th>
                         <th>Image</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
-                    @php
-                        $i = 1;
-                    @endphp
                     <tbody class="table-border-bottom-0">
-                      @foreach ($users as  $user)
+                      @foreach ($data as $value)
                       <tr>
-                        <td>{{$user->name}}</td>
-                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$user->email}}</strong></td>
-                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$user_city[$user->id - 1]->name ?? 'none'}}</strong></td>
-                        <td><span class="badge bg-label-{{$user->roles == 0 ? 'primary': 'danger'}} me-1">{{$user->roles == 0 ? 'user': 'admin'}}</span></td>
+                        <td>{{$value->name}}</td>
+                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$value->desc}}</strong></td>
+                        {{-- <td><span class="badge bg-label-{{$user->roles == 0 ? 'primary': 'danger'}} me-1">{{$user->roles == 0 ? 'user': 'admin'}}</span></td> --}}
                         <td>
                           <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="{{$user->id}}"
-                            >
-                              <img src="/storage/{{$user->image}}" alt="Avatar" class="rounded-circle" />
-                            </li>
+
+                              <img src="{{ url('Image/'.$value->image) }}" alt="Avatar" width="100px" height="100px" />
+
                           </ul>
                         </td>
                         <td>
@@ -49,10 +38,9 @@
                               <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href="{{route('users.edit' , $user->id)}}"
-                                ><i class="bx bx-edit-alt me-1"></i> Edit</a
-                              >
-                              <form action="{{ route('users.destroy' , $user->id)}}" method="POST" class="d-inline">
+                              <a class="dropdown-item" href="{{route('categories.edit', $value->id)}}">
+                                <i class="bx bx-edit-alt me-1"></i> Edit</a>
+                              <form action="{{ route('categories.destroy' , $value->id)}}" method="POST" class="d-inline">
                                 @method('DELETE')
                                 @csrf
                                 <span  class="dropdown-item"
@@ -64,9 +52,6 @@
                           </div>
                         </td>
                       </tr>
-                      @php
-                          $i++;
-                      @endphp
                       @endforeach
 
                     </tbody>
@@ -75,9 +60,9 @@
               </div>
 
               {{-- pagination --}}
-              <div class="pagination-wrapper">
+              {{-- <div class="pagination-wrapper">
                 {{ $users->links('pagination::bootstrap-4')}}
-              </div>
+              </div> --}}
 
               <!--/ Hoverable Table rows -->
 @endsection
