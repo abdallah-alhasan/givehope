@@ -14,9 +14,15 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $data= Category::all();
+        return view("admin.categories.index",compact("data"));
     }
 
+    public function showCategory()
+    {
+        $data= Category::all();
+        return view("pages.index",compact("data"));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -24,7 +30,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.categories.create");
     }
 
     /**
@@ -35,7 +41,22 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $input = $request->all();
+
+        if($request->file('image')){
+            $file= $request->file('image');
+            $filename= date('YmdHi').$file->getClientOriginalName();
+            $file-> move(public_path('Image'), $filename);
+            $input['image'] = "$filename";
+
+        }
+
+
+        Category::create($input);
+
+
+        return redirect()->route('categories.index')->with('success','category created successfully.');
     }
 
     /**
@@ -46,7 +67,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+
     }
 
     /**
@@ -57,7 +78,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('admin.categories.edit' , compact('category'));
     }
 
     /**
@@ -69,7 +90,31 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+
+
+        // $validation = $request->validate([
+        //     'name' => 'required',
+        //     'desc' => 'required',
+        //     'image' => 'image',
+
+        // ]);
+
+        $input = $request->all();
+
+        if($request->file('image')){
+            $file= $request->file('image');
+            $filename= date('YmdHi').$file->getClientOriginalName();
+            $file-> move(public_path('Image'), $filename);
+            $input['image'] = "$filename";
+
+        }
+
+
+
+
+         $category->update($input);
+        return redirect()->route('categories.index');
+
     }
 
     /**
@@ -80,6 +125,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return redirect()->route('categories.index')
+        ->with('message', 'category deleted successfully');
     }
 }

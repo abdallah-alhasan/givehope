@@ -61,7 +61,23 @@
       </div>
 
       <div class="row">
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+
+      @foreach($data as $values)
+ <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="post-entry text-center">
+            <a href="#" class="mb-3 img-wrap">
+
+              <img src="{{ url('Image/'.$values->image) }}" alt="Image placeholder" width ="400" height="250" >
+            </a>
+            <h3><a href="#">{{$values->desc}}</a></h3>
+            <span class="date mb-4 d-block text-muted" style="font-size: 20px">{{$values->name}}</span>
+
+
+          </div>
+        </div>
+        @endforeach
+
+        {{-- <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
           <div class="post-entry text-center">
             <a href="#" class="mb-3 img-wrap">
               <img src="images/Mattress-on-floor.jpg" alt="Image placeholder" class="img-fluid">
@@ -89,7 +105,7 @@
               <img src="images/clothes.jpg" alt="Image placeholder" class="img-fluid">
             </a>
             <h3><a href="#">Children That Needs Care</a></h3>
-            <span class="date mb-4 d-block text-muted" style="font-size: 20px">Wardrobes</span>
+            <span class="date mb-4 d-block text-muted" style="font-size: 20px">Wardrobes</span> --}}
 
 
           </div>

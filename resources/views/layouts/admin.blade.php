@@ -160,13 +160,13 @@ data-template="vertical-menu-template-free"
             <ul class="menu-sub">
             <li class="menu-item">
                 <a href="{{route('users.index')}}" class="menu-link">
-                <div data-i18n="Without menu">View users</div>
+                <div data-i18n="Without menu">View Users</div>
                 </a>
             </li>
             <li class="menu-item">
                 <a href="{{route('users.index')}}" class="menu-link">
-                <div data-i18n="Without navbar">Add users</div>
-                
+                <div data-i18n="Without navbar">Add Users</div>
+
                 </a>
             </li>
             </ul>
@@ -197,22 +197,22 @@ data-template="vertical-menu-template-free"
 
                 {{-- categories --}}
                 <li class="menu-header small text-uppercase">
-                    <span class="menu-header-text">categories</span>
+                    <span class="menu-header-text">Categories</span>
                     </li>
                     <li class="menu-item">
                     <a href="javascript:void(0);" class="menu-link menu-toggle">
                         <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                        <div data-i18n="Account Settings">Manage categories</div>
+                        <div data-i18n="Account Settings">Manage Categories</div>
                     </a>
                     <ul class="menu-sub">
                         <li class="menu-item">
-                        <a href="pages-account-settings-account.html" class="menu-link">
-                            <div data-i18n="Account">View categories</div>
+                        <a href="{{route('categories.index')}}" class="menu-link">
+                            <div data-i18n="Account">View Categories</div>
                         </a>
                         </li>
                         <li class="menu-item">
-                            <a href="layouts-without-navbar.html" class="menu-link">
-                            <div data-i18n="Without navbar">Add categories</div>
+                            <a href="{{route('categories.create')}}" class="menu-link">
+                            <div data-i18n="Without navbar">Add Categories</div>
                             </a>
                         </li>
                         {{-- <li class="menu-item">
@@ -224,13 +224,34 @@ data-template="vertical-menu-template-free"
                     </li>
 
         <!-- Cities -->
-        <li class="menu-header small text-uppercase"><span class="menu-header-text">Cities</span></li>
-        <li class="menu-item">
-            <a href="cards-basic.html" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-collection"></i>
-            <div data-i18n="Basic">Manage Cities </div>
+
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Cities</span>
+            </li>
+            <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                <div data-i18n="Account Settings">Manage Cities</div>
             </a>
-        </li>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                <a href="{{route('cities.index')}}" class="menu-link">
+                    <div data-i18n="Account">View Cities</div>
+                </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{route('cities.create')}}" class="menu-link">
+                    <div data-i18n="Without navbar">Add Cities</div>
+                    </a>
+                </li>
+                {{-- <li class="menu-item">
+                <a href="pages-account-settings-notifications.html" class="menu-link">
+                    <div data-i18n="Notifications">Notifications</div>
+                </a>
+                </li> --}}
+            </ul>
+            </li>
+
 
         <!-- Orders -->
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Orders</span></li>
