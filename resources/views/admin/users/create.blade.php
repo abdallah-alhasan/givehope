@@ -4,8 +4,7 @@
 <div class="col-xl">
     <div class="card mb-4">
 <div class="card-body">
-    <form action="{{route('users.update' , $user->id)}}"  method="POST" enctype="multipart/form-data">
-        @method('PATCH')
+    <form action="{{route('users.store')}}"  method="POST" enctype="multipart/form-data">
         @csrf
 
         {{-- name  --}}
@@ -23,8 +22,38 @@
             aria-label="John Doe"
             aria-describedby="basic-icon-default-fullname2"
             name="name"
-            value="{{ old('name') ?? $user->name}}"
+            
           />
+          @error('name')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+          @enderror
+        </div>
+      </div>
+
+        {{-- password  --}}
+      <div class="mb-3">
+        <label class="form-label" for="basic-icon-default-fullname">Password</label>
+        <div class="input-group input-group-merge">
+          <span id="basic-icon-default-fullname2" class="input-group-text"
+            ><i class="bx bx-user"></i
+          ></span>
+          <input
+            type="text"
+            class="form-control"
+            id="basic-icon-default-fullname"
+            placeholder="Password"
+            aria-label="Password"
+            aria-describedby="basic-icon-default-fullname2"
+            name="password"
+            
+          />
+          @error('password')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+          @enderror
         </div>
       </div>
       {{-- <div class="mb-3">
@@ -54,10 +83,16 @@
             ><i class="bx bx-buildings"></i
           ></span>
         <select name="city_id" id="city" >
+          <option selected disabled>Select a city</option>
           @foreach ($cities as $city)
-            <option value="{{$city->id}}" {{$user->city_id == $city->id ? 'selected' : ''}}  >{{$city->name}}</option>
+            <option value="{{$city->id}}">{{$city->name}}</option>
           @endforeach
         </select>
+        @error('city_id')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+          @enderror
         </div>
       </div>
 
@@ -68,9 +103,15 @@
           <span id="basic-icon-default-city" class="input-group-text"
             ><i class='bx bx-id-card'></i></span>
         <select name="roles" id="roles" >
-          <option value="0" {{$user->roles == 0 ? 'selected' : ''}}  >User</option>
-            <option value="1" {{$user->roles == 1 ? 'selected' : ''}} >Admin</option>
+            <option selected disabled  >Select role</option>
+            <option value="0"  >User</option>
+            <option value="1" >Admin</option>
         </select>
+        @error('roles')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+          @enderror
         </div>
       </div>
 
@@ -83,14 +124,19 @@
             type="text"
             id="basic-icon-default-email"
             class="form-control"
-            placeholder="john.doe"
-            aria-label="john.doe"
+            placeholder="example@example.com"
+            aria-label="email"
             aria-describedby="basic-icon-default-email2"
             name="email"
-            value="{{ old('email') ?? $user->email}}"
+            
           />
           <span id="basic-icon-default-email2" class="input-group-text">@example.com</span>
         </div>
+        @error('email')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+          @enderror
         <div class="form-text">You can use letters, numbers & periods</div>
       </div>
 
@@ -105,12 +151,17 @@
             type="text"
             id="basic-icon-default-phone"
             class="form-control phone-mask"
-            placeholder="658 799 8941"
-            aria-label="658 799 8941"
+            placeholder="07xxxxxxxx"
+            aria-label="07xxxxxxxx"
             aria-describedby="basic-icon-default-phone2"
             name="phonenumber"
-            value="{{ old('phonenumber') ?? $user->phonenumber}}"
+            
           />
+          @error('phonenumber')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+          @enderror
         </div>
       </div>
 
@@ -127,13 +178,17 @@
             class="form-control phone-mask"
             aria-describedby="basic-icon-default-image"
             name="image"
-            value="{{ old('image') ?? $user->image}}"
           />
+          @error('image')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+          @enderror
         </div>
       </div>
 
 
-      <button type="submit" class="btn btn-primary">Send</button>
+      <button type="submit" class="btn btn-primary">Save</button>
     </form>
   </div>
     </div>

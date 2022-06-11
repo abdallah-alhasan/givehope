@@ -164,7 +164,7 @@ data-template="vertical-menu-template-free"
                 </a>
             </li>
             <li class="menu-item">
-                <a href="layouts-without-navbar.html" class="menu-link">
+                <a href="{{route('users.create')}}" class="menu-link">
                 <div data-i18n="Without navbar">Add users</div>
                 </a>
             </li>
@@ -182,7 +182,7 @@ data-template="vertical-menu-template-free"
             </a>
             <ul class="menu-sub">
             <li class="menu-item">
-                <a href="pages-account-settings-account.html" class="menu-link">
+                <a href="{{route('donations.index')}}" class="menu-link">
                 <div data-i18n="Account">View Donations</div>
                 </a>
             </li>
