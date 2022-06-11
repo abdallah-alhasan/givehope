@@ -19,6 +19,10 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->boolean('status');
             $table->timestamps();
+
+
+            $table->index('user_id');
+            $table->index('package_id');
         });
     }
 

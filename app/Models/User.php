@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\City;
+use App\Models\Order;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -49,5 +50,9 @@ class User extends Authenticatable
 
     public function cities(){
         return $this->belongsTo(City::class);
+    }
+
+    public function orders(){
+        return $this->hasMany(Order::class);
     }
 }

@@ -24,6 +24,9 @@ class CreatePackagesTable extends Migration
             $table->string('products_number');
             $table->string('condition');
             $table->timestamps();
+
+            $table->index('city_id');
+            $table->index('category_id');
         });
     }
 
