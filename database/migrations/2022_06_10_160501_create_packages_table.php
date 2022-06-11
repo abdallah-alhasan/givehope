@@ -17,7 +17,8 @@ class CreatePackagesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('city_id');
-            $table->string('name');
+            $table->string('doner_name');
+            $table->string('phone_number');
             $table->string('title');
             $table->string('image');
             $table->text('description');
