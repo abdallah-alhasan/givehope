@@ -64,3 +64,6 @@ Route::get('/users/view', function () {
     return view('admin.users');
 })->name('view-users');
 // ->middleware(['auth'])->name('dashboard');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
