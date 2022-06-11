@@ -164,8 +164,9 @@ data-template="vertical-menu-template-free"
                 </a>
             </li>
             <li class="menu-item">
-                <a href="layouts-without-navbar.html" class="menu-link">
+                <a href="{{route('users.index')}}" class="menu-link">
                 <div data-i18n="Without navbar">Add users</div>
+                
                 </a>
             </li>
             </ul>
@@ -230,7 +231,7 @@ data-template="vertical-menu-template-free"
             <div data-i18n="Basic">Manage Cities </div>
             </a>
         </li>
-        
+
         <!-- Orders -->
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Orders</span></li>
         <li class="menu-item">
@@ -242,7 +243,7 @@ data-template="vertical-menu-template-free"
 
 
 
-        
+
     </aside>
     <!-- / Menu -->
 
@@ -383,7 +384,7 @@ data-template="vertical-menu-template-free"
             , made with ❤️ by
             <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">GIVEHOPE</a>
         </div>
-        
+
         </div>
     </footer>
     <!-- / Footer -->
