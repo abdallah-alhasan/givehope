@@ -159,7 +159,7 @@ data-template="vertical-menu-template-free"
 
             <ul class="menu-sub">
             <li class="menu-item">
-                <a href="{{route('view-users')}}" class="menu-link">
+                <a href="{{route('users.index')}}" class="menu-link">
                 <div data-i18n="Without menu">View users</div>
                 </a>
             </li>
