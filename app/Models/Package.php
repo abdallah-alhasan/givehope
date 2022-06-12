@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Package extends Model
 {
+
     protected $fillable = [
         'doner_name',
         'category_id',
@@ -31,4 +32,26 @@ class Package extends Model
     public function city(){
         return $this->belongsTo(City::class);
     }
+
+
+    // protected $fillable =[
+
+
+    //     'category_id',
+    //     'city_id',
+    //     'doner_name',
+
+    //     'phone_number',
+
+    //     'title',
+    //     'image',
+    //     'description',
+    //     'products_number',
+    //     'condition',
+
+
+    // ];
+
+
+
 }

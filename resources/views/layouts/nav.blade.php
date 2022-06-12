@@ -54,6 +54,8 @@
                     <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="/how-it-works" class="nav-link">How It Works</a></li>
                     <li class="nav-item"><a href="/donate" class="nav-link">Donate</a></li>
+                    {{-- <li class="nav-item"><a href="{{ route('categories.index') }}" class="nav-link">Donations</a></li> --}}
+                    {{-- <li class="nav-item"><a href="{{ route('categories.show', $category->id) }}" class="nav-link">Donations</a></li> --}}
                     <li class="nav-item"><a href="/gallery" class="nav-link">Gallery</a></li>
                     <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
                     <li class="nav-item"><a href="/about" class="nav-link">About</a></li>

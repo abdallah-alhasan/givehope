@@ -1,10 +1,13 @@
 <?php
 
 // use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UsersController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\PackageController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Donation_FormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,10 +60,11 @@ require __DIR__.'/auth.php';
 
 
 
+Route::get('categories/{packages}', [CategoryController::class,'show'])->name('categories.show');
 Route::resource('categories', CategoryController::class);
 
 Route::get('/softDelete/{package}', [PackageController::class,'softDelete'])->name('packages.softDelete');
-Route::resource('packages', PackageController::class);
+ Route::resource('packages', PackageController::class);
 Route::resource('orders', OrderController::class);
 
 Route::get('/editprofile/{user}',['App\Http\Controllers\UsersController','editProfile'] )->name('pages.editprofile');
@@ -91,3 +95,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+//// Donation Form
+Route::resource('donations', Donation_FormController::class);

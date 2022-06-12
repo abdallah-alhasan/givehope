@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\City;
+
 use App\Models\Package;
 use Illuminate\Http\Request;
+
 
 class PackageController extends Controller
 {
