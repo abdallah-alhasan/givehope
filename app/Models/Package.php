@@ -17,4 +17,15 @@ class Package extends Model
     public function city(){
         return $this->belongsTo(City::class);
     }
+
+
+    protected $fillable =[
+
+        'donator_name',
+        'phone_num',
+        'city_id',
+        'num_content',
+
+
+    ];
 }

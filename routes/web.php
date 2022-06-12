@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
-
+use App\Http\Controllers\DonationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -67,3 +67,8 @@ Route::get('/users/view', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+//Donate routes
+Route::resource('donations',DonationController::class);
