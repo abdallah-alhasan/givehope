@@ -82,6 +82,8 @@ class UsersController extends Controller
 
 
 
+    
+
 
     //profile 
     public function showProfile(User $user)

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\City;
 use App\Models\Package;
 use Illuminate\Http\Request;
@@ -28,7 +29,9 @@ class PackageController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::orderBy('id', 'ASC')->get();
+        $cities = City::orderBy('id', 'ASC')->get();
+        return view('admin.users.create' , compact('cities', 'categories'));
     }
 
     /**

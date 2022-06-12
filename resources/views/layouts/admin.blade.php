@@ -188,6 +188,11 @@ data-template="vertical-menu-template-free"
                 <div data-i18n="Account">View Donations</div>
                 </a>
             </li>
+            <li class="menu-item">
+                <a href="{{route('donations.create')}}" class="menu-link">
+                <div data-i18n="Account">Add Donations</div>
+                </a>
+            </li>
             {{-- <li class="menu-item">
                 <a href="pages-account-settings-notifications.html" class="menu-link">
                 <div data-i18n="Notifications">Notifications</div>
