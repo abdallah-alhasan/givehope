@@ -15,13 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
         //
 
-=======
-        $data= Category::all();
-        return view("admin.categories.index",compact("data"));
->>>>>>> 057046a310279dcfab6509e7eed0f4f0bc2d4dfc
     }
 
     public function showCategory()
@@ -73,7 +68,6 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-<<<<<<< HEAD
         //
         if (auth()->user()){
             $packages = Package::where('city_id', auth()->user()->city_id)->Where('category_id', $category->id)->latest()->paginate(6);
@@ -81,8 +75,6 @@ class CategoryController extends Controller
         }
             $packages = Package::Where('category_id',  $category->id)->latest()->paginate(6);
             return view('pages.donations', compact('packages'));
-=======
->>>>>>> 057046a310279dcfab6509e7eed0f4f0bc2d4dfc
 
     }
 
