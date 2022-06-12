@@ -32,15 +32,7 @@
 </style> --}}
 
 
-{{-- <ul>
-    <li>{{ $package->name }}</li>
-    <li>{{ $package->description }}</li>
-    @auth
-        <li>{{ $package->title }}</li>
-    @endauth
 
-
-</ul> --}}
 
 
 <div class="block-31" style="position: relative;">
@@ -69,7 +61,7 @@
             <div class="header" style="margin-top: 40px">
 
 
-                    <h2>Tables</h2>
+                    <h2>{{ $category->name }}</h2>
                     @auth
                     <p style="margin-bottom:-3px; color:#f7ca44">Located In {{ auth()->user()->city->name }}</p>
                     @endauth
@@ -77,7 +69,8 @@
     </div>
 </div>
 
-  <div class="container d-flex justify-content-center flex-row mt-50 mb-50">
+  <div class="container d-flex flex-column justify-content-center flex-row mt-50 mb-50">
+
     <div class="col-lg-3">
         <div class="left_sidebar_area">
           <aside class="left_widgets p_filter_widgets">
@@ -85,11 +78,13 @@
               <h3>Browse Categories</h3>
             </div>
             <div class="widgets_inner">
-              <ul class="list">
+              <ul class="list d-flex justify-content-between">
+                @foreach ($categories as $category)
 
-                  <li>
-                    <a href="">yousef</a>
-                  </li>
+                <li class="">
+                  <a href="{{ route('categories.show', $category->id) }}">{{ $category->name }}</a>
+                </li>
+                @endforeach
 
               </ul>
             </div>
