@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\City;
 use App\Models\User;
-use App\Models\City;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -39,7 +39,7 @@ class UsersController extends Controller
         return redirect()->route('users.index')
         ->with('message', 'user updated successfully');
     }
-    
+
     // public function show(Listing $listing){
     //     return view('listings.show',compact('listing'));
     // }
@@ -50,7 +50,7 @@ class UsersController extends Controller
     }
 
     public function store(Request $request){
-        
+
         $data = $request->validate([
             'name' => 'required',
             'password' => 'required',
@@ -66,7 +66,7 @@ class UsersController extends Controller
         // $save = new User();
         $save = User::create(array_merge($data , ['image' => $imagePath]));
         return redirect()->route('users.index')
-        ->with('message', 'User added successfully');  
+        ->with('message', 'User added successfully');
     }
 
     public function destroy(User $user)
@@ -87,7 +87,7 @@ class UsersController extends Controller
 
     public function editProfile(User $user)
     {
-        
+
         return view('pages.editprofile' , compact('user'));
     }
 
