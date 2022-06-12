@@ -15,8 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
-
+        $data= Category::all();
+        return view("admin.categories.index",compact("data"));
     }
 
     public function showCategory()
@@ -57,7 +57,7 @@ class CategoryController extends Controller
         Category::create($input);
 
 
-        return redirect()->route('categories.index')->with('success','category created successfully.');
+        return redirect()->route('categories.index')->with('message','category created successfully.');
     }
 
     /**
@@ -122,7 +122,7 @@ class CategoryController extends Controller
 
 
          $category->update($input);
-        return redirect()->route('categories.index');
+        return redirect()->route('categories.index')->with('message','category updated successfully.');
 
     }
 
