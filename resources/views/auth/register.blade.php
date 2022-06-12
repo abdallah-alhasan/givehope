@@ -10,7 +10,6 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
@@ -24,7 +23,6 @@
                                 @enderror
                             </div>
                         </div>
-
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
@@ -38,6 +36,39 @@
                                 @enderror
                             </div>
                         </div>
+
+
+                        <div class="row mb-3">
+                            <label for="phonenumber" class="col-md-4 col-form-label text-md-end">phoneNumber</label>
+                            <div class="col-md-6">
+                                <input id="phonenumber" type="text"
+                                    class="form-control @error('phonenumber') is-invalid @enderror" name="phonenumber" required autocomplete="phonenumber" autofocus>
+                                @error('phonenumber')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                        <label for="city_id" class="col-md-4 col-form-label text-md-end">City</label>
+                        <div class="col-md-6">
+                            <select class="form-select" aria-label="Default select example" name="city_id">
+                                <option selected>select your city</option>
+                                <option value="1">Irbid</option>
+                                <option value="2">Amman</option>
+                                <option value="3">Aqaba</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-3">
+                        <label for="image" class="col-md-4 col-form-label text-md-end">Identification papers</label>
+                        <div class="col-md-6">
+                        <input class="form-control" type="file" id="image" name="image">
+                        </div>
+                      </div>
 
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>

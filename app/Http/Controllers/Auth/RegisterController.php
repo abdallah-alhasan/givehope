@@ -7,7 +7,7 @@ use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
+ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
@@ -53,6 +53,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'phonenumber'=>['required','max:10','min:10']
         ]);
     }
 
@@ -68,6 +69,10 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'phonenumber'=>$data['phonenumber'],
+            'city_id'=>$data['city_id'],
+            'image'=>$data['image']
+
         ]);
     }
 }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <title>GiveHope &mdash; Website Template by Colorlib</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,7 +35,7 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+          <li class="nav-item "><a href="/" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="/how-it-works" class="nav-link">How It Works</a></li>
           <li class="nav-item"><a href="{{ route('categories.show', 1) }}" class="nav-link">Donate</a></li>
           {{-- <li class="nav-item"><a href="{{ route('categories.show', $category->id) }}" class="nav-link">Donate</a></li> --}}

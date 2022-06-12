@@ -14,9 +14,18 @@
           </div>
         </div>
       </div>
-      
+
     </div>
   </div>
+
+
+
+
+
+  {{-- form --}}
+
+
+  {{-- form --}}
 
   <div class="site-section">
     <div class="container">
@@ -101,7 +110,7 @@
   </div>
 
   <div class="featured-section overlay-color-2" style="background-image: url('images/bg_2.jpg');">
-    
+
     <div class="container">
       <div class="row">
 
@@ -112,7 +121,7 @@
         <div class="col-md-6 pl-md-5">
 
           <div class="form-volunteer">
-            
+
             <h2>Be A Volunteer Today</h2>
             <form action="#" method="post">
               <div class="form-group">
@@ -134,10 +143,14 @@
             </form>
           </div>
         </div>
-        
+
       </div>
     </div>
 
   </div> <!-- .featured-donate -->
+
+
+
+
 
 @endsection

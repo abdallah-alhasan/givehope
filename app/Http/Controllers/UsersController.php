@@ -34,8 +34,10 @@ class UsersController extends Controller
             'image' => 'image',
             'roles' => '',
         ]);
-        $imagePath = request('image')->store('uploads', 'public');
-        $user->update(array_merge($data,['image' => $imagePath]));
+        if (request('image')) {
+            $imagePath = request('image')->store('uploads', 'public');
+        }
+        $user->update(array_merge($data,request('image') != null ? ['image' => $imagePath ] : []));
         return redirect()->route('users.index')
         ->with('message', 'user updated successfully');
     }
@@ -62,9 +64,10 @@ class UsersController extends Controller
             'roles' => '',
         ]);
 
-        $imagePath = request('image')->store('uploads', 'public');
-        // $save = new User();
-        $save = User::create(array_merge($data , ['image' => $imagePath]));
+        if (request('image')) {
+            $imagePath = request('image')->store('uploads', 'public');
+        }
+        $save = User::create(array_merge($data , request('image') != null ? ['image' => $imagePath ] : [] ));
         return redirect()->route('users.index')
         ->with('message', 'User added successfully');
     }
@@ -75,6 +78,14 @@ class UsersController extends Controller
         return redirect()->route('users.index')
         ->with('message', 'user deleted successfully');
     }
+
+
+
+
+    
+
+
+    //profile 
     public function showProfile(User $user)
     {
         // dd($user->name);
