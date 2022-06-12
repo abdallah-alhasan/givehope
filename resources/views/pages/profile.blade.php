@@ -181,7 +181,7 @@
                                                     <label>Name</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <p>{{$user->name}}</p>
+                                                    <p>{{auth()->user()->name}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -189,7 +189,7 @@
                                                     <label>Email</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <p>{{$user->email}}</p>
+                                                    <p>{{auth()->user()->email}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -197,7 +197,7 @@
                                                     <label>Phone</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <p>{{$user->phonenumber}}</p>
+                                                    <p>{{auth()->user()->phonenumber}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -212,7 +212,7 @@
                                 {{--  --}}
                 </form>
     </div>
-            
+
 
             <a href="/editprofile/{{$user->id}}" type="submit" class="btn btn-warning">Edit Profile</a>
         </div>

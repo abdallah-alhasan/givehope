@@ -82,7 +82,8 @@
 
                         <li class="nav-item ">
                             <a  class="nav-link "
-                            href="" role="button">
+                            {{-- href="{{ route('/profile/{user}',auth()->user()->id) }}" role="button"> --}}
+                            href="/profile/{{ auth()->user()->id }}" role="button">
                                 {{ __('My account')}}
                                 {{-- {{ Auth::user()->name }} --}}
                             </a>
