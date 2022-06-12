@@ -54,10 +54,10 @@
                               <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href="{{route('donations.edit' , $donation->id)}}"
+                              <a class="dropdown-item" href="{{route('packages.edit' , $donation->id)}}"
                                 ><i class="bx bx-edit-alt me-1"></i> Edit</a
                               >
-                              <form action="{{ route('donations.destroy' , $donation->id)}}" method="POST" class="d-inline">
+                              <form action="{{ route('packages.destroy' , $donation->id)}}" method="POST" class="d-inline">
                                 @method('DELETE')
                                 @csrf
                                 <span  class="dropdown-item" 

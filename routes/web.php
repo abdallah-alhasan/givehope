@@ -64,14 +64,16 @@ Route::resource('packages', PackageController::class);
 Route::resource('orders', OrderController::class);
 
 Route::get('/editprofile/{user}',['App\Http\Controllers\UsersController','editProfile'] )->name('pages.editprofile');
-Route::post('/editprofile',['App\Http\Controllers\UsersController','updateProfile'] )->name('pages.profile');
+
+Route::post('/updateprofile/{user}',['App\Http\Controllers\UsersController','updateProfile'] )->name('pages.updateProfile');
+
 Route::get('/profile/{user}',['App\Http\Controllers\UsersController','showProfile'] );
 
 
 //admin routes
 
 Route::resource('admin/users' , 'App\Http\Controllers\UsersController');
-Route::resource('admin/donations' , 'App\Http\Controllers\PackageController');
+Route::resource('admin/packages' , 'App\Http\Controllers\PackageController');
 Route::resource('admin/categories' , 'App\Http\Controllers\CategoryController');
 Route::resource('admin/cities' , 'App\Http\Controllers\CityController');
 
