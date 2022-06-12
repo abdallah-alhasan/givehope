@@ -15,7 +15,12 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::orderBy('created_at', 'ASC')->oldest()->paginate(10);
+        $orders_package = Order::orderBy('id', 'ASC')->join('packages', 'orders.package_id', '=', 'packages.id')
+        ->get(['orders.id', 'packages.title']);
+        // dd($orders_package);
+        // dd($user_city);
+        return view('admin.orders.index',compact('orders' , 'orders_package'));
     }
 
     /**

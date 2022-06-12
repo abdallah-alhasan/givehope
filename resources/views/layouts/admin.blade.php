@@ -262,7 +262,7 @@ data-template="vertical-menu-template-free"
         <!-- Orders -->
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Orders</span></li>
         <li class="menu-item">
-            <a href="cards-basic.html" class="menu-link">
+            <a href="{{route('orders.index')}}" class="menu-link">
             <i class="menu-icon tf-icons bx bx-collection"></i>
             <div data-i18n="Basic">Manage Orders </div>
             </a>
