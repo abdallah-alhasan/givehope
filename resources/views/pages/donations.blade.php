@@ -1,0 +1,178 @@
+
+@extends('layouts.master')
+
+@section('content')
+{{-- <style>
+    .ftco-navbar-light {
+    background: transparent !important;
+    position: absolute;
+    color: #000 !important;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    top: 0;
+}
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+    color: #000;
+    opacity: 1 !important;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+    color: #000 !important;
+
+}
+
+.navbar-dark .navbar-brand {
+    color: #000 !important;
+}
+.navbar-dark .navbar-toggler {
+    color: #000 !important;
+    color: #000 !important;
+}
+
+</style> --}}
+
+
+{{-- <ul>
+    <li>{{ $package->name }}</li>
+    <li>{{ $package->description }}</li>
+    @auth
+        <li>{{ $package->title }}</li>
+    @endauth
+
+
+</ul> --}}
+
+
+<div class="block-31" style="position: relative;">
+    <div class="owl-carousel loop-block-31 ">
+      <div class="block-30 block-30-sm item" style="background-image: url({{ url('images/bg_1.jpg') }});" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center text-center">
+            <div class="col-md-7">
+              <h2 class="heading">Donations</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  {{-- 2 --}}
+
+
+
+  <div class="row justify-content-center text-center">
+    <div class="col-md-8 col-lg-6">
+            <div class="header" style="margin-top: 40px">
+
+
+                    <h2>Tables</h2>
+                    @auth
+                    <p style="margin-bottom:-3px; color:#f7ca44">Located In {{ auth()->user()->city->name }}</p>
+                    @endauth
+            </div>
+    </div>
+</div>
+
+  <div class="container d-flex justify-content-center mt-50 mb-50">
+
+
+      <div class="row">
+        @foreach ($packages as $package)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-md-4 mt-2">
+
+
+    <div class="card">
+                        <div class="card-body">
+                            <div class="card-img-actions">
+
+                                    <img src="https://s1.img.bidsquare.com/item/xl/7584/7584036.jpeg" class="card-img img-fluid" width="96" height="350" alt="">
+
+
+                            </div>
+                        </div>
+
+                        <div class="card-body bg-light text-center">
+                            <div class="mb-2">
+                                <h6 class="font-weight-semibold mb-2"class="text-default mb-2" data-abc="true" style="font-size:20px">
+                                    {{ $package->title }}
+                                </h6>
+
+                                <p  class="text-muted" data-abc="true">{{ $package->description }}</p>
+                                <p  class="text-muted" data-abc="true">{{ $package->products_number }}</p>
+                                <p  class="text-muted" data-abc="true">{{ $package->condition }}</p>
+                            </div>
+
+
+
+                            <div>
+                               <i class="fa fa-star star"></i>
+                               <i class="fa fa-star star"></i>
+                               <i class="fa fa-star star"></i>
+                               <i class="fa fa-star star"></i>
+                            </div>
+
+
+                            @auth
+                            <a href="{{ route('packages.show', $package->id) }}" class="btn bg-cart" style="color: #656262"><i class="fa fa-cart-plus mr-2"></i> Show Item</a>
+                            @endauth
+
+
+                        </div>
+                    </div>
+
+
+
+
+</div>
+@endforeach
+
+<div class="container d-flex justify-content-center">
+    <nav aria-label="Page navigation example" class="mx-auto my-5">
+{{ $packages->links() }}
+        {{-- <ul class="pagination pg-blue justify-content-center">
+          <li class="page-item"><a class="page-link">Previous</a></li>
+          <li class="page-item"><a href="secondPage.php" class="page-link">1</a></li>
+          <li class="page-item"><a href="secondPage.php" class="page-link">2</a></li>
+          <li class="page-item"><a href="thirdPage.php" class="page-link">3</a></li>
+          <li class="page-item"><a class="page-link">Next</a></li>
+        </ul> --}}
+      </nav>
+    </div>
+
+
+
+
+
+
+
+    </div>
+</div>
+{{-- 2 --}}
+
+
+
+
+
+
+
+
+@endsection

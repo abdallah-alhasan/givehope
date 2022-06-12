@@ -1,7 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\PackageController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +20,7 @@ use App\Http\Controllers\UsersController;
 
 Route::get('/', function () {
     return view('pages.index');
-});
+})->name('home.index');
 
 Route::get('/about', function () {
     return view('pages.about');
@@ -54,7 +58,11 @@ require __DIR__.'/auth.php';
 
 
 
+Route::resource('categories', CategoryController::class);
 
+Route::get('/softDelete/{package}', [PackageController::class,'softDelete'])->name('packages.softDelete');
+Route::resource('packages', PackageController::class);
+Route::resource('orders', OrderController::class);
 
 //admin routes
 

@@ -47,6 +47,7 @@ class PackageController extends Controller
     public function show(Package $package)
     {
         //
+        return view('pages.single-product', compact('package'));
     }
 
     /**
@@ -81,5 +82,12 @@ class PackageController extends Controller
     public function destroy(Package $package)
     {
         //
+    }
+    public function softDelete(Package $package)
+    {
+        //
+        $package->delete();
+        return redirect()->route('categories.show', 1)->withSuccess(__('Package Booked successfully.'));
+        // return redirect()->route('home.index')->withSuccess(__('Package Booked successfully.'));
     }
 }

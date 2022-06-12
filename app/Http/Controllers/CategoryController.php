@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Package;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,7 @@ class CategoryController extends Controller
     public function index()
     {
         //
+
     }
 
     /**
@@ -47,6 +49,13 @@ class CategoryController extends Controller
     public function show(Category $category)
     {
         //
+        if (auth()->user()){
+            $packages = Package::where('city_id', auth()->user()->city_id)->Where('category_id', $category->id)->latest()->paginate(6);
+            return view('pages.donations', compact('packages'));
+        }
+            $packages = Package::Where('category_id',  $category->id)->latest()->paginate(6);
+            return view('pages.donations', compact('packages'));
+
     }
 
     /**
