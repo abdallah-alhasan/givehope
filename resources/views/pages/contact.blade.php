@@ -14,7 +14,7 @@
           </div>
         </div>
       </div>
-      
+
     </div>
   </div>
 
@@ -22,24 +22,30 @@
     <div class="container">
       <div class="row block-9">
         <div class="col-md-6 pr-md-5">
-          <form action="#">
+          <form action="{{route('contact.send')}}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="form-group">
-              <input type="text" class="form-control px-3 py-3" placeholder="Your Name">
+              <input type="text" name="name" class="form-control px-3 py-3" placeholder="Your Name">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control px-3 py-3" placeholder="Your Email">
+              <input type="text"  name="email"class="form-control px-3 py-3" placeholder="Your Email">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control px-3 py-3" placeholder="Subject">
+              <input type="text"  name="subject"class="form-control px-3 py-3" placeholder="Subject">
             </div>
             <div class="form-group">
-              <textarea name="" id="" cols="30" rows="7" class="form-control px-3 py-3" placeholder="Message"></textarea>
+              <textarea name="Message" id="" cols="30" rows="7" class="form-control px-3 py-3" placeholder="Message"></textarea>
             </div>
             <div class="form-group">
               <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
             </div>
           </form>
-        
+@if(Session::has("message_sent"))
+ <div class="alert alert-success" role="alert">
+
+    {{Session::get('message_sent')}}
+ </div>
+@endif
         </div>
 
         <div class="col-md-6" id="map"></div>

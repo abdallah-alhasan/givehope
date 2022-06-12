@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +64,13 @@ Route::resource('admin/cities' , 'App\Http\Controllers\CityController');
 
 
 Route::get('' , 'App\Http\Controllers\CategoryController@showCategory');
+// Route::get('contact' , 'App\Http\Controllers\ContactController@contact');
+// Route::get('send-message' , 'App\Http\Controllers\ContactController@sendmail')->name('contact.send');
+
+
+Route::get('contact' , [ContactController::class,'contact']);
+Route::get('send-message' , [ContactController::class,'sendmail'])->name('contact.send');
+
 
 
 Route::get('/users/view', function () {
