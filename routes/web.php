@@ -18,12 +18,9 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
-<<<<<<< HEAD
 Route::get('/', function () {
     return view('pages.index');
 })->name('home.index');
-=======
->>>>>>> 057046a310279dcfab6509e7eed0f4f0bc2d4dfc
 
 Route::get('/about', function () {
     return view('pages.about');

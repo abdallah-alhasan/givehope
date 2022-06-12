@@ -77,25 +77,28 @@
     </div>
 </div>
 
-  <div class="container d-flex justify-content-center mt-50 mb-50">
+  <div class="container d-flex justify-content-center flex-row mt-50 mb-50">
+    <div class="col-lg-3">
+        <div class="left_sidebar_area">
+          <aside class="left_widgets p_filter_widgets">
+            <div class="l_w_title">
+              <h3>Browse Categories</h3>
+            </div>
+            <div class="widgets_inner">
+              <ul class="list">
 
+                  <li>
+                    <a href="">yousef</a>
+                  </li>
 
-      <div class="row">
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <div class="row flex-row-reverse">
         @foreach ($packages as $package)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <div class="col-md-4 mt-2">
 
@@ -145,6 +148,16 @@
 </div>
 @endforeach
 
+
+
+
+
+
+
+
+
+
+
 <div class="container d-flex justify-content-center">
     <nav aria-label="Page navigation example" class="mx-auto my-5">
 {{ $packages->links() }}
@@ -157,14 +170,8 @@
         </ul> --}}
       </nav>
     </div>
-
-
-
-
-
-
-
     </div>
+
 </div>
 {{-- 2 --}}
 

@@ -73,7 +73,7 @@ class CategoryController extends Controller
             $packages = Package::where('city_id', auth()->user()->city_id)->Where('category_id', $category->id)->latest()->paginate(6);
             return view('pages.donations', compact('packages'));
         }
-            $packages = Package::Where('category_id',  $category->id)->latest()->paginate(6);
+            $packages = Package::Where('category_id',  $category->id)->latest()->paginate(3);
             return view('pages.donations', compact('packages'));
 
     }
