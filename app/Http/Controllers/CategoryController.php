@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Package;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -56,7 +57,7 @@ class CategoryController extends Controller
         Category::create($input);
 
 
-        return redirect()->route('categories.index')->with('success','category created successfully.');
+        return redirect()->route('categories.index')->with('message','category created successfully.');
     }
 
     /**
@@ -67,6 +68,14 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
+        //
+        $categories = Category::all();
+        if (auth()->user()){
+            $packages = Package::where('city_id', auth()->user()->city_id)->Where('category_id', $category->id)->latest()->paginate(6);
+            return view('pages.donations', compact('packages','category','categories'));
+        }
+            $packages = Package::Where('category_id',  $category->id)->latest()->paginate(6);
+            return view('pages.donations', compact('packages','category','categories'));
 
     }
 
@@ -113,7 +122,7 @@ class CategoryController extends Controller
 
 
          $category->update($input);
-        return redirect()->route('categories.index');
+        return redirect()->route('categories.index')->with('message','category updated successfully.');
 
     }
 

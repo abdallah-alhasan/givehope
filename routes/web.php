@@ -1,8 +1,10 @@
 <?php
 
+// use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UsersController;
-use App\Http\Controllers\ContactController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +17,9 @@ use App\Http\Controllers\ContactController;
 |
 */
 
+Route::get('/', function () {
+    return view('pages.index');
+})->name('home.index');
 
 Route::get('/about', function () {
     return view('pages.about');
@@ -52,6 +57,15 @@ require __DIR__.'/auth.php';
 
 
 
+Route::resource('categories', CategoryController::class);
+
+Route::get('/softDelete/{package}', [PackageController::class,'softDelete'])->name('packages.softDelete');
+Route::resource('packages', PackageController::class);
+Route::resource('orders', OrderController::class);
+
+Route::get('/editprofile/{user}',['App\Http\Controllers\UsersController','editProfile'] )->name('pages.editprofile');
+Route::post('/editprofile',['App\Http\Controllers\UsersController','updateProfile'] )->name('pages.profile');
+Route::get('/profile/{user}',['App\Http\Controllers\UsersController','showProfile'] );
 
 
 //admin routes
@@ -64,13 +78,6 @@ Route::resource('admin/cities' , 'App\Http\Controllers\CityController');
 
 
 Route::get('' , 'App\Http\Controllers\CategoryController@showCategory');
-// Route::get('contact' , 'App\Http\Controllers\ContactController@contact');
-// Route::get('send-message' , 'App\Http\Controllers\ContactController@sendmail')->name('contact.send');
-
-
-Route::get('contact' , [ContactController::class,'contact']);
-Route::get('send-message' , [ContactController::class,'sendmail'])->name('contact.send');
-
 
 
 Route::get('/users/view', function () {
