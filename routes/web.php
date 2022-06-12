@@ -60,6 +60,7 @@ require __DIR__.'/auth.php';
 
 
 
+Route::get('categories/{packages}', [CategoryController::class,'show'])->name('categories.show');
 Route::resource('categories', CategoryController::class);
 
 Route::get('/softDelete/{package}', [PackageController::class,'softDelete'])->name('packages.softDelete');
