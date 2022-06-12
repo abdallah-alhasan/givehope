@@ -1,6 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
+    {{-- @php
+        echo '<pre>;';
+          print_r($users->city);
+        echo '<pre>;';
+    @endphp --}}
               <!-- Hoverable Table rows -->
               @if(session()->has('message'))
                 <div class="alert alert-success ">
@@ -24,12 +29,12 @@
                         $i = 1;
                     @endphp
                     <tbody class="table-border-bottom-0">
-                      @foreach ($users as  $user)
+                      @foreach ($donations as  $donation)
                       <tr>
-                        <td>{{$user->name}}</td>
-                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$user->email}}</strong></td>
-                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$user_city[$user->id - 1]->name ?? 'none'}}</strong></td>
-                        <td><span class="badge bg-label-{{$user->roles == 0 ? 'primary': 'danger'}} me-1">{{$user->roles == 0 ? 'user': 'admin'}}</span></td>
+                        <td>{{$donation->doner_name}}</td>
+                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$donation->title}}</strong></td>
+                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$donation_city[$donation->id - 1]->name ?? 'none'}}</strong></td>
+                        <td><span class="badge bg-label-success me-1">{{$donation->condition}}</span></td>
                         <td>
                           <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
                             <li
@@ -37,9 +42,9 @@
                               data-popup="tooltip-custom"
                               data-bs-placement="top"
                               class="avatar avatar-xs pull-up"
-                              title="{{$user->id}}"
+                              title="{{$donation->id}}"
                             >
-                              <img src="/storage/{{$user->image}}" alt="Avatar" class="rounded-circle" />
+                              <img src="/storage/{{$donation->image}}" alt="Avatar" class="rounded-circle" />
                             </li>
                           </ul>
                         </td>
@@ -49,13 +54,13 @@
                               <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href="{{route('users.edit' , $user->id)}}"
+                              <a class="dropdown-item" href="{{route('donations.edit' , $donation->id)}}"
                                 ><i class="bx bx-edit-alt me-1"></i> Edit</a
                               >
-                              <form action="{{ route('users.destroy' , $user->id)}}" method="POST" class="d-inline">
+                              <form action="{{ route('donations.destroy' , $donation->id)}}" method="POST" class="d-inline">
                                 @method('DELETE')
                                 @csrf
-                                <span  class="dropdown-item"
+                                <span  class="dropdown-item" 
                                   ><i class="bx bx-trash me-1"></i> <button style="border: none; background-color:transparent;margin:0;padding:0;font-weight: 400;
                                   color: #697a8d;">Delete</button></span
                                 >
@@ -68,7 +73,7 @@
                           $i++;
                       @endphp
                       @endforeach
-
+                      
                     </tbody>
                   </table>
                 </div>
@@ -76,7 +81,7 @@
 
               {{-- pagination --}}
               <div class="pagination-wrapper">
-                {{ $users->links('pagination::bootstrap-4')}}
+                {{ $donations->links('pagination::bootstrap-4')}}
               </div>
 
               <!--/ Hoverable Table rows -->

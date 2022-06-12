@@ -1,8 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UsersController;
-use App\Http\Controllers\DonationController;
+use App\Http\Controllers\PackageController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Donation_FormController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +21,7 @@ use App\Http\Controllers\DonationController;
 
 Route::get('/', function () {
     return view('pages.index');
-});
+})->name('home.index');
 
 Route::get('/about', function () {
     return view('pages.about');
@@ -54,11 +59,23 @@ require __DIR__.'/auth.php';
 
 
 
+Route::resource('categories', CategoryController::class);
 
+Route::get('/softDelete/{package}', [PackageController::class,'softDelete'])->name('packages.softDelete');
+ Route::resource('packages', PackageController::class);
+Route::resource('orders', OrderController::class);
 
 //admin routes
 
 Route::resource('admin/users' , 'App\Http\Controllers\UsersController');
+Route::resource('admin/donations' , 'App\Http\Controllers\PackageController');
+Route::resource('admin/categories' , 'App\Http\Controllers\CategoryController');
+Route::resource('admin/cities' , 'App\Http\Controllers\CityController');
+
+
+
+Route::get('' , 'App\Http\Controllers\CategoryController@showCategory');
+
 
 Route::get('/users/view', function () {
     return view('admin.users');
@@ -69,6 +86,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-
-//Donate routes
-Route::resource('donations',DonationController::class);
+//// Donation Form
+Route::resource('donations', Donation_FormController::class);

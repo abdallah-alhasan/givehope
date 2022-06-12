@@ -2,19 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UsersController extends Controller
 {
     public function index(){
-        $users = User::oldest()->paginate(10);
-    return view('admin.users.index',compact('users'));
+        $users = User::orderBy('city_id', 'ASC')->oldest()->paginate(10);
+        $user_city = User::orderBy('id', 'ASC')->join('cities', 'users.city_id', '=', 'cities.id')
+        ->get(['users.id', 'cities.name']);
+        // dd($user_city);
+        return view('admin.users.index',compact('users' , 'user_city'));
     }
 
     public function edit(User $user)
     {
-        return view('admin.users.edit' , compact('user'));
+        $cities = City::orderBy('id', 'ASC')->get();
+        return view('admin.users.edit' , compact('user', 'cities'));
     }
 
     public function update(Request $request, User $user)
@@ -23,36 +29,45 @@ class UsersController extends Controller
             'name' => 'required',
             'email' => ['required' , 'email'],
             'phonenumber' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
-            'city' => '',
+            'city_id' => '',
             'image' => 'image',
             'roles' => '',
         ]);
         $imagePath = request('image')->store('uploads', 'public');
         $user->update(array_merge($data,['image' => $imagePath]));
-        return redirect()->route('user.index')
+        return redirect()->route('users.index')
         ->with('message', 'user updated successfully');
     }
+    
     // public function show(Listing $listing){
     //     return view('listings.show',compact('listing'));
     // }
 
-    // public function create(){
-    //     return view('listings.create');
-    // }
+    public function create(){
+        $cities = City::orderBy('id', 'ASC')->get();
+        return view('admin.users.create' , compact('cities'));
+    }
 
-    // public function store(Request $request){
-    //     $data = $request->validate([
-    //         'title' => 'required',
-    //         'company' => ['required', Rule::unique('listings' , 'company')],
-    //         'location' => 'required',
-    //         'website' => 'required',
-    //         'email' => ['required' , 'email'],
-    //         'tags' => 'required',
-    //         'description' => 'required',
-    //     ]);
-    //     Listing::create($data);
-    //     return redirect('/');
-    // }
+    public function store(Request $request){
+        
+        $data = $request->validate([
+            'name' => 'required',
+            'password' => 'required',
+            'email' => ['required' , 'email'],
+            'phonenumber' => 'required',
+            // |regex:/^([0-9\s\-\+\(\)]*)$/|min:10'
+            'city_id' => '',
+            'image' => 'image',
+            'roles' => '',
+        ]);
+
+        $imagePath = request('image')->store('uploads', 'public');
+        // $save = new User();
+        $save = User::create(array_merge($data , ['image' => $imagePath]));
+        return redirect()->route('users.index')
+        ->with('message', 'User added successfully');  
+    }
+
     public function destroy(User $user)
     {
         $user->delete();

@@ -6,10 +6,12 @@ use App\Models\City;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Package extends Model
 {
     use HasFactory;
+    use SoftDeletes;
     public function category(){
         return $this->belongsTo(Category::class);
     }
@@ -21,11 +23,22 @@ class Package extends Model
 
     protected $fillable =[
 
-        'donator_name',
-        'phone_num',
+        
+        'category_id',
         'city_id',
-        'num_content',
+        'doner_name',
+        
+        'phone_number',
+        
+        'title',
+        'image',
+        'description',
+        'products_number',
+        'condition',
 
 
     ];
+
+
+
 }

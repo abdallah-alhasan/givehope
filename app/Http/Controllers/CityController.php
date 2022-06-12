@@ -14,7 +14,8 @@ class CityController extends Controller
      */
     public function index()
     {
-        //
+        $data= City::all();
+        return view("admin.cities.index",compact("data"));
     }
 
     /**
@@ -24,7 +25,7 @@ class CityController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.cities.create");
     }
 
     /**
@@ -35,7 +36,11 @@ class CityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+         City::create($input);
+
+
+        return redirect()->route('cities.index')->with('success','city created successfully.');
     }
 
     /**
@@ -80,6 +85,8 @@ class CityController extends Controller
      */
     public function destroy(City $city)
     {
-        //
+        $city->delete();
+        return redirect()->route('cities.index')
+        ->with('message', 'city deleted successfully');
     }
 }
