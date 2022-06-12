@@ -4,12 +4,12 @@
 <div class="col-xl">
     <div class="card mb-4">
 <div class="card-body">
-    <form action="{{route('users.store')}}"  method="POST" enctype="multipart/form-data">
+    <form action="{{route('donations.store')}}"  method="POST" enctype="multipart/form-data">
         @csrf
 
         {{-- name  --}}
       <div class="mb-3">
-        <label class="form-label" for="basic-icon-default-fullname">Full Name</label>
+        <label class="form-label" for="basic-icon-default-fullname">Doner name</label>
         <div class="input-group input-group-merge">
           <span id="basic-icon-default-fullname2" class="input-group-text"
             ><i class="bx bx-user"></i
@@ -21,10 +21,10 @@
             placeholder="John Doe"
             aria-label="John Doe"
             aria-describedby="basic-icon-default-fullname2"
-            name="name"
+            name="doner_name"
             
           />
-          @error('name')
+          @error('doner_name')
               <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
               </span>
@@ -32,24 +32,24 @@
         </div>
       </div>
 
-        {{-- password  --}}
+        {{-- phone_number  --}}
       <div class="mb-3">
-        <label class="form-label" for="basic-icon-default-fullname">Password</label>
+        <label class="form-label" for="basic-icon-default-fullname">phone number</label>
         <div class="input-group input-group-merge">
           <span id="basic-icon-default-fullname2" class="input-group-text"
-            ><i class="bx bx-user"></i
+            ><i class="bx bx-phone"></i
           ></span>
           <input
             type="text"
             class="form-control"
             id="basic-icon-default-fullname"
-            placeholder="Password"
-            aria-label="Password"
+            placeholder="phone number"
+            aria-label="phone_number"
             aria-describedby="basic-icon-default-fullname2"
-            name="password"
+            name="phone_number"
             
           />
-          @error('password')
+          @error('phone_number')
               <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
               </span>
@@ -57,7 +57,7 @@
         </div>
       </div>
       {{-- <div class="mb-3">
-        <label class="form-label" for="basic-icon-default-city">city</label>
+        <label class="form-label" for="basic-icon-default-category">city</label>
         <div class="input-group input-group-merge">
           <span id="basic-icon-default-city" class="input-group-text"
             ><i class="bx bx-buildings"></i
@@ -96,18 +96,41 @@
         </div>
       </div>
 
-        {{-- roles --}}
+       
+        {{-- category --}}
         <div class="mb-3">
-        <label class="form-label" for="basic-icon-default-city">Role</label>
+          <label class="form-label" for="basic-icon-default-category">category</label>
+          <div class="input-group input-group-merge">
+            <span id="basic-icon-default-category" class="input-group-text"
+              ><i class="bx bx-category"></i
+            ></span>
+          <select name="category_id" id="category" >
+            <option selected disabled>Select a category</option>
+            @foreach ($categories as $category)
+              <option value="{{$category->id}}">{{$category->name}}</option>
+            @endforeach
+          </select>
+          @error('category_id')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+          </div>
+        </div>
+
+        {{-- condition --}}
+        <div class="mb-3">
+        <label class="form-label" for="basic-icon-default-city">condition</label>
         <div class="input-group input-group-merge">
           <span id="basic-icon-default-city" class="input-group-text"
             ><i class='bx bx-id-card'></i></span>
-        <select name="roles" id="roles" >
-            <option selected disabled  >Select role</option>
-            <option value="0"  >User</option>
-            <option value="1" >Admin</option>
+        <select name="condition" id="condition" >
+            <option selected disabled  >Select the condition</option>
+            <option value="Poor"  >Poor</option>
+            <option value="Good"  >Good</option>
+            <option value="excellent" >excellent</option>
         </select>
-        @error('roles')
+        @error('condition')
               <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
               </span>
@@ -115,55 +138,79 @@
         </div>
       </div>
 
-      {{-- email --}}
+      {{-- title --}}
       <div class="mb-3">
-        <label class="form-label" for="basic-icon-default-email">Email</label>
+        <label class="form-label" for="basic-icon-default-email">Title</label>
         <div class="input-group input-group-merge">
-          <span class="input-group-text"><i class="bx bx-envelope"></i></span>
+          <span class="input-group-text"><i class="bx bx-title"></i></span>
           <input
             type="text"
             id="basic-icon-default-email"
             class="form-control"
-            placeholder="example@example.com"
-            aria-label="email"
+            placeholder="Enter a title"
+            aria-label="title"
             aria-describedby="basic-icon-default-email2"
-            name="email"
+            name="title"
             
           />
-          <span id="basic-icon-default-email2" class="input-group-text">@example.com</span>
         </div>
-        @error('email')
+        @error('title')
               <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
               </span>
           @enderror
-        <div class="form-text">You can use letters, numbers & periods</div>
       </div>
 
-      {{-- phonenumber --}}
+      {{-- description --}}
       <div class="mb-3">
-        <label class="form-label" for="basic-icon-default-phone">Phone No</label>
+        <label class="form-label" for="basic-icon-default-phone">description</label>
         <div class="input-group input-group-merge">
           <span id="basic-icon-default-phone2" class="input-group-text"
-            ><i class="bx bx-phone"></i
+            ><i class="bx bx-description"></i
           ></span>
           <input
             type="text"
             id="basic-icon-default-phone"
             class="form-control phone-mask"
-            placeholder="07xxxxxxxx"
-            aria-label="07xxxxxxxx"
+            placeholder="description"
+            aria-label="description"
             aria-describedby="basic-icon-default-phone2"
-            name="phonenumber"
+            name="description"
             
           />
-          @error('phonenumber')
+          @error('description')
               <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
               </span>
           @enderror
         </div>
       </div>
+
+      {{-- products_number  --}}
+      <div class="mb-3">
+        <label class="form-label" for="basic-icon-default-fullname">products number</label>
+        <div class="input-group input-group-merge">
+          <span id="basic-icon-default-fullname2" class="input-group-text"
+            ><i class="bx bx-products"></i
+          ></span>
+          <input
+            type="text"
+            class="form-control"
+            id="basic-icon-default-fullname"
+            placeholder="products number"
+            aria-label="products_number"
+            aria-describedby="basic-icon-default-fullname2"
+            name="products_number"
+            
+          />
+          @error('products_number')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+          @enderror
+        </div>
+      </div>
+
 
       {{-- image  --}}
       <div class="mb-3">

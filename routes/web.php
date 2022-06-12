@@ -71,7 +71,7 @@ Route::get('/profile/{user}',['App\Http\Controllers\UsersController','showProfil
 //admin routes
 
 Route::resource('admin/users' , 'App\Http\Controllers\UsersController');
-Route::resource('admin/donations' , 'App\Http\Controllers\PackageController');
+Route::resource('admin/packages' , 'App\Http\Controllers\PackageController');
 Route::resource('admin/categories' , 'App\Http\Controllers\CategoryController');
 Route::resource('admin/cities' , 'App\Http\Controllers\CityController');
 
