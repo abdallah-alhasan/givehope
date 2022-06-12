@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\City;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -59,4 +60,37 @@ class UsersController extends Controller
         return redirect()->route('users.index')
         ->with('message', 'user deleted successfully');
     }
+    public function showProfile(User $user)
+    {
+        // dd($user->name);
+        // auth()->users()->city()->name
+        $city= City::where('id' , $user->city_id)->first();
+        // dd($city->name);
+        return view('pages.profile', compact('user','city'));
+
+    }
+
+    public function editProfile(User $user)
+    {
+        
+        return view('pages.editprofile' , compact('user'));
+    }
+
+    public function updateProfile(Request $request, User $user)
+    {
+        $data = $request->validate([
+            'name' => ' ',
+            'email' =>  ' ',
+            'phonenumber' => 'regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'city' => '',
+            'image' => 'image',
+            'roles' => '',
+        ]);
+        $imagePath = request('image')->store('uploads', 'public');
+        $user->update(array_merge($data,['image' => $imagePath]));
+        return view('pages.profile')
+        ->with('message', 'user updated successfully');
+    }
+
+
 }

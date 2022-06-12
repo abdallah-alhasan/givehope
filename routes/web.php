@@ -55,7 +55,10 @@ require __DIR__.'/auth.php';
 
 
 
+Route::get('/profile/{user}',['App\Http\Controllers\UsersController','showProfile'] );
 
+Route::get('/editprofile/{user}',['App\Http\Controllers\UsersController','editProfile'] )->name('pages.editprofile');
+Route::post('/editprofile',['App\Http\Controllers\UsersController','updateProfile'] )->name('pages.profile');
 //admin routes
 
 Route::resource('admin/users' , 'App\Http\Controllers\UsersController');

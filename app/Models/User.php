@@ -48,7 +48,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function cities(){
+    public function city(){
         return $this->belongsTo(City::class);
     }
 
