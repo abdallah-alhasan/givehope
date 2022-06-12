@@ -1,6 +1,8 @@
 <?php
 
+// use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,6 +17,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+Route::get('/', function () {
+    return view('pages.index');
+})->name('home.index');
 
 Route::get('/about', function () {
     return view('pages.about');
@@ -52,6 +57,15 @@ require __DIR__.'/auth.php';
 
 
 
+Route::resource('categories', CategoryController::class);
+
+Route::get('/softDelete/{package}', [PackageController::class,'softDelete'])->name('packages.softDelete');
+Route::resource('packages', PackageController::class);
+Route::resource('orders', OrderController::class);
+
+Route::get('/editprofile/{user}',['App\Http\Controllers\UsersController','editProfile'] )->name('pages.editprofile');
+Route::post('/editprofile',['App\Http\Controllers\UsersController','updateProfile'] )->name('pages.profile');
+Route::get('/profile/{user}',['App\Http\Controllers\UsersController','showProfile'] );
 
 
 //admin routes
