@@ -35,16 +35,16 @@
         <div class="col-md-6 pr-5">
           <div class="block-48">
               <span class="block-48-text-1">Served Over</span>
-              <div class="block-48-counter ftco-number" data-number="1321901">0</div>
-              <span class="block-48-text-1 mb-4 d-block">Children in 150 Countries</span>
+              <div class="block-48-counter ftco-number" data-number="3760">0</div>
+              <span class="block-48-text-1 mb-4 d-block">Familes in 5 Cities</span>
               <p class="mb-0"><a href="#" class="btn btn-white px-3 py-2">View Our Program</a></p>
             </div>
         </div>
         <div class="col-md-6 welcome-text">
           <h2 class="display-4 mb-3">Who Are We?</h2>
-          <p class="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-          <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
-          <p class="mb-0"><a href="#" class="btn btn-primary px-3 py-2">Learn More</a></p>
+          <p class="lead">More than 1,000 donors have trusted GiveHope to direct their donations. Together, they have given over 5000 to the organizations we recommend. These donations will save many families and provide cfurinter for global poor.</p>
+          <p class="mb-4">Be The One Who Make The Difference . </p>
+          <p class="mb-0"><a href="" class="btn btn-primary px-3 py-2">Donate Now</a></p>
         </div>
       </div>
     </div>
@@ -61,35 +61,23 @@
       </div>
 
       <div class="row">
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+
+      @foreach($data as $values)
+ <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
           <div class="post-entry text-center">
             <a href="#" class="mb-3 img-wrap">
-              <img src="images/Mattress-on-floor.jpg" alt="Image placeholder" class="img-fluid">
+
+              <img src="{{ url('Image/'.$values->image) }}" alt="Image placeholder" width ="350" height="250" >
             </a>
-            <h3><a href="#">Lets Give Them A Bed To Sleep On </a></h3>
-            <span class="date mb-4 d-block text-muted" style="font-size: 20px">Beds</span>
+            <h3><a href="#">{{$values->desc}}</a></h3>
+            <span class="date mb-4 d-block text-muted" style="font-size: 20px">{{$values->name}}</span>
 
 
           </div>
         </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
-          <div class="post-entry text-center">
-            <a href="#" class="mb-3 img-wrap">
-              <img src="images/couch.jpg" alt="Image placeholder" class="img-fluid">
-            </a>
-            <h3 class=""><a href="#">A Chance to Live A Decent Life</a></h3>
-            <span class="date mb-4 d-block text-muted" style="font-size: 20px">Couches</span>
+        @endforeach
 
 
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
-          <div class="post-entry text-center">
-            <a href="#" class="mb-3 img-wrap">
-              <img src="images/clothes.jpg" alt="Image placeholder" class="img-fluid">
-            </a>
-            <h3><a href="#">Children That Needs Care</a></h3>
-            <span class="date mb-4 d-block text-muted" style="font-size: 20px">Wardrobes</span>
 
 
           </div>

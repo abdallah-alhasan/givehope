@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
 use App\Models\Package;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,12 @@ class PackageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(){
+        $donations = Package::orderBy('city_id', 'ASC')->oldest()->paginate(10);
+        $donation_city = Package::orderBy('id', 'ASC')->join('cities', 'packages.city_id', '=', 'cities.id')
+        ->get(['packages.id', 'cities.name']);
+        // dd($user_city);
+        return view('admin.donations.index',compact('donations' , 'donation_city'));
     }
 
     /**
@@ -47,6 +51,7 @@ class PackageController extends Controller
     public function show(Package $package)
     {
         //
+        return view('pages.single-product', compact('package'));
     }
 
     /**
@@ -81,5 +86,12 @@ class PackageController extends Controller
     public function destroy(Package $package)
     {
         //
+    }
+    public function softDelete(Package $package)
+    {
+        //
+        $package->delete();
+        return redirect()->route('categories.show', 1)->withSuccess(__('Package Booked successfully.'));
+        // return redirect()->route('home.index')->withSuccess(__('Package Booked successfully.'));
     }
 }

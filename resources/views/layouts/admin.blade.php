@@ -32,7 +32,8 @@ data-template="vertical-menu-template-free"
 <meta name="description" content="" />
 
 <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="/assets/img/favicon/favicon.ico" />
+<link rel="icon" href="public/images/up-arrow.png"/>
+
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -106,22 +107,22 @@ data-template="vertical-menu-template-free"
                         <mask id="mask-2" fill="white">
                         <use xlink:href="#path-1"></use>
                         </mask>
-                        <use fill="#696cff" xlink:href="#path-1"></use>
+                        <use fill="#f7ca44" xlink:href="#path-1"></use>
                         <g id="Path-3" mask="url(#mask-2)">
-                        <use fill="#696cff" xlink:href="#path-3"></use>
-                        <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-3"></use>
+                        <use fill="#f7ca44" xlink:href="#path-3"></use>
+                        <use fill-opacity="0.2" fill="#f7ca44" xlink:href="#path-3"></use>
                         </g>
                         <g id="Path-4" mask="url(#mask-2)">
-                        <use fill="#696cff" xlink:href="#path-4"></use>
-                        <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-4"></use>
+                        <use fill="#f7ca44" xlink:href="#path-4"></use>
+                        <use fill-opacity="0.2" fill="#f7ca44" xlink:href="#path-4"></use>
                         </g>
                     </g>
                     <g
                         id="Triangle"
                         transform="translate(19.000000, 11.000000) rotate(-300.000000) translate(-19.000000, -11.000000) "
                     >
-                        <use fill="#696cff" xlink:href="#path-5"></use>
-                        <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-5"></use>
+                        <use fill="#f7ca44" xlink:href="#path-5"></use>
+                        <use fill-opacity="0.2" fill="#f7ca44" xlink:href="#path-5"></use>
                     </g>
                     </g>
                 </g>
@@ -160,13 +161,13 @@ data-template="vertical-menu-template-free"
             <ul class="menu-sub">
             <li class="menu-item">
                 <a href="{{route('users.index')}}" class="menu-link">
-                <div data-i18n="Without menu">View users</div>
+                <div data-i18n="Without menu">View Users</div>
                 </a>
             </li>
             <li class="menu-item">
-                <a href="{{route('users.index')}}" class="menu-link">
+                <a href="{{route('users.create')}}" class="menu-link">
                 <div data-i18n="Without navbar">Add users</div>
-                
+
                 </a>
             </li>
             </ul>
@@ -183,7 +184,7 @@ data-template="vertical-menu-template-free"
             </a>
             <ul class="menu-sub">
             <li class="menu-item">
-                <a href="pages-account-settings-account.html" class="menu-link">
+                <a href="{{route('donations.index')}}" class="menu-link">
                 <div data-i18n="Account">View Donations</div>
                 </a>
             </li>
@@ -197,22 +198,22 @@ data-template="vertical-menu-template-free"
 
                 {{-- categories --}}
                 <li class="menu-header small text-uppercase">
-                    <span class="menu-header-text">categories</span>
+                    <span class="menu-header-text">Categories</span>
                     </li>
                     <li class="menu-item">
                     <a href="javascript:void(0);" class="menu-link menu-toggle">
                         <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                        <div data-i18n="Account Settings">Manage categories</div>
+                        <div data-i18n="Account Settings">Manage Categories</div>
                     </a>
                     <ul class="menu-sub">
                         <li class="menu-item">
-                        <a href="pages-account-settings-account.html" class="menu-link">
-                            <div data-i18n="Account">View categories</div>
+                        <a href="{{route('categories.index')}}" class="menu-link">
+                            <div data-i18n="Account">View Categories</div>
                         </a>
                         </li>
                         <li class="menu-item">
-                            <a href="layouts-without-navbar.html" class="menu-link">
-                            <div data-i18n="Without navbar">Add categories</div>
+                            <a href="{{route('categories.create')}}" class="menu-link">
+                            <div data-i18n="Without navbar">Add Categories</div>
                             </a>
                         </li>
                         {{-- <li class="menu-item">
@@ -224,13 +225,34 @@ data-template="vertical-menu-template-free"
                     </li>
 
         <!-- Cities -->
-        <li class="menu-header small text-uppercase"><span class="menu-header-text">Cities</span></li>
-        <li class="menu-item">
-            <a href="cards-basic.html" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-collection"></i>
-            <div data-i18n="Basic">Manage Cities </div>
+
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Cities</span>
+            </li>
+            <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                <div data-i18n="Account Settings">Manage Cities</div>
             </a>
-        </li>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                <a href="{{route('cities.index')}}" class="menu-link">
+                    <div data-i18n="Account">View Cities</div>
+                </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{route('cities.create')}}" class="menu-link">
+                    <div data-i18n="Without navbar">Add Cities</div>
+                    </a>
+                </li>
+                {{-- <li class="menu-item">
+                <a href="pages-account-settings-notifications.html" class="menu-link">
+                    <div data-i18n="Notifications">Notifications</div>
+                </a>
+                </li> --}}
+            </ul>
+            </li>
+
 
         <!-- Orders -->
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Orders</span></li>
@@ -381,7 +403,7 @@ data-template="vertical-menu-template-free"
             <script>
             document.write(new Date().getFullYear());
             </script>
-            , made with ❤️ by
+            ,
             <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">GIVEHOPE</a>
         </div>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Package;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -36,6 +37,14 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         //
+        $order = new Order();
+        $order->package_id = $request->package_id;
+        $order->user_id = $request->user_id;
+        $order->status = $request->status;
+        $order->save();
+        // Package::softDelete($order->id)
+        return redirect()->route('packages.softDelete',$request->package_id);
+
     }
 
     /**

@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\City;
+
 use App\Models\Order;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
@@ -23,10 +23,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        // 'phonenumber',
-        // 'city',
-        // 'image',
-        // 'roles',
+        'phonenumber',
+        'city_id',
+        'image',
+        'roles',
     ];
 
     /**
