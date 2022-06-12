@@ -4,7 +4,7 @@
 <div class="col-xl">
     <div class="card mb-4">
 <div class="card-body">
-    <form action="{{route('donations.store')}}"  method="POST" enctype="multipart/form-data">
+    <form action="{{route('packages.store')}}"  method="POST" enctype="multipart/form-data">
         @csrf
 
         {{-- name  --}}
