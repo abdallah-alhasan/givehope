@@ -35,6 +35,8 @@ class Donation_FormController extends Controller
     public function store(Request $request)
     {
         {
+            $input = $request->all();
+
             //Validate the input
             $request->validate([
                
@@ -44,15 +46,27 @@ class Donation_FormController extends Controller
                'products_number'=> 'required',
                ]);
        
-               //Create a new donation in the database
-               //$request->all(): Retreiving all input data
-               Package::create($request->all());
+            //    //Create a new donation in the database
+            //    //$request->all(): Retreiving all input data
+            //    Package::create($request->all());
        
-               //Redirect the user and send friendly message
-               return redirect()->route('donations.create')
-                               ->with('success','Donation created successfully.');
+
    
-   
+            
+            if($request->file('image')){
+                $file= $request->file('image');
+                $filename= date('YmdHi').$file->getClientOriginalName();
+                $file-> move(public_path('Image'), $filename);
+                $input['image'] = "$filename";
+    
+            }
+    
+    
+            Package::create($input);
+
+                      //Redirect the user and send friendly message
+                          return redirect()->route('donations.create')
+                        ->with('success','Donation created successfully.');
    
        }
     }

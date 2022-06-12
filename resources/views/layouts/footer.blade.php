@@ -49,7 +49,6 @@
   <script src="js/jquery.magnific-popup.min.js"></script>
   <script src="js/bootstrap-datepicker.js"></script>
 
-<<<<<<< HEAD
   <script src="{{ url('js/jquery.min.js') }}"></script>
   <script src="{{ url('js/jquery-migrate-3.0.1.min.js') }}"></script>
   <script src="{{ url('js/popper.min.js') }}"></script>
@@ -69,15 +68,5 @@
   <script src="{{ url('js/google-map.js') }}"></script>
   <script src="{{ url('js/main.js') }}"></script>
 
-=======
-  <script src="js/jquery.fancybox.min.js"></script>
-
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
-
->>>>>>> 87f3d31c76384aa037f01a94274a3d6f7d1ae753
   </body>
 </html>
