@@ -7,7 +7,7 @@
           <p class="mb-5">Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
           <p><a href="#" class="link-underline">Read  More</a></p>
         </div>
-    
+
         <div class="col-md-6 col-lg-4">
           <div class="block-23">
             <h3 class="heading-section">Get Connected</h3>
@@ -40,7 +40,6 @@
 
 
 
-<<<<<<< HEAD
   <script src="{{ url('js/jquery.min.js') }}"></script>
   <script src="{{ url('js/jquery-migrate-3.0.1.min.js') }}"></script>
   <script src="{{ url('js/popper.min.js') }}"></script>
@@ -59,15 +58,6 @@
   <script src="{{ url('https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false') }}"></script>
   <script src="{{ url('js/google-map.js') }}"></script>
   <script src="{{ url('js/main.js') }}"></script>
-=======
-  <script src="js/jquery.fancybox.min.js"></script>
-
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
->>>>>>> 057046a310279dcfab6509e7eed0f4f0bc2d4dfc
 
   </body>
 </html>

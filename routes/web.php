@@ -65,7 +65,9 @@ Route::resource('packages', PackageController::class);
 Route::resource('orders', OrderController::class);
 
 Route::get('/editprofile/{user}',['App\Http\Controllers\UsersController','editProfile'] )->name('pages.editprofile');
-Route::post('/editprofile',['App\Http\Controllers\UsersController','updateProfile'] )->name('pages.profile');
+
+Route::post('/updateprofile/{user}',['App\Http\Controllers\UsersController','updateProfile'] )->name('pages.updateProfile');
+
 Route::get('/profile/{user}',['App\Http\Controllers\UsersController','showProfile'] );
 
 
