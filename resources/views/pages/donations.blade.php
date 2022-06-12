@@ -2,10 +2,10 @@
 @extends('layouts.master')
 
 @section('content')
-{{-- <style>
+<style>
     .ftco-navbar-light {
     background: transparent !important;
-    position: absolute;
+    position: fixed;
     color: #000 !important;
     left: 0;
     right: 0;
@@ -29,14 +29,14 @@
     color: #000 !important;
 }
 
-</style> --}}
+</style>
 
 
 
 
 
-<div class="block-31" style="position: relative;">
-    <div class="owl-carousel loop-block-31 ">
+{{-- <div class="container p-5 m-5" > --}}
+    {{-- <div class="owl-carousel loop-block-31 ">
       <div class="block-30 block-30-sm item" style="background-image: url({{ url('images/bg_1.jpg') }});" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
@@ -47,8 +47,8 @@
         </div>
       </div>
 
-    </div>
-  </div>
+    </div> --}}
+  {{-- </div> --}}
 
 
 
@@ -56,20 +56,20 @@
 
 
 
-  <div class="row justify-content-center text-center">
-    <div class="col-md-8 col-lg-6">
-            <div class="header" style="margin-top: 40px">
+  <div class="row justify-content-center text-center" style="margin-top:150px; background:#f6f6f6">
+    <div class=" container-fluid   ">
+            <div class="header p-5" style="">
 
 
                     <h2>{{ $category->name }}</h2>
                     @auth
-                    <p style="margin-bottom:-3px; color:#f7ca44">Located In {{ auth()->user()->city->name }}</p>
+                    <p class="h4" style="color:#f7ca44">Located In {{ auth()->user()->city->name }}</p>
                     @endauth
             </div>
     </div>
 </div>
 
-  <div class="container d-flex flex-column justify-content-center flex-row mt-50 mb-50">
+  <div class="container-fluid d-flex justify-content-center flex-row mt-50 mb-50 p-5">
 
     <div class="col-lg-3">
         <div class="left_sidebar_area">
@@ -78,10 +78,10 @@
               <h3>Browse Categories</h3>
             </div>
             <div class="widgets_inner">
-              <ul class="list d-flex justify-content-between">
+              <ul class="list">
                 @foreach ($categories as $category)
 
-                <li class="">
+                <li class="h4">
                   <a href="{{ route('categories.show', $category->id) }}">{{ $category->name }}</a>
                 </li>
                 @endforeach
@@ -92,10 +92,10 @@
         </div>
       </div>
 
-      <div class="row flex-row-reverse">
+      <div class="row flex-row">
         @foreach ($packages as $package)
 
-<div class="col-md-4 mt-2">
+<div class="col-lg-3 mt-2">
 
 
     <div class="card">

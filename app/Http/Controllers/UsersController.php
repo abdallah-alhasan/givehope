@@ -82,15 +82,16 @@ class UsersController extends Controller
 
 
 
-    
 
 
-    //profile 
+
+    //profile
     public function showProfile(User $user)
     {
         // dd($user->name);
         // auth()->users()->city()->name
-        $city= City::where('id' , $user->city_id)->first();
+        $city= City::where('id' ,$user->city_id)->first();
+        // $cities = City::where('name' , $city->city_id );
         // dd($city->name);
         return view('pages.profile', compact('user','city'));
 
