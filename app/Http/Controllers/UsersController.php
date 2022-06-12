@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\City;
 use App\Models\User;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -33,12 +34,14 @@ class UsersController extends Controller
             'image' => 'image',
             'roles' => '',
         ]);
-        $imagePath = request('image')->store('uploads', 'public');
-        $user->update(array_merge($data,['image' => $imagePath]));
+        if (request('image')) {
+            $imagePath = request('image')->store('uploads', 'public');
+        }
+        $user->update(array_merge($data,request('image') != null ? ['image' => $imagePath ] : []));
         return redirect()->route('users.index')
         ->with('message', 'user updated successfully');
     }
-    
+
     // public function show(Listing $listing){
     //     return view('listings.show',compact('listing'));
     // }
@@ -49,7 +52,7 @@ class UsersController extends Controller
     }
 
     public function store(Request $request){
-        
+
         $data = $request->validate([
             'name' => 'required',
             'password' => 'required',
@@ -61,11 +64,12 @@ class UsersController extends Controller
             'roles' => '',
         ]);
 
-        $imagePath = request('image')->store('uploads', 'public');
-        // $save = new User();
-        $save = User::create(array_merge($data , ['image' => $imagePath]));
+        if (request('image')) {
+            $imagePath = request('image')->store('uploads', 'public');
+        }
+        $save = User::create(array_merge($data , request('image') != null ? ['image' => $imagePath ] : [] ));
         return redirect()->route('users.index')
-        ->with('message', 'User added successfully');  
+        ->with('message', 'User added successfully');
     }
 
     public function destroy(User $user)
@@ -74,4 +78,49 @@ class UsersController extends Controller
         return redirect()->route('users.index')
         ->with('message', 'user deleted successfully');
     }
+
+
+
+
+
+
+
+    //profile
+    public function showProfile(User $user)
+    {
+        // dd($user->name);
+        // auth()->users()->city()->name
+        $city= City::where('id' ,$user->city_id)->first();
+        // $cities = City::where('name' , $city->city_id );
+        // dd($city->name);
+        return view('pages.profile', compact('user','city'));
+
+    }
+
+    public function editProfile(User $user)
+    {
+
+        return view('pages.editprofile' , compact('user'));
+    }
+
+    public function updateProfile(Request $request, User $user)
+    {
+        $data = $request->validate([
+            'name' => ' ',
+            'email' =>  ' ',
+            'phonenumber' => 'regex:/^([0-9\s\-\+\(\)]*)$/|min:10'
+
+
+        ]);
+        // $imagePath = request('image')->store('uploads', 'public');
+        // $user->update(array_merge($data,['image' => $imagePath]));
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phonenumber = $request->phonenumber;
+        $user->save();
+        return redirect("profile/$user->id")
+        ->with('message', 'user updated successfully');
+    }
+
+
 }
