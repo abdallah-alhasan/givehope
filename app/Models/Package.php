@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Package extends Model
 {
+
     protected $fillable = [
         'doner_name',
         'category_id',
