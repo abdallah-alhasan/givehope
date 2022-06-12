@@ -82,15 +82,16 @@ class UsersController extends Controller
 
 
 
-    
 
 
-    //profile 
+
+    //profile
     public function showProfile(User $user)
     {
         // dd($user->name);
         // auth()->users()->city()->name
-        $city= City::where('id' , $user->city_id)->first();
+        $city= City::where('id' ,$user->city_id)->first();
+        // $cities = City::where('name' , $city->city_id );
         // dd($city->name);
         return view('pages.profile', compact('user','city'));
 
@@ -107,14 +108,17 @@ class UsersController extends Controller
         $data = $request->validate([
             'name' => ' ',
             'email' =>  ' ',
-            'phonenumber' => 'regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
-            'city' => '',
-            'image' => 'image',
-            'roles' => '',
+            'phonenumber' => 'regex:/^([0-9\s\-\+\(\)]*)$/|min:10'
+
+
         ]);
-        $imagePath = request('image')->store('uploads', 'public');
-        $user->update(array_merge($data,['image' => $imagePath]));
-        return view('pages.profile')
+        // $imagePath = request('image')->store('uploads', 'public');
+        // $user->update(array_merge($data,['image' => $imagePath]));
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phonenumber = $request->phonenumber;
+        $user->save();
+        return redirect("profile/$user->id")
         ->with('message', 'user updated successfully');
     }
 

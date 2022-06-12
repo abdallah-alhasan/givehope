@@ -184,12 +184,12 @@ data-template="vertical-menu-template-free"
             </a>
             <ul class="menu-sub">
             <li class="menu-item">
-                <a href="{{route('donations.index')}}" class="menu-link">
+                <a href="{{route('packages.index')}}" class="menu-link">
                 <div data-i18n="Account">View Donations</div>
                 </a>
             </li>
             <li class="menu-item">
-                <a href="{{route('donations.create')}}" class="menu-link">
+                <a href="{{route('packages.create')}}" class="menu-link">
                 <div data-i18n="Account">Add Donations</div>
                 </a>
             </li>

@@ -3,9 +3,9 @@
 @section('content')
 
 <div class="container" style="padding-top:8% ">
-    <form action="{{ route('pages.editprofile', $user->id)}}" method="POST">
+    <form action="{{ route('pages.updateProfile', $user->id)}}" method="POST">
         @csrf
-        @method('PUT')
+        {{-- @method('PUT') --}}
     <div class="form-group ">
       <label for="exampleFormControlInput1">Charitie Name:</label>
       <input type="text" name="name" value="{{ $user->name }}" class="form-control" >
@@ -27,7 +27,7 @@
         <option value="2">Two</option>
         <option value="3">Three</option>
       </select> --}}
-      <input class=" form-control" type="text" name="city" value="{{$user->city_id}}" disabled>
+      {{-- <input class="form-control" type="hidden" name="city_id" value="{{$user->city_id}}" disabled> --}}
 
     </div>
     <div class="form-group ">
