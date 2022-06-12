@@ -125,8 +125,11 @@ class PackageController extends Controller
      */
     public function destroy(Package $package)
     {
-        //
+        $package->delete();
+        return redirect()->route('Donations.index')
+        ->with('message', 'Donation deleted successfully');
     }
+
     public function softDelete(Package $package)
     {
         //
