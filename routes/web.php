@@ -1,10 +1,12 @@
 <?php
 
 // use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UsersController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\PackageController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------

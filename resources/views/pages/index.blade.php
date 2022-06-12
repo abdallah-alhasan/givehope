@@ -69,8 +69,8 @@
 
               <img src="{{ url('Image/'.$values->image) }}" alt="Image placeholder" width ="350" height="250" >
             </a>
-            <h3><a href="#">{{$values->desc}}</a></h3>
-            <span class="date mb-4 d-block text-muted" style="font-size: 20px">{{$values->name}}</span>
+            <h3 class="date mb-4 d-block text-muted" style="font-size: 20px"><a href="{{ route('categories.show', $values->id) }}"> {{$values->name}}</a></h3>
+            <span>{{$values->desc}}</span>
 
 
           </div>

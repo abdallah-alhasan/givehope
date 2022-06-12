@@ -69,7 +69,7 @@
     </div>
 </div>
 
-  <div class="container d-flex flex-column justify-content-center flex-row mt-50 mb-50">
+  <div class="container d-flex justify-content-center flex-row mt-50 mb-50">
 
     <div class="col-lg-3">
         <div class="left_sidebar_area">
@@ -78,7 +78,7 @@
               <h3>Browse Categories</h3>
             </div>
             <div class="widgets_inner">
-              <ul class="list d-flex justify-content-between">
+              <ul class="list">
                 @foreach ($categories as $category)
 
                 <li class="">
@@ -95,7 +95,7 @@
       <div class="row flex-row-reverse">
         @foreach ($packages as $package)
 
-<div class="col-md-4 mt-2">
+<div class="col-lg-4 mt-2">
 
 
     <div class="card">
@@ -121,12 +121,12 @@
 
 
 
-                            <div>
+                            {{-- <div>
                                <i class="fa fa-star star"></i>
                                <i class="fa fa-star star"></i>
                                <i class="fa fa-star star"></i>
                                <i class="fa fa-star star"></i>
-                            </div>
+                            </div> --}}
 
 
                             @auth
