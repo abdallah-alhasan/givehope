@@ -18,9 +18,12 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
+<<<<<<< HEAD
 Route::get('/', function () {
     return view('pages.index');
 })->name('home.index');
+=======
+>>>>>>> 057046a310279dcfab6509e7eed0f4f0bc2d4dfc
 
 Route::get('/about', function () {
     return view('pages.about');
@@ -67,6 +70,14 @@ Route::resource('orders', OrderController::class);
 //admin routes
 
 Route::resource('admin/users' , 'App\Http\Controllers\UsersController');
+Route::resource('admin/donations' , 'App\Http\Controllers\PackageController');
+Route::resource('admin/categories' , 'App\Http\Controllers\CategoryController');
+Route::resource('admin/cities' , 'App\Http\Controllers\CityController');
+
+
+
+Route::get('' , 'App\Http\Controllers\CategoryController@showCategory');
+
 
 Route::get('/users/view', function () {
     return view('admin.users');
@@ -75,3 +86,5 @@ Route::get('/users/view', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+

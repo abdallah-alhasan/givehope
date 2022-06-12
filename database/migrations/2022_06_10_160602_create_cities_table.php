@@ -15,9 +15,10 @@ class CreateCitiesTable extends Migration
     {
         Schema::create('cities', function (Blueprint $table) {
             $table->id();
-            // $table->unsignedBigInteger('user_id')->nullable();
             $table->string('name');
             $table->timestamps();
+
+            
         });
     }
 
