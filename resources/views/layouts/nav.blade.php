@@ -61,16 +61,58 @@
                     <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
 
-                    <li class="nav-item">
-                         <a class="dropdown-item nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
-                          document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
+                    {{-- sujoud  --}}
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </li>
+
+                     <!-- Right Side Of Navbar -->
+                     <ul class="navbar-nav ms-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                        href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+
+                        <li class="nav-item ">
+                            <a  class="nav-link "
+                            {{-- href="{{ route('/profile/{user}',auth()->user()->id) }}" role="button"> --}}
+                            href="/profile/{{ auth()->user()->id }}" role="button">
+                                {{ __('My account')}}
+                                {{-- {{ Auth::user()->name }} --}}
+                            </a>
+                        </li>
+
+
+                            {{-- <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> --}}
+                                <li class="nav-item" >
+                                <a style="color: #ff6600af " class="nav-link"  href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+
+                                    @csrf
+                                </form>
+                            </li>
+
+                        @endguest
+                    </ul>
+
+
+
+                    {{-- sujoud  --}}
+
+
                 </ul>
             </div>
         </div>
