@@ -56,14 +56,14 @@
 
 
 
-  <div class="row justify-content-center text-center" style="margin-top:150px; background:#f6f6f6">
-    <div class=" container-fluid   ">
-            <div class="header p-5" style="">
+  <div class="row justify-content-center " style="margin-top:130px; background:#f6f6f6">
+    <div class=" container-fluid px-5">
+            <div class="header p-4" style="">
 
 
-                    <h2>{{ $category->name }}</h2>
+                    <h2>Donations / {{ $category->name }}</h2>
                     @auth
-                    <p class="h4" style="color:#f7ca44">Located In {{ auth()->user()->city->name }}</p>
+                    <p class="h5" style="color:#f7ca44">Located In {{ auth()->user()->city->name }}</p>
                     @endauth
             </div>
     </div>

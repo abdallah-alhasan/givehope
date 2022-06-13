@@ -64,10 +64,10 @@
       @foreach($data as $values)
  <div class="col-12 col-sm-4 col-md-2 col-lg-3 mb-2 mb-lg-0">
           <div class="post-entry text-center">
-            <a href="#" class="mb-3 img-wrap">
+            {{-- <a href="#" class="mb-3 img-wrap"> --}}
 
               <img src="{{ url('Image/'.$values->image) }}" alt="Image placeholder" width ="250" height="200" >
-            </a>
+            {{-- </a> --}}
             <h3 class="date mb-4 d-block text-muted" style="font-size: 20px"><a href="{{ route('categories.show', $values->id) }}"> {{$values->name}}</a></h3>
             <span>{{$values->desc}}</span>
 
