@@ -76,10 +76,11 @@ Route::get('/profile/{user}',['App\Http\Controllers\UsersController','showProfil
 
 //admin routes
 
-Route::resource('admin/users' , 'App\Http\Controllers\UsersController');
-Route::resource('admin/packages' , 'App\Http\Controllers\PackageController');
-Route::resource('admin/categories' , 'App\Http\Controllers\CategoryController');
-Route::resource('admin/cities' , 'App\Http\Controllers\CityController');
+Route::resource('admin/users' , 'App\Http\Controllers\UsersController')->middleware('auth');
+Route::resource('admin/packages' , 'App\Http\Controllers\PackageController')->middleware('auth');
+Route::resource('admin/categories' , 'App\Http\Controllers\CategoryController')->middleware('auth');
+Route::resource('admin/cities' , 'App\Http\Controllers\CityController')->middleware('auth');
+Route::get('items/{id}' , 'App\Http\Controllers\OrderController@orderItems');
 
 
 

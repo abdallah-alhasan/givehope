@@ -2,6 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Order;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PackageFactory extends Factory
@@ -14,7 +17,17 @@ class PackageFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
+            'doner_name' => $this->faker->name() ,
+            'category_id' => $this->faker->numberBetween(1,4),
+            'condition' => $this->faker->numberBetween(1,4),
+            'products_number' =>$this->faker->numberBetween(1,10) ,
+            'title' => $this->faker->title(),
+            'phone_number' => $this->faker->phoneNumber(),
+            'city_id' => $this->faker->numberBetween(1,4),
+            'image' => $this->faker->imageUrl(400, 300),
+            'description' =>$this->faker->text() ,
         ];
     }
+
+
 }

@@ -73,7 +73,6 @@ class PackageController extends Controller
      */
     public function show(Package $package)
     {
-        //
         return view('pages.single-product', compact('package'));
     }
 
