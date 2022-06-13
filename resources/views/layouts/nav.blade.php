@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/fancybox.min.css">
+   
+    {{-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> --}}
 
    <link href="{{ url('https://fonts.googleapis.com/css?family=Overpass:300,400,500|Dosis:400,700') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ url('css/open-iconic-bootstrap.min.css') }}">
@@ -51,7 +54,7 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="/how-it-works" class="nav-link">How It Works</a></li>
                     <li class="nav-item"><a href="/donate" class="nav-link">Donate</a></li>
                     {{-- <li class="nav-item"><a href="{{ route('categories.index') }}" class="nav-link">Donations</a></li> --}}
