@@ -51,23 +51,22 @@
   </div>
 
 
-
-  <div class="site-section bg-light">
+<div class="site-section bg-light">
     <div class="container">
       <div class="row mb-5">
-        <div class="col-md-12">
-          <h2>Our Donations</h2>
+        <div class="col-md-12 text-center">
+          <h2> Donations</h2>
         </div>
       </div>
 
       <div class="row">
 
       @foreach($data as $values)
- <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+ <div class="col-12 col-sm-4 col-md-2 col-lg-3 mb-2 mb-lg-0">
           <div class="post-entry text-center">
             {{-- <a href="#" class="mb-3 img-wrap"> --}}
 
-              <img src="{{ url('Image/'.$values->image) }}" alt="Image placeholder" width ="350" height="250" >
+              <img src="{{ url('Image/'.$values->image) }}" alt="Image placeholder" width ="250" height="200" >
             {{-- </a> --}}
             <h3 class="date mb-4 d-block text-muted" style="font-size: 20px"><a href="{{ route('categories.show', $values->id) }}"> {{$values->name}}</a></h3>
             <span>{{$values->desc}}</span>
@@ -76,6 +75,35 @@
           </div>
         </div>
         @endforeach
+
+
+        {{-- <section class='product-category site-section'>
+            <div class='container'>
+                <div class='row'>
+                    <div class="col-md-12">
+                        <div class='title text-center'>
+                            <h2>Our Donations</h2>
+
+                        </div>
+                    </div>
+                    @foreach($data as $values)
+                          <div class='col-md-6'>
+                        <div class='category-box text-center' >
+                            <a href='#'>
+                                <img src="{{ url('Image/'.$values->image) }}" alt="Image placeholder" width ="500" height="350"/>
+                                <div class='content' style='background-color: #682828db;'>
+                                    <h3 style="margin-top: 20px"><a href="#">{{$values->desc}}</a></h3>
+                                    <span class="date mb-4 d-block text-muted " style="font-size: 20px">{{$values->name}}</span>
+                                </div>
+                            </a>
+                        </div>
+                </div>
+                @endforeach
+
+
+            </div>
+          </div>
+        </section> --}}
 
 
 
@@ -135,9 +163,9 @@
     <div class="container">
       <div class="row mb-3 justify-content-center">
         <div class="col-md-8 text-center">
-          <h2>Latest Fundraisers</h2>
+          <h2>Latest Collaborations</h2>
           <p class="lead">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <p><a href="#" class="link-underline">View All Fundraisers</a></p>
+          <p><a href="#" class="link-underline">Take A Look At Our Trusted Partners!</p>
         </div>
       </div>
     </div>
@@ -237,63 +265,6 @@
   </div> <!-- .section -->
 
 
-  <div class="site-section fund-raisers">
-    <div class="container">
-      <div class="row mb-3 justify-content-center">
-        <div class="col-md-8 text-center">
-          <h2>Latest Donations</h2>
-          <p class="lead">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <p class="mb-5"><a href="#" class="link-underline">View All Donations</a></p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6 col-lg-3 mb-5">
-          <div class="person-donate text-center">
-            <img src="images/person_1.jpg" alt="Image placeholder" class="img-fluid">
-            <div class="donate-info">
-              <h2>Jorge Smith</h2>
-              <span class="time d-block mb-3">Donated Just now</span>
-              <p>Donated <span class="text-success">$252</span> <br> <em>for</em> <a href="#" class="link-underline fundraise-item">Water Is Life. Clean Water In Urban Area</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3 mb-5">
-          <div class="person-donate text-center">
-            <img src="images/person_2.jpg" alt="Image placeholder" class="img-fluid">
-            <div class="donate-info">
-              <h2>Christine Charles</h2>
-              <span class="time d-block mb-3">Donated 1 hour ago</span>
-              <p>Donated <span class="text-success">$400</span> <br> <em>for</em> <a href="#" class="link-underline fundraise-item">Children Needs Education</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3 mb-5">
-          <div class="person-donate text-center">
-            <img src="images/person_3.jpg" alt="Image placeholder" class="img-fluid">
-            <div class="donate-info">
-              <h2>Albert Sluyter</h2>
-              <span class="time d-block mb-3">Donated 4 hours ago</span>
-              <p>Donated <span class="text-success">$1,200</span> <br> <em>for</em> <a href="#" class="link-underline fundraise-item">Need Shelter for Children in Africa</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3 mb-5">
-          <div class="person-donate text-center">
-            <img src="images/person_4.jpg" alt="Image placeholder" class="img-fluid">
-            <div class="donate-info">
-              <h2>Andrew Holloway</h2>
-              <span class="time d-block mb-3">Donated 9 hours ago</span>
-              <p>Donated <span class="text-success">$100</span> <br> <em>for</em> <a href="#" class="link-underline fundraise-item">Water Is Life. Clean Water In Urban Area</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> <!-- .section -->
 
   <div class="featured-section overlay-color-2" style="background-image: url('images/bg_3.jpg');">
 
@@ -306,11 +277,11 @@
 
         <div class="col-md-6 pl-md-5">
           <span class="featured-text d-block mb-3">Success Stories</span>
-          <h2>Water Is Life. We Successfuly Provide Clean Water in South East Asia</h2>
+          <h2>The Act of Giving Is Life. We Successfuly Provided 2560 Families With Needed House Supplies.</h2>
           <p class="mb-3">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          <span class="fund-raised d-block mb-5">We have raised $100,000</span>
+          <span class="fund-raised d-block mb-5">Want To Be Part Of Our Success Stories? </span>
 
-          <p><a href="#" class="btn btn-success btn-hover-white py-3 px-5">Read The Full Story</a></p>
+          <p><a href="#" class="btn btn-success btn-hover-white py-3 px-5" style=" color:#f7ca44; background-color: rgba(255, 255, 255, 0.952); border:white">Donate Now!</a></p>
         </div>
 
       </div>
@@ -325,5 +296,8 @@
 
 
   </div> <!-- .featured-donate -->
+
+
+
 @endsection
 

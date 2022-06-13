@@ -82,7 +82,7 @@
           <span id="basic-icon-default-city" class="input-group-text"
             ><i class="bx bx-buildings"></i
           ></span>
-        <select name="city_id" id="city" >
+        <select name="city_id" id="city"  style="border-radius: 0 0.375rem 0.375rem 0; border-color:#d9dee3;">
           <option selected disabled>Select a city</option>
           @foreach ($cities as $city)
             <option value="{{$city->id}}">{{$city->name}}</option>
@@ -104,7 +104,7 @@
             <span id="basic-icon-default-category" class="input-group-text"
               ><i class="bx bx-category"></i
             ></span>
-          <select name="category_id" id="category" >
+          <select name="category_id" id="category" style="border-radius: 0 0.375rem 0.375rem 0;  border-color:#d9dee3;">
             <option selected disabled>Select a category</option>
             @foreach ($categories as $category)
               <option value="{{$category->id}}">{{$category->name}}</option>
@@ -124,7 +124,7 @@
         <div class="input-group input-group-merge">
           <span id="basic-icon-default-city" class="input-group-text"
             ><i class='bx bx-id-card'></i></span>
-        <select name="condition" id="condition" >
+        <select name="condition" id="condition"  style="border-radius: 0 0.375rem 0.375rem 0;  border-color:#d9dee3;" >
             <option selected disabled  >Select the condition</option>
             <option value="Poor"  >Poor</option>
             <option value="Good"  >Good</option>

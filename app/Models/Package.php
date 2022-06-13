@@ -34,23 +34,7 @@ class Package extends Model
     }
 
 
-    // protected $fillable =[
 
-
-    //     'category_id',
-    //     'city_id',
-    //     'doner_name',
-
-    //     'phone_number',
-
-    //     'title',
-    //     'image',
-    //     'description',
-    //     'products_number',
-    //     'condition',
-
-
-    // ];
 
 
 

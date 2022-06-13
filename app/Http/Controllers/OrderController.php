@@ -15,7 +15,24 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders_doners = Order::orderBy('id', 'ASC')->join('users', 'orders.user_id', '=', 'users.id')
+        ->get(['users.id', 'users.name']);
+        $orders_package = Order::orderBy('id', 'ASC')->join('packages', 'orders.package_id', '=', 'packages.id')
+        ->get(['orders.id', 'packages.title']);
+        $orders = Order::orderBy('created_at', 'ASC')->oldest()->paginate(10);
+
+        // dd($orders_package);
+        // dd($user_city);
+        return view('admin.orders.index',compact('orders_package', 'orders_doners' ,'orders' ));
+    }
+
+
+    public function orderItems($id)
+    {
+        $items = Order::where('user_id' , $id)->paginate(10);
+        $orders_package = Order::orderBy('id', 'ASC')->join('packages', 'orders.package_id', '=', 'packages.id')
+        ->get(['orders.id', 'packages.title' , 'packages.image' , 'packages.description' , 'packages.condition']);
+        return view('admin.orders.items',compact('items' , 'orders_package'));
     }
 
     /**
@@ -25,7 +42,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        return abort(404);
     }
 
     /**
@@ -89,6 +106,13 @@ class OrderController extends Controller
      */
     public function destroy(Order $order)
     {
-        //
+        $order->delete();
+        return redirect()->route('orders.index')
+        ->with('message', 'Order deleted successfully');
+    }
+
+    public function approve(Order $order)
+    {
+
     }
 }

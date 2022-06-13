@@ -22,7 +22,7 @@
     <div class="container">
       <div class="row block-9">
         <div class="col-md-6 pr-md-5">
-          <form action="{{route('contact.send')}}" method="POST" enctype="multipart/form-data">
+          <form action="" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
               <input type="text" name="name" class="form-control px-3 py-3" placeholder="Your Name">

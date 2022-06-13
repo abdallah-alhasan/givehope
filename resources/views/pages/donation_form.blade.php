@@ -37,7 +37,7 @@
                 
                <b> <h2>Be A Volunteer Today</h2></b>
 
-                <form action="{{ route('donations.store') }}" method="POST">
+                <form action="{{ route('donations.store') }}" method="POST" enctype="multipart/form-data">
                   @csrf
                
                   <div class="form-group">
@@ -71,7 +71,7 @@
 
                   <div class="form-group">
                     <b> <label for="pack_img">Product image</label> </b>
-                    <input type="text" class="form-control py-2" name="image" placeholder="Upload an image for the product">
+                    <input type="file" class="form-control py-2" name="image" placeholder="Upload an image for the product">
                   </div>
 
                   <div class="form-group">
