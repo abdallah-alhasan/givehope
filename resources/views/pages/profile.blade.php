@@ -17,6 +17,10 @@
         body{
     background: -webkit-linear-gradient(left, #f3f3f4, #edece7);
 }
+.ftco-navbar-light {
+
+    top: 0px !important;
+}
 .emp-profile{
     padding: 3%;
     margin-top: 3%;

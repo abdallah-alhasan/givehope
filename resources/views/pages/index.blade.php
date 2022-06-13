@@ -10,7 +10,7 @@
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-7">
               <h2 class="heading mb-5">For It Is In Giving That We Receive.</h2>
-              <p style="display: inline-block;"><a href="https://vimeo.com/channels/staffpicks/93951774"  data-fancybox class="ftco-play-video d-flex"><span class="play-icon-wrap align-self-center mr-4"><span class="ion-ios-play"></span></span> <span class="align-self-center">Watch Video</span></a></p>
+              <p style="display: inline-block;"><a href="https://www.youtube.com/watch?v=MG3jGHnBVQs&t=158s"  data-fancybox class="ftco-play-video d-flex"><span class="play-icon-wrap align-self-center mr-4"><span class="ion-ios-play"></span></span> <span class="align-self-center">Watch Video</span></a></p>
             </div>
           </div>
         </div>
