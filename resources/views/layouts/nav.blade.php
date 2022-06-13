@@ -118,12 +118,7 @@
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-<<<<<<< HEAD
-                                    <a class="nav-link"
-                                        href="{{ '/signup'}}">{{ __('Register') }}</a>
-=======
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
->>>>>>> 567a31227a7a7ea11ba4fdad6bbc696acc8395f8
                                 </li>
                             @endif
                         @else
