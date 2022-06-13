@@ -37,6 +37,20 @@
                 
                <b> <h2>Be A Volunteer Today</h2></b>
 
+
+               {{-- ///////////////////////// Donation Form ////////////////////////////////////////// --}}
+
+               
+               @if ($errors->any())
+               <div class="alert alert-danger">
+                   <ul>
+                       @foreach ($errors->all() as $error)
+                           <li>{{ $error }}</li>
+                       @endforeach
+                   </ul>
+               </div>
+           @endif
+
                 <form action="{{ route('donations.store') }}" method="POST" enctype="multipart/form-data">
                   @csrf
                
@@ -49,11 +63,6 @@
                     <b> <label for="phone_num">Phone Number</label> </b>
                     <input type="text" class="form-control py-2" name="phone_number" placeholder="Enter your phone number">
                   </div>
-
-
-
-
-
 
                   <div class="form-group col-md-4">
                     <label for="">City</label>
@@ -79,8 +88,6 @@
                     <input type="text" class="form-control py-2" name="products_number" placeholder="Number of package content">
                   </div>
 
-
-                  
 
                  <div class="form-group col-md-4">
                   <label for="">Category</label>
@@ -114,6 +121,8 @@
                     <input type="submit" class="btn btn-white px-5 py-2" value="Send">
                   </div>
                 </form>
+
+
               </div>
             </div>
             
