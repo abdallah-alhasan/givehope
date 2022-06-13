@@ -12,6 +12,14 @@ class Order extends Model
     
     use HasFactory;
 
+    public function scopeFilter($query , array $filters){
+        if($filters['search'] ?? false){
+            $query->where('id' , 'like' , '%' . request('search') . '%')
+            ->orWhere('user_id' , 'like' , '%' . request('search') . '%')
+            ->orWhere('status' , 'like' , '%' . request('search') . '%');
+        }
+    }
+
     public function user(){
         return $this->belongsTo(User::class);
     }

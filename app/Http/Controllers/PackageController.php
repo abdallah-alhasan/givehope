@@ -17,7 +17,7 @@ class PackageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $donations = Package::orderBy('city_id', 'ASC')->oldest()->paginate(10);
+        $donations = Package::orderBy('city_id', 'ASC')->filter(request(['search']))->oldest()->paginate(10);
         $donation_city = Package::orderBy('id', 'ASC')->join('cities', 'packages.city_id', '=', 'cities.id')
         ->get(['packages.id', 'cities.name']);
         // dd($user_city);

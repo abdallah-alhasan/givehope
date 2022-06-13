@@ -14,7 +14,7 @@ class CityController extends Controller
      */
     public function index()
     {
-        $data= City::all();
+        $data= City::orderBy('id', 'ASC')->filter(request(['search']))->oldest()->paginate(10);
         return view("admin.cities.index",compact("data"));
     }
 
