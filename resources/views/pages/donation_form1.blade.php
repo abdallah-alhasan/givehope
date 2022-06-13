@@ -3,8 +3,6 @@
 
 @section('content')
 
-
-
 <div class="block-31" style="position: relative;">
     <div class="loop-block-31 ">
        <div class="block-30 block-30-sm item" style="background-image: url({{url('images/donate.jpg')}});" data-stellar-background-ratio="0.5">
