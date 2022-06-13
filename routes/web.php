@@ -76,7 +76,8 @@ Route::get('/profile/{user}',['App\Http\Controllers\UsersController','showProfil
 
 
 //admin routes
-
+Route::get('admin/user/approve/{id}', [UsersController::class,'approve']);
+Route::get('admin/users/approve-all', [UsersController::class,'approveAll']);
 Route::resource('admin/users' , 'App\Http\Controllers\UsersController')->middleware('auth');
 Route::resource('admin/packages' , 'App\Http\Controllers\PackageController')->middleware('auth');
 Route::resource('admin/categories' , 'App\Http\Controllers\CategoryController')->middleware('auth');
@@ -84,6 +85,7 @@ Route::resource('admin/cities' , 'App\Http\Controllers\CityController')->middlew
 Route::get('items/{id}' , 'App\Http\Controllers\OrderController@orderItems');
 
 Route::get('categories/{packages}', [CategoryController::class,'show'])->name('categories.show');
+
 
 Route::get('' , 'App\Http\Controllers\CategoryController@showCategory');
 

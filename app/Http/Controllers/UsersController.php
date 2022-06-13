@@ -84,10 +84,22 @@ class UsersController extends Controller
         ->with('message', 'user deleted successfully');
     }
 
+    public function approve($id)
+    {
+        $user = new User;
+        $user->where('id', $id)->update(['status' => 1]);
+        return redirect()->route('users.index')
+        ->with('message', 'User has been approved successfully');
+    }
 
-
-
-
+    public function approveAll()
+    {
+        DB::table('users')->update(['status' => 1]);
+        // $user = new User;
+        // $user->update(['status' => 1]);
+        return redirect()->route('users.index')
+        ->with('message', 'All users have been approved successfully');
+    }
 
 
     //profile
