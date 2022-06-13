@@ -74,6 +74,11 @@
 
 
   <div class="row justify-content-center " style="margin-top:130px; background:#f6f6f6">
+    @if (Session::get('success'))
+    <div class="alert alert-success text-center fw-bolder" role="alert">
+        {{ Session::get('success') }}
+    </div>
+    @endif
     <div class=" container-fluid px-5">
             <div class="header p-4" style="">
 
