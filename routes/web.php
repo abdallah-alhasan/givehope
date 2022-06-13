@@ -69,11 +69,7 @@ require __DIR__ . '/auth.php';
 
 
 
-Route::resource('categories', CategoryController::class);
 
-Route::get('/softDelete/{package}', [PackageController::class,'softDelete'])->name('packages.softDelete');
-Route::resource('packages', PackageController::class);
-Route::resource('orders', OrderController::class);
 
 Route::get('/editprofile/{user}', ['App\Http\Controllers\UsersController', 'editProfile'])->name('pages.editprofile');
 
@@ -91,10 +87,15 @@ Route::resource('admin/categories' , 'App\Http\Controllers\CategoryController')-
 Route::resource('admin/cities' , 'App\Http\Controllers\CityController')->middleware('auth');
 Route::get('items/{id}' , 'App\Http\Controllers\OrderController@orderItems');
 
+Route::resource('categories', CategoryController::class);
 Route::get('categories/{packages}', [CategoryController::class,'show'])->name('categories.show');
 
+Route::get('/softDelete/{package}', [PackageController::class,'softDelete'])->name('packages.softDelete');
+Route::resource('packages', PackageController::class);
+Route::resource('orders', OrderController::class);
 
 Route::get('' , 'App\Http\Controllers\CategoryController@showCategory');
+
 
 // Route::get('/' , function(){
 
