@@ -20,7 +20,7 @@
                     <th>Order ID</th>
                     <th>Doner name</th>
                     <th>Status</th>
-                    <th>Actions</th>
+                    <th>Actions/items</th>
                     </tr>
                 </thead>
                 @php
@@ -40,10 +40,10 @@
                             <i class="bx bx-dots-vertical-rounded"></i>
                         </button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/items/{{$orders_doners[$i ]->id}}"{{--pass the user id--}}
+                            <a class="dropdown-item" href="/items/{{$order->user_id}}"{{--pass the user id--}}
                             ><i class="bx bx-show me-1"></i> View</a
                             >
-                            <a class="dropdown-item" href="{{'/approve/' . $order->id }}"
+                            <a class="dropdown-item" href="{{'admin/order/approve/' . $order->id }}"
                             ><i class="bx bx-check me-1"></i> Approve</a
                         >
                         <form action="{{ route('orders.destroy' , $order->id)}}" method="POST" class="d-inline">
