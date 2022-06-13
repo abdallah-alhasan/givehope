@@ -15,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $data= Category::all();
+        $data= Category::orderBy('id', 'ASC')->filter(request(['search']))->oldest()->paginate(10);
         return view("admin.categories.index",compact("data"));
     }
 
@@ -71,10 +71,10 @@ class CategoryController extends Controller
         //
         $categories = Category::all();
         if (auth()->user()){
-            $packages = Package::where('city_id', auth()->user()->city_id)->Where('category_id', $category->id)->latest()->paginate(6);
+            $packages = Package::where('city_id', auth()->user()->city_id)->Where('category_id', $category->id)->latest()->paginate(12);
             return view('pages.donations', compact('packages','category','categories'));
         }
-            $packages = Package::Where('category_id',  $category->id)->latest()->paginate(6);
+            $packages = Package::Where('category_id',  $category->id)->latest()->paginate(12);
             return view('pages.donations', compact('packages','category','categories'));
 
     }

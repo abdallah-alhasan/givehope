@@ -4,8 +4,8 @@
 @section('content')
 
 <div class="block-31" style="position: relative;">
-    <div class="owl-carousel loop-block-31 ">
-       <div class="block-30 block-30-sm item" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5"> 
+    <div class="loop-block-31 ">
+       <div class="block-30 block-30-sm item" style="background-image: url({{url('images/donate.jpg')}});" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-7">
@@ -14,7 +14,7 @@
           </div>
         </div>
       </div>
-      
+
     </div>
   </div>
 
@@ -23,7 +23,7 @@
 
 
       <div class="featured-section overlay-color-2" style="background-image: url({{url('images/bg_2.jpg')}});">
-    
+
         <div class="container">
           <div class="row">
     
@@ -32,9 +32,9 @@
             </div> --}}
     
             <div class="col-md-6 pl-md-5">
-    
+
               <div class="form-volunteer">
-                
+
                <b> <h2>Be A Volunteer Today</h2></b>
 
 
@@ -53,7 +53,7 @@
 
                 <form action="{{ route('donations.store') }}" method="POST" enctype="multipart/form-data">
                   @csrf
-               
+
                   <div class="form-group">
                     <b> <label for="name">Name</label> </b>
                     <input type="text" class="form-control py-2" name="doner_name" placeholder="Enter your name">
@@ -107,7 +107,7 @@
                     <option value="Poor">Poor</option>
                   </select>
                 </div>
-                
+
 
 
                   <div class="form-group">
@@ -125,13 +125,13 @@
 
               </div>
             </div>
-            
+
           </div>
         </div>
-    
-      </div> 
 
-      
+      </div>
+
+
     </div>
   </div> <!-- .section -->
 <!--.featured-donate -->

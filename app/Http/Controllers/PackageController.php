@@ -17,7 +17,7 @@ class PackageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $donations = Package::orderBy('city_id', 'ASC')->oldest()->paginate(10);
+        $donations = Package::orderBy('city_id', 'ASC')->filter(request(['search']))->oldest()->paginate(10);
         $donation_city = Package::orderBy('id', 'ASC')->join('cities', 'packages.city_id', '=', 'cities.id')
         ->get(['packages.id', 'cities.name']);
         // dd($user_city);
@@ -57,10 +57,26 @@ class PackageController extends Controller
             'description' => '',
         ]);
 
-        if (request('image')) {
-            $imagePath = request('image')->store('uploads', 'public');
+        $input = $request->all();
+
+        if($request->file('image')){
+            $file= $request->file('image');
+            $filename= date('YmdHi').$file->getClientOriginalName();
+            $file-> move(public_path('Image'), $filename);
+            $input['image'] = "$filename";
+
         }
-        $save = Package::create(array_merge($data , request('image') != null ? ['image' => $imagePath ] : [] ));
+
+
+        Package::create($input);
+
+
+
+        // if (request('image')) {
+
+        //     $imagePath = request('image')->store('uploads', 'public');
+        // }
+        // $save = Package::create(array_merge($data , request('image') != null ? ['image' => $imagePath ] : [] ));
         return redirect()->route('packages.index')
         ->with('message', 'Donation added successfully');
     }
