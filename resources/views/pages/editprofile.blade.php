@@ -1,9 +1,28 @@
 @extends('layouts.master')
 
 @section('content')
+<style>
 
 
+<<<<<<< HEAD
 <div class="container" style="padding-top:8% ">
+=======
+.ftco-navbar-light {
+    background: #343a40 !important;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    top: 0px  !important;
+
+
+}
+
+
+</style>
+
+<div class="container" style="padding:8%;margin-top:100px">
+>>>>>>> 567a31227a7a7ea11ba4fdad6bbc696acc8395f8
     <form action="{{ route('pages.updateProfile', $user->id)}}" method="POST">
         @csrf
         {{-- @method('PUT') --}}

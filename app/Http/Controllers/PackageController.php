@@ -17,7 +17,7 @@ class PackageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $donations = Package::orderBy('city_id', 'ASC')->oldest()->paginate(10);
+        $donations = Package::orderBy('city_id', 'ASC')->filter(request(['search']))->oldest()->paginate(10);
         $donation_city = Package::orderBy('id', 'ASC')->join('cities', 'packages.city_id', '=', 'cities.id')
         ->get(['packages.id', 'cities.name']);
         // dd($user_city);
@@ -73,7 +73,6 @@ class PackageController extends Controller
      */
     public function show(Package $package)
     {
-        //
         return view('pages.single-product', compact('package'));
     }
 
@@ -128,7 +127,7 @@ class PackageController extends Controller
     public function destroy(Package $package)
     {
         $package->delete();
-        return redirect()->route('Donations.index')
+        return redirect()->route('packages.index')
         ->with('message', 'Donation deleted successfully');
     }
 

@@ -29,6 +29,23 @@
     color: #000 !important;
 }
 
+
+
+.p_filter_widgets a:before {
+    content: "";
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 1px solid #797979;
+     position: absolute;
+    left: -7%;
+    top: 44%;
+    transition:cubic-bezier(0.075, 0.82, 0.165, 1)
+  }
+
+.p_filter_widgets p:hover a:before {
+    background-color: #f7ca44 !important;
+}
 </style>
 
 
@@ -56,14 +73,14 @@
 
 
 
-  <div class="row justify-content-center text-center" style="margin-top:150px; background:#f6f6f6">
-    <div class=" container-fluid   ">
-            <div class="header p-5" style="">
+  <div class="row justify-content-center " style="margin-top:130px; background:#f6f6f6">
+    <div class=" container-fluid px-5">
+            <div class="header p-4" style="">
 
 
-                    <h2>{{ $category->name }}</h2>
+                    <h2>Donations / {{ $category->name }}</h2>
                     @auth
-                    <p class="h4" style="color:#f7ca44">Located In {{ auth()->user()->city->name }}</p>
+                    <p class="h5" style="color:#f7ca44">Located In {{ auth()->user()->city->name }}</p>
                     @endauth
             </div>
     </div>
@@ -76,14 +93,16 @@
           <aside class="left_widgets p_filter_widgets">
             <div class="l_w_title">
               <h3>Browse Categories</h3>
+              <hr style=" width: 80%; background-color: #f7ca44; margin-left: -2px"/>
             </div>
             <div class="widgets_inner">
               <ul class="list">
                 @foreach ($categories as $category)
 
-                <li class="h4">
+                <p class="h4 p_filter_widgets" style="position: relative;">
                   <a href="{{ route('categories.show', $category->id) }}">{{ $category->name }}</a>
-                </li>
+                  <hr style=" width: 80%; margin-left: -10px"/>
+                </p>
                 @endforeach
 
               </ul>
@@ -99,14 +118,14 @@
 
 
     <div class="card">
-                        <div class="card-body">
-                            <div class="card-img-actions">
+        <div class="card-img-actions">
 
-                                    <img src="https://s1.img.bidsquare.com/item/xl/7584/7584036.jpeg" class="card-img img-fluid" width="96" height="350" alt="">
+                                    <img src="https://s1.img.bidsquare.com/item/xl/7584/7584036.jpeg" class="card-img-top" alt="">
 
 
-                            </div>
-                        </div>
+        </div>
+    </div>
+                        {{-- <div class="card-body"> --}}
 
                         <div class="card-body bg-light text-center">
                             <div class="mb-2">
@@ -115,18 +134,13 @@
                                 </h6>
 
                                 <p  class="text-muted" data-abc="true">{{ $package->description }}</p>
-                                <p  class="text-muted" data-abc="true">{{ $package->products_number }}</p>
+                                {{-- <p  class="text-muted" data-abc="true">{{ $package->products_number }}</p> --}}
                                 <p  class="text-muted" data-abc="true">{{ $package->condition }}</p>
                             </div>
 
 
 
-                            <div>
-                               <i class="fa fa-star star"></i>
-                               <i class="fa fa-star star"></i>
-                               <i class="fa fa-star star"></i>
-                               <i class="fa fa-star star"></i>
-                            </div>
+
 
 
                             @auth
@@ -135,7 +149,7 @@
 
 
                         </div>
-                    </div>
+                    {{-- </div> --}}
 
 
 

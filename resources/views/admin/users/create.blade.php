@@ -82,7 +82,7 @@
           <span id="basic-icon-default-city" class="input-group-text"
             ><i class="bx bx-buildings"></i
           ></span>
-        <select name="city_id" id="city" >
+        <select name="city_id" id="city" style="border-radius: 0 0.375rem 0.375rem 0;  border-color:#d9dee3;" >
           <option selected disabled>Select a city</option>
           @foreach ($cities as $city)
             <option value="{{$city->id}}">{{$city->name}}</option>
@@ -102,7 +102,7 @@
         <div class="input-group input-group-merge">
           <span id="basic-icon-default-city" class="input-group-text"
             ><i class='bx bx-id-card'></i></span>
-        <select name="roles" id="roles" >
+        <select name="roles" id="roles"  style="border-radius: 0 0.375rem 0.375rem 0;  border-color:#d9dee3;">
             <option selected disabled  >Select role</option>
             <option value="0"  >User</option>
             <option value="1" >Admin</option>

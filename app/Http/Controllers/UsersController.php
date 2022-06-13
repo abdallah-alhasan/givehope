@@ -10,11 +10,16 @@ use Illuminate\Support\Facades\DB;
 
 class UsersController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(){
-        $users = User::orderBy('city_id', 'ASC')->oldest()->paginate(10);
+        $users = User::orderBy('city_id', 'ASC')->filter(request(['search']))->oldest()->paginate(10);
         $user_city = User::orderBy('id', 'ASC')->join('cities', 'users.city_id', '=', 'cities.id')
         ->get(['users.id', 'cities.name']);
-        // dd($user_city);
         return view('admin.users.index',compact('users' , 'user_city'));
     }
 

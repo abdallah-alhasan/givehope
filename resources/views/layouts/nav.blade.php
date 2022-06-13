@@ -19,8 +19,14 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/fancybox.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-   <link href="{{ url('https://fonts.googleapis.com/css?family=Overpass:300,400,500|Dosis:400,700') }}" rel="stylesheet">
+    {{-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> --}}
+
+    <link href="{{ url('https://fonts.googleapis.com/css?family=Overpass:300,400,500|Dosis:400,700') }}"
+        rel="stylesheet">
     <link rel="stylesheet" href="{{ url('css/open-iconic-bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/animate.css') }}">
     <link rel="stylesheet" href="{{ url('css/owl.carousel.min.css') }}">
@@ -36,6 +42,16 @@
 
     <link rel="stylesheet" href="{{ url('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url('css/style.css') }}">
+    <style>
+
+
+.amal{
+
+    position:relative;
+    top: 50px;
+    background-color: #ffffffc2
+}
+    </style>
 
 </head>
 
@@ -51,21 +67,47 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="/how-it-works" class="nav-link">How It Works</a></li>
-                    <li class="nav-item"><a href="/donate" class="nav-link">Donate</a></li>
+                    <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                    {{-- <li class="nav-item"><a href="/how-it-works" class="nav-link">How It Works</a></li> --}}
+                    <li class="nav-item"><a href="/donations/create" class="nav-link">Donate</a></li>
+
+                    @php
+                        use App\Models\Category;
+                        $data = Category::all();
+                    @endphp
+
+
+                    <div class="dropdown show nav-item">
+                        <a class=" dropdown-toggle nav-link" href="{{ route('categories.show', 1) }}"
+                            role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Donations
+                        </a>
+
+
+                        <div class="dropdown-menu amal" aria-labelledby="dropdownMenuLink" >
+                            @foreach ($data as $values)
+                            <a class="dropdown-item"  href="{{ route('categories.show', $values->id) }}">
+                                {{ $values->name }}</a>
+
+                        @endforeach
+                        </div>
+                    </div>
+
+
+
                     {{-- <li class="nav-item"><a href="{{ route('categories.index') }}" class="nav-link">Donations</a></li> --}}
-                    {{-- <li class="nav-item"><a href="{{ route('categories.show', $category->id) }}" class="nav-link">Donations</a></li> --}}
-                    <li class="nav-item"><a href="/gallery" class="nav-link">Gallery</a></li>
-                    <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
+                    {{-- <li class="nav-item"><a href="{{ route('categories.show',1) }}" class="nav-link">Donations</a></li> --}}
+                    {{-- <li class="nav-item"><a href="/gallery" class="nav-link">Gallery</a></li>
+                    <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li> --}}
                     <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
 
-                    {{-- sujoud  --}}
+                    {{-- sujoud --}}
 
 
-                     <!-- Right Side Of Navbar -->
-                     <ul class="navbar-nav ms-auto">
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -76,30 +118,33 @@
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
+<<<<<<< HEAD
                                     <a class="nav-link"
                                         href="{{ '/signup'}}">{{ __('Register') }}</a>
+=======
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+>>>>>>> 567a31227a7a7ea11ba4fdad6bbc696acc8395f8
                                 </li>
                             @endif
                         @else
-
-                        <li class="nav-item ">
-                            <a  class="nav-link "
-                            {{-- href="{{ route('/profile/{user}',auth()->user()->id) }}" role="button"> --}}
-                            href="/profile/{{ auth()->user()->id }}" role="button">
-                                {{ __('My account')}}
-                                {{-- {{ Auth::user()->name }} --}}
-                            </a>
-                        </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " {{-- href="{{ route('/profile/{user}',auth()->user()->id) }}" role="button"> --}} href="/profile/{{ auth()->user()->id }}"
+                                    role="button">
+                                    {{ __('My account') }}
+                                    {{-- {{ Auth::user()->name }} --}}
+                                </a>
+                            </li>
 
 
                             {{-- <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> --}}
-                                <li class="nav-item" >
-                                <a style="color: #ff6600af " class="nav-link"  href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
+                            <li class="nav-item">
+                                <a style="color: #f7ca44;font-weight:900;" class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    class="d-none">
 
                                     @csrf
                                 </form>
@@ -110,7 +155,7 @@
 
 
 
-                    {{-- sujoud  --}}
+                    {{-- sujoud --}}
 
 
                 </ul>
