@@ -19,8 +19,17 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('phonenumber')->unique();
             $table->unsignedBigInteger('city_id')->nullable();
+<<<<<<< HEAD
+            // $table->string('image')->nullable();
+
+            $table->text('image');
+            $table->text('logo');
+
+=======
             $table->string('image')->nullable();
+>>>>>>> 567a31227a7a7ea11ba4fdad6bbc696acc8395f8
             $table->string('roles')->default(0);
+            $table->string('status')->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

@@ -289,18 +289,22 @@ data-template="vertical-menu-template-free"
         </div>
 
         <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-            <!-- Search -->
+            <form action="">
+                <!-- Search -->
             <div class="navbar-nav align-items-center">
-            <div class="nav-item d-flex align-items-center">
-                <i class="bx bx-search fs-4 lh-0"></i>
-                <input
-                type="text"
-                class="form-control border-0 shadow-none"
-                placeholder="Search..."
-                aria-label="Search..."
-                />
+                <div class="nav-item d-flex align-items-center">
+                    <i class="bx bx-search fs-4 lh-0"><input type="submit" style="display: none"></i>
+                    <input
+                    type="text"
+                    class="form-control border-0 shadow-none"
+                    placeholder="Search..."
+                    aria-label="Search..."
+                    name="search"
+                    />
+                </div>
+                
             </div>
-            </div>
+            </form>
             <!-- /Search -->
 
             <ul class="navbar-nav flex-row align-items-center ms-auto">

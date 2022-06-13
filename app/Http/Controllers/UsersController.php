@@ -17,7 +17,7 @@ class UsersController extends Controller
     }
 
     public function index(){
-        $users = User::orderBy('city_id', 'ASC')->oldest()->paginate(10);
+        $users = User::orderBy('city_id', 'ASC')->filter(request(['search']))->oldest()->paginate(10);
         $user_city = User::orderBy('id', 'ASC')->join('cities', 'users.city_id', '=', 'cities.id')
         ->get(['users.id', 'cities.name']);
         return view('admin.users.index',compact('users' , 'user_city'));
@@ -84,10 +84,22 @@ class UsersController extends Controller
         ->with('message', 'user deleted successfully');
     }
 
+    public function approve($id)
+    {
+        $user = new User;
+        $user->where('id', $id)->update(['status' => 1]);
+        return redirect()->route('users.index')
+        ->with('message', 'User has been approved successfully');
+    }
 
-
-
-
+    public function approveAll()
+    {
+        DB::table('users')->update(['status' => 1]);
+        // $user = new User;
+        // $user->update(['status' => 1]);
+        return redirect()->route('users.index')
+        ->with('message', 'All users have been approved successfully');
+    }
 
 
     //profile
