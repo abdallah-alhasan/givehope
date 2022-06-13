@@ -59,7 +59,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">GiveHope</a>
+            <a class="navbar-brand" href="/">GiveHope</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
@@ -118,12 +118,7 @@
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-<<<<<<< HEAD
-                                    <a class="nav-link"
-                                        href="{{ '/signup'}}">{{ __('Register') }}</a>
-=======
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
->>>>>>> 567a31227a7a7ea11ba4fdad6bbc696acc8395f8
                                 </li>
                             @endif
                         @else

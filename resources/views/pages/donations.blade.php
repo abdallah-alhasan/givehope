@@ -115,20 +115,20 @@
           </aside>
         </div>
       </div>
-
+      <div class="container my-5 ">
       <div class="row flex-row">
         @foreach ($packages as $package)
 
-<div class="col-lg-3 mt-2">
+<div class="col-lg-3 mt-3">
 
 
     <div class="card">
-        <div class="card-img-actions">
+        {{-- <div class="card-img-actions"> --}}
 
-                                    <img src="{{ url('Image/'.$package->image) }}" class="card-img-top" alt="">
+                                    <img src="{{ url('Image/'.$package->image) }}" class="card-img-top " width="400" height="250" alt="">
 
 
-        </div>
+        {{-- </div> --}}
     </div>
                         {{-- <div class="card-body"> --}}
 
@@ -149,7 +149,9 @@
 
 
                             @auth
+                            @if (auth()->user()->status == 1)
                             <a href="{{ route('packages.show', $package->id) }}" class="btn bg-cart" style="color: #656262"><i class="fa fa-cart-plus mr-2"></i> Show Item</a>
+                            @endif
                             @endauth
 
 
@@ -161,6 +163,12 @@
 
 </div>
 @endforeach
+</div>
+</div>
+
+
+
+        </div>
 
 
 
@@ -184,9 +192,9 @@
         </ul> --}}
       </nav>
     </div>
-    </div>
 
-</div>
+
+
 {{-- 2 --}}
 
 
