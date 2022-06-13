@@ -26,6 +26,7 @@ class User extends Authenticatable
         'phonenumber',
         'city_id',
         'image',
+        'logo',
         'roles',
     ];
 

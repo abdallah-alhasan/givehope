@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <div class="container" style="padding-top:8% ">
     <form action="{{ route('pages.updateProfile', $user->id)}}" method="POST">
         @csrf
