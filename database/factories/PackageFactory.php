@@ -21,7 +21,7 @@ class PackageFactory extends Factory
             'category_id' => $this->faker->numberBetween(1,4),
             'condition' => $this->faker->numberBetween(1,4),
             'products_number' =>$this->faker->numberBetween(1,10) ,
-            'title' => $this->faker->title(),
+            'title' => $this->faker->text(90),
             'phone_number' => $this->faker->phoneNumber(),
             'city_id' => $this->faker->numberBetween(1,4),
             'image' => $this->faker->imageUrl(400, 300),
