@@ -25,7 +25,7 @@
                     <img src= "/images/giving.png" width="170" height="100" alt="image" />
                     <h2>Want To Be A Doner?</h2>
                     <br>
-                    <h4>“Those who are happiest are those who do the most for others!"</h4>
+                    <h5>“Those who are happiest are those who do the most for others!"</h5>
 <br> <br> <br>
 
                 </div>
