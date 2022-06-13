@@ -8,6 +8,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Donation_FormController;
+use App\Models\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,6 +86,12 @@ Route::get('items/{id}' , 'App\Http\Controllers\OrderController@orderItems');
 Route::get('categories/{packages}', [CategoryController::class,'show'])->name('categories.show');
 
 Route::get('' , 'App\Http\Controllers\CategoryController@showCategory');
+
+// Route::get('/' , function(){
+
+//     $data= Category::all();
+//     return view('layouts.nav',compact('data'));
+// });
 
 
 Route::get('/users/view', function () {

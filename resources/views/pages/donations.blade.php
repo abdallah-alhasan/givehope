@@ -120,7 +120,7 @@
     <div class="card">
         <div class="card-img-actions">
 
-                <img src="https://s1.img.bidsquare.com/item/xl/7584/7584036.jpeg" class="card-img-top"  alt="">
+                                    <img src="https://s1.img.bidsquare.com/item/xl/7584/7584036.jpeg" class="card-img-top" alt="">
 
 
         </div>
@@ -134,18 +134,13 @@
                                 </h6>
 
                                 <p  class="text-muted" data-abc="true">{{ $package->description }}</p>
-                                <p  class="text-muted" data-abc="true">{{ $package->products_number }}</p>
+                                {{-- <p  class="text-muted" data-abc="true">{{ $package->products_number }}</p> --}}
                                 <p  class="text-muted" data-abc="true">{{ $package->condition }}</p>
                             </div>
 
 
 
-                            <div>
-                               <i class="fa fa-star star"></i>
-                               <i class="fa fa-star star"></i>
-                               <i class="fa fa-star star"></i>
-                               <i class="fa fa-star star"></i>
-                            </div>
+
 
 
                             @auth
