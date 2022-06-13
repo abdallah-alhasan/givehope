@@ -10,7 +10,6 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Donation_FormController;
-use App\Http\Controllers\UserOrdersController;
 
 use Illuminate\Routing\RouteRegistrar;
 
@@ -114,10 +113,3 @@ Route::get('/signup' ,  [RegisterController::class, 'index']);
 //// Donation Form
 Route::resource('donations', Donation_FormController::class);
 
-
-
-// Route::get('userorders' , 'resources\views\pages\UserOrders.blade.php');
-
-Route::get('/ola', function () {
-    return view('pages.UserOrders');
-});

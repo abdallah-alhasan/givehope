@@ -62,7 +62,7 @@
                         $i++;
                     @endphp
                     @endforeach
-                    
+
                 </tbody>
                 </table>
             </div>
