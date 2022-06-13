@@ -27,9 +27,9 @@
         <div class="container">
           <div class="row">
     
-            <div class="col-md-6 mb-5 mb-md-0">
+            {{-- <div class="col-md-6 mb-5 mb-md-0">
               <img src="{{url('images/bg_2.jpg')}}" alt="Image placeholder" class="img-fluid">
-            </div>
+            </div> --}}
     
             <div class="col-md-6 pl-md-5">
     
