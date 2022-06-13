@@ -29,6 +29,23 @@
     color: #000 !important;
 }
 
+
+
+.p_filter_widgets a:before {
+    content: "";
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 1px solid #797979;
+     position: absolute;
+    left: -7%;
+    top: 44%;
+    transition:cubic-bezier(0.075, 0.82, 0.165, 1)
+  }
+
+.p_filter_widgets p:hover a:before {
+    background-color: #f7ca44 !important;
+}
 </style>
 
 
@@ -76,14 +93,16 @@
           <aside class="left_widgets p_filter_widgets">
             <div class="l_w_title">
               <h3>Browse Categories</h3>
+              <hr style=" width: 80%; background-color: #f7ca44; margin-left: -2px"/>
             </div>
             <div class="widgets_inner">
               <ul class="list">
                 @foreach ($categories as $category)
 
-                <li class="h4">
+                <p class="h4 p_filter_widgets" style="position: relative;">
                   <a href="{{ route('categories.show', $category->id) }}">{{ $category->name }}</a>
-                </li>
+                  <hr style=" width: 80%; margin-left: -10px"/>
+                </p>
                 @endforeach
 
               </ul>
@@ -99,14 +118,14 @@
 
 
     <div class="card">
-                        <div class="card-body">
-                            <div class="card-img-actions">
+        <div class="card-img-actions">
 
-                                    <img src="{{ url('Image/'.$package->image) }}" class="card-img" alt="">
+                                    <img src="{{ url('Image/'.$package->image) }}" class="card-img-top" alt="">
 
 
-                            </div>
-                        </div>
+        </div>
+    </div>
+                        {{-- <div class="card-body"> --}}
 
                         <div class="card-body bg-light text-center">
                             <div class="mb-2">
@@ -130,7 +149,7 @@
 
 
                         </div>
-                    </div>
+                    {{-- </div> --}}
 
 
 

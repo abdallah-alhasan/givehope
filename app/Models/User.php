@@ -26,9 +26,18 @@ class User extends Authenticatable
         'phonenumber',
         'city_id',
         'image',
+        'logo',
         'roles',
     ];
 
+
+    public function scopeFilter($query , array $filters){
+        if($filters['search'] ?? false){
+            $query->where('name' , 'like' , '%' . request('search') . '%')
+            ->orWhere('email' , 'like' , '%' . request('search') . '%')
+            ->orWhere('city_id' , 'like' , '%' . request('search') . '%');
+        }
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

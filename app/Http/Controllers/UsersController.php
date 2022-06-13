@@ -17,7 +17,7 @@ class UsersController extends Controller
     }
 
     public function index(){
-        $users = User::orderBy('city_id', 'ASC')->oldest()->paginate(10);
+        $users = User::orderBy('city_id', 'ASC')->filter(request(['search']))->oldest()->paginate(10);
         $user_city = User::orderBy('id', 'ASC')->join('cities', 'users.city_id', '=', 'cities.id')
         ->get(['users.id', 'cities.name']);
         return view('admin.users.index',compact('users' , 'user_city'));

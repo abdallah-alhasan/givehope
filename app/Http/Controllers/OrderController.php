@@ -19,7 +19,7 @@ class OrderController extends Controller
         ->get(['users.id', 'users.name']);
         $orders_package = Order::orderBy('id', 'ASC')->join('packages', 'orders.package_id', '=', 'packages.id')
         ->get(['orders.id', 'packages.title']);
-        $orders = Order::orderBy('created_at', 'ASC')->oldest()->paginate(10);
+        $orders = Order::orderBy('created_at', 'ASC')->filter(request(['search']))->oldest()->paginate(10);
 
         // dd($orders_package);
         // dd($user_city);
