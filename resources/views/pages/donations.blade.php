@@ -102,7 +102,7 @@
                         <div class="card-body">
                             <div class="card-img-actions">
 
-                                    <img src="https://s1.img.bidsquare.com/item/xl/7584/7584036.jpeg" class="card-img" alt="">
+                                    <img src="{{ url('Image/'.$package->image) }}" class="card-img" alt="">
 
 
                             </div>

@@ -57,10 +57,26 @@ class PackageController extends Controller
             'description' => '',
         ]);
 
-        if (request('image')) {
-            $imagePath = request('image')->store('uploads', 'public');
+        $input = $request->all();
+
+        if($request->file('image')){
+            $file= $request->file('image');
+            $filename= date('YmdHi').$file->getClientOriginalName();
+            $file-> move(public_path('Image'), $filename);
+            $input['image'] = "$filename";
+
         }
-        $save = Package::create(array_merge($data , request('image') != null ? ['image' => $imagePath ] : [] ));
+
+
+        Package::create($input);
+
+
+
+        // if (request('image')) {
+
+        //     $imagePath = request('image')->store('uploads', 'public');
+        // }
+        // $save = Package::create(array_merge($data , request('image') != null ? ['image' => $imagePath ] : [] ));
         return redirect()->route('packages.index')
         ->with('message', 'Donation added successfully');
     }
