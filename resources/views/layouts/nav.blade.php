@@ -42,6 +42,16 @@
 
     <link rel="stylesheet" href="{{ url('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url('css/style.css') }}">
+    <style>
+
+
+.amal{
+
+    position:relative;
+    top: 50px;
+    background-color: #ffffffc2
+}
+    </style>
 
 </head>
 
@@ -67,17 +77,17 @@
                     @endphp
 
 
-                    <div class="dropdown show">
-                        <a class=" dropdown-toggle" href="{{ route('categories.show', 1) }}"
+                    <div class="dropdown show nav-item">
+                        <a class=" dropdown-toggle nav-link" href="{{ route('categories.show', 1) }}"
                             role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             Donations
                         </a>
 
 
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <div class="dropdown-menu amal" aria-labelledby="dropdownMenuLink" >
                             @foreach ($data as $values)
-                            <a class="dropdown-item" href="{{ route('categories.show', $values->id) }}">
+                            <a class="dropdown-item"  href="{{ route('categories.show', $values->id) }}">
                                 {{ $values->name }}</a>
 
                         @endforeach
