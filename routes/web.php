@@ -10,6 +10,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Donation_FormController;
+use App\Http\Controllers\UserOrdersController;
 
 use Illuminate\Routing\RouteRegistrar;
 
@@ -80,6 +81,7 @@ Route::get('/profile/{user}', ['App\Http\Controllers\UsersController', 'showProf
 //admin routes
 Route::get('admin/user/approve/{id}', [UsersController::class,'approve']);
 Route::get('admin/users/approve-all', [UsersController::class,'approveAll']);
+Route::get('admin/order/approve/{id}', [OrderController::class,'approve']);
 Route::resource('admin/users' , 'App\Http\Controllers\UsersController')->middleware('auth');
 Route::resource('admin/packages' , 'App\Http\Controllers\PackageController')->middleware('auth');
 Route::resource('admin/categories' , 'App\Http\Controllers\CategoryController')->middleware('auth');
@@ -111,3 +113,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/signup' ,  [RegisterController::class, 'index']);
 //// Donation Form
 Route::resource('donations', Donation_FormController::class);
+
+
+
+// Route::get('userorders' , 'resources\views\pages\UserOrders.blade.php');
+
+Route::get('/ola', function () {
+    return view('pages.UserOrders');
+});
