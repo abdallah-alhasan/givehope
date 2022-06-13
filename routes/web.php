@@ -60,7 +60,7 @@ require __DIR__.'/auth.php';
 
 
 
-// Route::get('categories/{packages}', [CategoryController::class,'show'])->name('categories.show');
+
 Route::resource('categories', CategoryController::class);
 
 Route::get('/softDelete/{package}', [PackageController::class,'softDelete'])->name('packages.softDelete');
@@ -82,7 +82,7 @@ Route::resource('admin/categories' , 'App\Http\Controllers\CategoryController')-
 Route::resource('admin/cities' , 'App\Http\Controllers\CityController')->middleware('auth');
 Route::get('items/{id}' , 'App\Http\Controllers\OrderController@orderItems');
 
-
+Route::get('categories/{packages}', [CategoryController::class,'show'])->name('categories.show');
 
 Route::get('' , 'App\Http\Controllers\CategoryController@showCategory');
 
