@@ -60,7 +60,7 @@
             <div class="col-md-6 border-end">
                 	<div class="d-flex flex-column justify-content-center">
                         <div class="main_image">
-                            <img src="https://th.bing.com/th/id/R.0b2ea0dcc6987401432c8520ddbaa43b?rik=sCSt9UQcLiNT%2bw&pid=ImgRaw&r=0" id="main_product_image" width="350">
+                            <img src="{{ url('Image/'.$package->image) }}" id="main_product_image" width="350">
                         </div>	<div class="thumbnail_images">
                             <ul id="thumbnail">
                                 {{-- <li><img onclick="changeImage(this)" src="https://i.imgur.com/TAzli1U.jpg" width="70"></li> --}}
