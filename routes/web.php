@@ -102,6 +102,7 @@ Route::get('' , 'App\Http\Controllers\CategoryController@showCategory');
 // });
 // -users');
 // ->middleware(['auth'])->name('dashboard');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
