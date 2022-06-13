@@ -73,7 +73,6 @@ class PackageController extends Controller
      */
     public function show(Package $package)
     {
-        //
         return view('pages.single-product', compact('package'));
     }
 
@@ -128,7 +127,7 @@ class PackageController extends Controller
     public function destroy(Package $package)
     {
         $package->delete();
-        return redirect()->route('Donations.index')
+        return redirect()->route('packages.index')
         ->with('message', 'Donation deleted successfully');
     }
 
