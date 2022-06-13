@@ -10,11 +10,11 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Donation_FormController;
-<<<<<<< HEAD
+
 use Illuminate\Routing\RouteRegistrar;
-=======
+
 use App\Models\Category;
->>>>>>> 567a31227a7a7ea11ba4fdad6bbc696acc8395f8
+
 
 /*
 |--------------------------------------------------------------------------
@@ -67,17 +67,10 @@ require __DIR__ . '/auth.php';
 
 
 
-<<<<<<< HEAD
-Route::get('categories/{packages}', [CategoryController::class, 'show'])->name('categories.show');
-Route::resource('categories', CategoryController::class);
-
-Route::get('/softDelete/{package}', [PackageController::class, 'softDelete'])->name('packages.softDelete');
-=======
 
 Route::resource('categories', CategoryController::class);
 
 Route::get('/softDelete/{package}', [PackageController::class,'softDelete'])->name('packages.softDelete');
->>>>>>> 567a31227a7a7ea11ba4fdad6bbc696acc8395f8
 Route::resource('packages', PackageController::class);
 Route::resource('orders', OrderController::class);
 
@@ -90,15 +83,6 @@ Route::get('/profile/{user}', ['App\Http\Controllers\UsersController', 'showProf
 
 //admin routes
 
-<<<<<<< HEAD
-Route::resource('admin/users', 'App\Http\Controllers\UsersController');
-Route::resource('admin/packages', 'App\Http\Controllers\PackageController');
-Route::resource('admin/categories', 'App\Http\Controllers\CategoryController');
-Route::resource('admin/cities', 'App\Http\Controllers\CityController');
-
-
-Route::get('', 'App\Http\Controllers\CategoryController@showCategory');
-=======
 Route::resource('admin/users' , 'App\Http\Controllers\UsersController')->middleware('auth');
 Route::resource('admin/packages' , 'App\Http\Controllers\PackageController')->middleware('auth');
 Route::resource('admin/categories' , 'App\Http\Controllers\CategoryController')->middleware('auth');
@@ -108,18 +92,13 @@ Route::get('items/{id}' , 'App\Http\Controllers\OrderController@orderItems');
 Route::get('categories/{packages}', [CategoryController::class,'show'])->name('categories.show');
 
 Route::get('' , 'App\Http\Controllers\CategoryController@showCategory');
->>>>>>> 567a31227a7a7ea11ba4fdad6bbc696acc8395f8
 
 // Route::get('/' , function(){
 
 //     $data= Category::all();
 //     return view('layouts.nav',compact('data'));
 // });
-
-
-Route::get('/users/view', function () {
-    return view('admin.users');
-})->name('view-users');
+// -users');
 // ->middleware(['auth'])->name('dashboard');
 Auth::routes();
 
