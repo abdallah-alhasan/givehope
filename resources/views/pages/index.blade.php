@@ -66,15 +66,49 @@
           <div class="post-entry text-center">
             {{-- <a href="#" class="mb-3 img-wrap"> --}}
 
-              <img src="{{ url('Image/'.$values->image) }}" alt="Image placeholder" width ="250" height="200" >
+              <img src="{{ url('Image/'.$values->image) }}" alt="Image placeholder"   class='img-wrap' width ="270" height="200" >
             {{-- </a> --}}
-            <h3 class="date mb-4 d-block text-muted" style="font-size: 20px"><a href="{{ route('categories.show', $values->id) }}"> {{$values->name}}</a></h3>
-            <span>{{$values->desc}}</span>
+
+            <h3 class="date mb-4 d-block text-muted" style="font-size: 25px;margin-top:10px"><a href="{{ route('categories.show', $values->id) }}"> {{$values->name}}</a></h3>
+            <p style="margin-top:-15px">{{$values->desc}}</p>
 
 
           </div>
         </div>
         @endforeach
+
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+{{-- <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+    <div class="post-entry">
+        @foreach($data as $values)
+      <a href="#" class="mb-3 img-wrap">
+        <img src="{{ url('Image/'.$values->image) }}" alt="Image placeholder" class="img-fluid"  width ="250" height="200">
+      </a>
+      <h3 class="date mb-4 d-block text-muted" style="font-size: 20px"><a href="{{ route('categories.show', $values->id) }}"> {{$values->name}}</a></h3>
+      <span>{{$values->desc}}</span>
+
+    </div>
+  </div> --}}
+
+
+
+
+
+
+
+
+
+
+
 
 {{--
    <section class='product-category site-section'>
@@ -108,17 +142,14 @@
 
 
 
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> <!-- .section -->
 
 
 
 
 
-  <div class="site-section fund-raisers bg-light">
+
+
+  {{-- <div class="site-section fund-raisers bg-light">
     <div class="container">
       <div class="row mb-3 justify-content-center">
         <div class="col-md-8 text-center">
@@ -221,7 +252,7 @@
         </div>
       <!-- </div> -->
     </div>
-  </div> <!-- .section -->
+  </div> <!-- .section --> --}}
 
 
 

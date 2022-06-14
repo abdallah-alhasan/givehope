@@ -80,6 +80,7 @@ Route::get('/profile/{user}', ['App\Http\Controllers\UsersController', 'showProf
 //admin routes
 Route::get('admin/user/approve/{id}', [UsersController::class,'approve']);
 Route::get('admin/users/approve-all', [UsersController::class,'approveAll']);
+Route::get('admin/order/approve/{id}', [OrderController::class,'approve']);
 Route::resource('admin/users' , 'App\Http\Controllers\UsersController')->middleware('auth');
 Route::resource('admin/packages' , 'App\Http\Controllers\PackageController')->middleware('auth');
 Route::resource('admin/categories' , 'App\Http\Controllers\CategoryController')->middleware('auth');
@@ -103,6 +104,7 @@ Route::get('' , 'App\Http\Controllers\CategoryController@showCategory');
 // });
 // -users');
 // ->middleware(['auth'])->name('dashboard');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -110,3 +112,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/signup' ,  [RegisterController::class, 'index']);
 //// Donation Form
 Route::resource('donations', Donation_FormController::class);
+
