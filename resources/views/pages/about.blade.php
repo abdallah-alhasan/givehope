@@ -33,7 +33,49 @@
           </div>
       </div>
 
-      <div class="row mt-5">
+
+      <div class="site-section border-top">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-md-4">
+              <div class="media block-6">
+                <div class="icon"><span class="ion-ios-bulb"></span></div>
+                <div class="media-body">
+                  <h3 class="heading">Our Mission</h3>
+                  <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                  <p><a href="#" class="link-underline">Learn More</a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="media block-6">
+                <div class="icon"><span class="ion-ios-cash"></span></div>
+                <div class="media-body">
+                  <h3 class="heading">Make Donations</h3>
+                  <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                  <p><a href="#" class="link-underline">Learn More</a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="media block-6">
+                <div class="icon"><span class="ion-ios-contacts"></span></div>
+                <div class="media-body">
+                  <h3 class="heading">We Need Volunteers</h3>
+                  <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                  <p><a href="#" class="link-underline">Learn More</a></p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {{-- <div class="row mt-5">
         <div class="col-md-12 mb-5 text-center mt-5">
           <h2>Leadership</h2>
         </div>
@@ -93,61 +135,12 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
 
     </div>
   </div>
 
-  <div class="site-section">
-    <div class="container">
-      <div class="block-31 mb-5" style="position: relative;">
-          <div class="owl-carousel loop-block-31">
-            <div class="block-30 no-overlay item" style="background-image: url('images/bg_2.jpg');"></div>
-            <div class="block-30 no-overlay item" style="background-image: url('images/bg_1.jpg');"></div>
-            <div class="block-30 no-overlay item" style="background-image: url('images/bg_3.jpg');"></div>
-          </div>
-        </div>
-    </div>
-  </div>
 
-  <div class="site-section border-top">
-    <div class="container">
-      <div class="row">
 
-        <div class="col-md-4">
-          <div class="media block-6">
-            <div class="icon"><span class="ion-ios-bulb"></span></div>
-            <div class="media-body">
-              <h3 class="heading">Our Mission</h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              <p><a href="#" class="link-underline">Learn More</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="media block-6">
-            <div class="icon"><span class="ion-ios-cash"></span></div>
-            <div class="media-body">
-              <h3 class="heading">Make Donations</h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              <p><a href="#" class="link-underline">Learn More</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="media block-6">
-            <div class="icon"><span class="ion-ios-contacts"></span></div>
-            <div class="media-body">
-              <h3 class="heading">We Need Volunteers</h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              <p><a href="#" class="link-underline">Learn More</a></p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div> <!-- .site-section -->
+<!-- .site-section -->
 @endsection
