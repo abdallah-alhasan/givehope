@@ -74,10 +74,13 @@
 
 
   <div class="row justify-content-center " style="margin-top:130px; background:#f6f6f6">
-    @if (Session::get('success'))
-    <div class="alert alert-success text-center fw-bolder" role="alert">
-        {{ Session::get('success') }}
-    </div>
+    @if ($message = Session::get('success'))
+    {{-- <div class="alert alert-success text-center fw-bolder" role="alert"> --}}
+        <script>
+            swal("Package Booked successfully.", " ", "success");
+        </script>
+        {{-- {{ alert($message) }} --}}
+    {{-- </div> --}}
     @endif
     <div class=" container-fluid px-5">
             <div class="header p-4" style="">
@@ -183,13 +186,6 @@
 <div class="container d-flex justify-content-center">
     <nav aria-label="Page navigation example" class="mx-auto my-5">
 {{ $packages->links() }}
-        {{-- <ul class="pagination pg-blue justify-content-center">
-          <li class="page-item"><a class="page-link">Previous</a></li>
-          <li class="page-item"><a href="secondPage.php" class="page-link">1</a></li>
-          <li class="page-item"><a href="secondPage.php" class="page-link">2</a></li>
-          <li class="page-item"><a href="thirdPage.php" class="page-link">3</a></li>
-          <li class="page-item"><a class="page-link">Next</a></li>
-        </ul> --}}
       </nav>
     </div>
 
