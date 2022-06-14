@@ -33,7 +33,7 @@ $(document).ready(function($) {
 			margin: 10,
 			nav: true,
 			stagePadding: 5,
-			nav: false,
+			nav: true,
 			navText: ['<span class="ion-md-arrow-back">', '<span class="ion-md-arrow-forward">'],
 			responsive:{
 				0:{
@@ -51,7 +51,7 @@ $(document).ready(function($) {
 		$('.nonloop-block-13').owlCarousel({
 	    center: false,
 	    items: 1,
-	    loop: false,
+	    loop: true,
 			stagePadding: 0,
 	    margin: 20,
 	    nav: true,
@@ -73,7 +73,7 @@ $(document).ready(function($) {
 		});
 
 		$('.nonloop-block-31').owlCarousel({
-			loop: true,
+			loop: false,
 			mouseDrag: false,
 			touchDrag: false,
 			margin: 0,
@@ -88,10 +88,10 @@ $(document).ready(function($) {
 		});
 
 		$('.loop-block-11').owlCarousel({
-	    center: false,
+	    center: true,
 	    items: 1,
 	    loop: true,
-
+        stagePadding: 0,
 	    margin: 30,
 	    nav: true,
 			navText: ['<span class="ion-md-arrow-back">', '<span class="ion-md-arrow-forward">'],
@@ -111,16 +111,16 @@ $(document).ready(function($) {
 	    }
 		});
 
-		$('.nonloop').owlCarousel({
-	    center: false,
+		$('.loop').owlCarousel({
+	    center: true,
 	    items:2,
-	    loop:true,
-	    margin:0,
+	    loop:false,
+	    margin:10,
 	    nav: true,
 			navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
 	    responsive:{
         600:{
-          items:3
+          items:2
         }
 	    }
 		});

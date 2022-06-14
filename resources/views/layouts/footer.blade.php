@@ -1,95 +1,52 @@
+<footer class="footer">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-6 col-lg-4">
+          <h3 class="heading-section">About Us</h3>
+          <p class="lead">donors have trusted GiveHope to direct their donations that will save many families.</p>
+          <p><a href="/about" class="link-underline">Read  More</a></p>
+        </div>
+        <div class="col-md-6 col-lg-4" >
+          <h3 class="heading-section" style="margin-left: 30px">Recent Blog</h3>
+
+          <div class="block-21 d-flex mb-4">
+
+            <div class="text" style="margin-left: 30px">
+              <h3 class="lead"><a href="#">Life Is Short So Be Kind</a></h3>
+              <div class="meta">
+                <div><a href="#"><span class="icon-calendar"></span> July 29, 2018</a></div>
+                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+              </div>
+            </div>
+          </div>
 
 
-<footer class="footer section text-center">
-	<div class="container"style="color:#DDF3FF" >
-		<div class="row">
-			<div class="col-md-12">
-				<ul class="social-media">
-					<li>
-                        <a href="https://www.instagram.com">
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="block-23">
+            <h3 class="heading-section">Get Connected</h3>
+              <ul>
 
-							<i class="fa-brands fa-instagram"></i>
-						</a>
-					</li>
-					<li>
-                        <a href="https://www.facebook.com">
-							<i class="fa-brands fa-facebook"></i>
-						</a>
-					</li>
-					<li>
+                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+              </ul>
 
-						<a href="https://www.twitter.com">
-                            <i class="fa-brands fa-twitter"></i>
-						</a>
-					</li>
-
-				</ul>
-				<ul class="footer-menu text-uppercase" >
-					<li>
-						<a href="contact.php">CONTACT</a>
-					</li>
-					<li>
-						<a href="products.php?cat=7">SHOP</a>
-					</li>
-					<li>
-						<a href="">Pricing</a>
-					</li>
-					<li>
-						<a href="">PRIVACY POLICY</a>
-					</li>
-				</ul>
-				<p class="copyright-text" style="color: gray">Copyright &copy;2022, Designed &amp; Developed by Group'4'.</p>
-			</div>
-		</div>
-	</div>
-</footer>
-{{--  --}}
+            </div>
+        </div>
 
 
+      </div>
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-  <script src="https://kit.fontawesome.com/5a3ad4e25b.js" crossorigin="anonymous"></script>
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="/js/popper.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/jquery.easing.1.3.js"></script>
-  <script src="/js/jquery.waypoints.min.js"></script>
-  <script src="/js/jquery.stellar.min.js"></script>
-  <script src="/js/owl.carousel.min.js"></script>
-  <script src="/js/jquery.magnific-popup.min.js"></script>
-  <script src="/js/bootstrap-datepicker.js"></script>
-
-  <script src="{{ url('js/jquery.min.js') }}"></script>
-  <script src="{{ url('js/jquery-migrate-3.0.1.min.js') }}"></script>
-  <script src="{{ url('js/popper.min.js') }}"></script>
-  <script src="{{ url('js/bootstrap.min.js') }}"></script>
-  <script src="{{ url('js/jquery.easing.1.3.js') }}"></script>
-  <script src="{{ url('js/jquery.waypoints.min.js') }}"></script>
-  <script src="{{ url('js/jquery.stellar.min.js') }}"></script>
-  <script src="{{ url('js/owl.carousel.min.js') }}"></script>
-  <script src="{{ url('js/jquery.magnific-popup.min.js') }}"></script>
-  <script src="{{ url('js/bootstrap-datepicker.js') }}"></script>
-
-  <script src="{{ url('js/jquery.fancybox.min.js' )}}"></script>
+        <div class="col-md-12 text-center">
+            <p>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This project is made by group'3'</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
 
 
-  <script src="{{ url('js/aos.js') }}"></script>
-  <script src="{{ url('js/jquery.animateNumber.min.js') }}"></script>
-  <script src="{{ url('https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false') }}"></script>
-  <script src="{{ url('js/google-map.js') }}"></script>
-  <script src="{{ url('js/main.js') }}"></script>
+        </div>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
-
-  </body>
-</html>
+    </div>
+  </footer>
