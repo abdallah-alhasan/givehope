@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
+    
+
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -23,6 +25,7 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
+
 
     use RegistersUsers;
 

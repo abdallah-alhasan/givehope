@@ -33,7 +33,7 @@
 }
 .profile-img img{
     width: 70%;
-    height: 100%;
+    height: 80%;
 }
 .profile-img .file {
     position: relative;
@@ -53,9 +53,11 @@
 }
 .profile-head h5{
     color: #333;
+    font-size: 30px;
 }
 .profile-head h6{
     color: #eccb46;
+    font-size: 25px;
 }
 .profile-edit-btn{
     border: none;
@@ -113,6 +115,9 @@
     font-weight: 600;
     color: #f0b206;
 }
+.size{
+    font-size: 20px;
+}
     </style>
 </head>
 
@@ -127,7 +132,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="profile-img">
-                                <img style="width: 250px; height: 250px" src="{{url('Image/'.$user->logo) }}" alt=""/>
+                                <img style="width: 250px; height: 200px" src="{{url('Image/'.$user->logo) }}" alt=""/>
 
                                 {{-- <div class="file btn btn-lg btn-warning">
                                     Change Photo
@@ -144,14 +149,14 @@
                                             {{auth()->user()->name}}
                                         </h6>
                                         {{-- <p class="proile-rating">RANKINGS : <span>8/10</span></p> --}}
-                                        <br><br>
+                                        <br>
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">MY INFO</a>
+                                        <a class="nav-link active size" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">MY INFO</a>
                                     </li>
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"></a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </div>
                         </div>
@@ -170,38 +175,38 @@
                         <div class="col-md-4">
 
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-4">
                             <div class="tab-content profile-tab" id="myTabContent">
                                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <label>City</label>
+                                                    <label class="size">City</label>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-6 size">
                                                     <p>{{$city->name}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <label>Name</label>
+                                                    <label class="size">Name</label>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-6 size">
                                                     <p>{{auth()->user()->name}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <label>Email</label>
+                                                    <label class="size">Email</label>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-6 size">
                                                     <p>{{auth()->user()->email}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <label>Phone</label>
+                                                    <label class="size">Phone</label>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-6 size">
                                                     <p>{{auth()->user()->phonenumber}}</p>
                                                 </div>
                                             </div>
