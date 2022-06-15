@@ -90,6 +90,10 @@ Route::resource('admin/messages' , 'App\Http\Controllers\MessageController')->mi
 Route::resource('admin/cities' , 'App\Http\Controllers\CityController')->middleware('auth');
 Route::get('items/{id}' , 'App\Http\Controllers\OrderController@orderItems');
 
+Route::get('orders/{id}' , 'App\Http\Controllers\OrderController@orders');
+Route::get('order/items/{id}' , 'App\Http\Controllers\OrderController@profileItems');
+
+
 Route::resource('categories', CategoryController::class);
 Route::get('categories/{packages}', [CategoryController::class,'show'])->name('categories.show');
 
