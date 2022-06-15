@@ -302,7 +302,7 @@ data-template="vertical-menu-template-free"
                     name="search"
                     />
                 </div>
-                
+
             </div>
             </form>
             <!-- /Search -->
@@ -324,18 +324,18 @@ data-template="vertical-menu-template-free"
             <!-- User -->
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                <div class="avatar avatar-online">
-                    <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
-                </div>
+                {{-- <div class="avatar avatar-online">
+                    <img src="/storage/{{auth()->user()->image}}" alt class="w-px-40 h-auto rounded-circle" />
+                </div> --}}
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                 <li>
                     <a class="dropdown-item" href="#">
                     <div class="d-flex">
                         <div class="flex-shrink-0 me-3">
-                        <div class="avatar avatar-online">
-                            <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
-                        </div>
+                        {{-- <div class="avatar avatar-online">
+                            <img src="/storage/{{auth()->user()->image}}" alt class="w-px-40 h-auto rounded-circle" />
+                        </div> --}}
                         </div>
                         <div class="flex-grow-1">
                         <span class="fw-semibold d-block">John Doe</span>
@@ -348,7 +348,7 @@ data-template="vertical-menu-template-free"
                     <div class="dropdown-divider"></div>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="#">
+                    {{-- <a class="dropdown-item" href="/admin/users/{{auth()->user()->id}}/edit"> --}}
                     <i class="bx bx-user me-2"></i>
                     <span class="align-middle">My Profile</span>
                     </a>

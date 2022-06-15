@@ -1,8 +1,98 @@
+<style>
+
+
+/* Created with https://www.css-gradient.com */
+
+.wrapper {
+	 margin: 10vh;
+}
+ .card {
+	 border: none;
+	 transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+	 overflow: hidden;
+	 border-radius: 20px;
+	 min-height: 450px;
+	 box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.166);
+}
+ @media (max-width: 768px) {
+	 .card {
+		 min-height: 350px;
+	}
+}
+ @media (max-width: 420px) {
+	 .card {
+		 min-height: 300px;
+	}
+}
+ .card.card-has-bg {
+	 transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+	 background-size: 120%;
+	 background-repeat: no-repeat;
+	 background-position: center center;
+}
+ .card.card-has-bg:before {
+	 content: '';
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 bottom: 0;
+	 left: 0;
+	 background: inherit;
+	 -webkit-filter: grayscale(1);
+	 -moz-filter: grayscale(100%);
+	 -ms-filter: grayscale(100%);
+	 -o-filter: grayscale(100%);
+	 filter: grayscale(100%);
+}
+ .card.card-has-bg:hover {
+	 transform: scale(0.98);
+	 box-shadow: 0 0 5px -2px rgba(0, 0, 0, 0.123);
+	 background-size: 130%;
+	 transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+ .card.card-has-bg:hover .card-img-overlay {
+	 transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+	 background: #234f6d;
+	 background: linear-gradient(0deg, rgba(114, 81, 4, 0.43) 0%, rgba(164, 143, 57, 0.584) 100%);
+}
+ .card .card-footer {
+	 background: none;
+	 border-top: none;
+}
+ .card .card-footer .media img {
+	 border: solid 3px rgba(255, 255, 255, 0.14);
+}
+ .card .card-meta {
+	 color: #26bd75;
+}
+ .card .card-body {
+	 transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+ .card:hover {
+	 cursor: pointer;
+	 transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+ .card:hover .card-body {
+	 margin-top: 30px;
+	 transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+ .card .card-img-overlay {
+	 transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+	 background: #234f6d;
+	 background: linear-gradient(0deg, rgba(35, 79, 109, 0.197) 0%, rgba(69, 95, 113, 0.685) 100%);
+}
+
+
+</style>
+
+
 @extends('layouts.master')
 
 
 
 @section('content')
+
+
 <div class="block-31" style="position: relative;">
     <div class=" loop-block-31 ">
       <div class="block-30 block-30-sm item" style="background-image: url('images/child.png');" data-stellar-background-ratio="0.5">
@@ -19,14 +109,6 @@
     </div>
   </div>
 
-{{-- hero slider --}}
-
-
-
-
-
-{{-- end of hero slider --}}
-
 
 
   <div class="site-section section-counter">
@@ -35,7 +117,7 @@
         <div class="col-md-6 pr-5">
           <div class="block-48">
               <span class="block-48-text-1">Served Over</span>
-              <div class="block-48-counter ftco-number" data-number="3760">0</div>
+              <div class="block-48-counter ftco-number" data-number="3760">3760</div>
               <span class="block-48-text-1 mb-4 d-block">Familes in 5 Cities</span>
               <p class="mb-0"><a href="#" class="btn btn-white px-3 py-2">View Our Program</a></p>
             </div>
@@ -44,75 +126,62 @@
           <h2 class="display-4 mb-3">Who Are We?</h2>
           <p class="lead">More than 1,000 donors have trusted GiveHope to direct their donations. Together, they have given over 5000 to the organizations we recommend. These donations will save many families and provide cfurinter for global poor.</p>
           <p class="mb-4">Be The One Who Make The Difference . </p>
-          <p class="mb-0"><a href="" class="btn btn-primary px-3 py-2">Donate Now</a></p>
+          <p class="mb-0"><a href="/about" class="btn btn-primary px-3 py-2">Donate Now</a></p>
         </div>
       </div>
     </div>
   </div>
 
 
-<div class="site-section bg-light">
-    <div class="container">
-      <div class="row mb-5">
-        <div class="col-md-12 text-center">
-          <h2> Donations</h2>
-        </div>
-      </div>
-
-      <div class="row">
-
-      @foreach($data as $values)
- <div class="col-12 col-sm-4 col-md-2 col-lg-3 mb-2 mb-lg-0">
-          <div class="post-entry text-center">
-            {{-- <a href="#" class="mb-3 img-wrap"> --}}
-
-              <img src="{{ url('Image/'.$values->image) }}" alt="Image placeholder" width ="250" height="200" >
-            {{-- </a> --}}
-            <h3 class="date mb-4 d-block text-muted" style="font-size: 20px"><a href="{{ route('categories.show', $values->id) }}"> {{$values->name}}</a></h3>
-            <span>{{$values->desc}}</span>
 
 
-          </div>
-        </div>
-        @endforeach
 
-{{--
-   <section class='product-category site-section'>
-            <div class='container'>
-                <div class='row'>
-                    <div class="col-md-12">
-                        <div class='title text-center'>
-                            <h2>Our Donations</h2>
-
-                        </div>
-                    </div>
-                    @foreach($data as $values)
-                          <div class='col-md-6'>
-                        <div class='category-box text-center' >
-                            <a href='#'>
-                                <img src="{{ url('Image/'.$values->image) }}" alt="Image placeholder" width ="500" height="350"/>
-                                <div class='content' style='background-color: #ffffffdb;'>
-                                    <h3 style="margin-top: 20px"><a href="#">{{$values->desc}}</a></h3>
-                                    <span class="date mb-4 d-block text-muted " style="font-size: 20px">{{$values->name}}</span>
-                                </div>
-                            </a>
-                        </div>
+        <section class="wrapper">
+            <div class="container">
+              <div class="row">
+                <div class="col text-center mb-5">
+                   <h2>DONATIONS</h2>
+            <p class="lead">There is no better exercise for your heart than reaching down and helping to lift someone up.</p>
                 </div>
+              </div>
+            <div class="row">
+                @foreach($data as $values)
+           <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-white card-has-bg click-col" style="background-image:url('{{ ('Image/'.$values->image) }}');">
+                   <img class="card-img d-none" src="" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+                  <div class="card-img-overlay d-flex flex-column">
+                   <div class="card-body">
+                      <small class="card-meta mb-2" style="color: #f7ca44">New Donations Added Everyday</small>
+                      <h4 class="card-title mt-0 "><a class="text-white" herf="{{ route('categories.show', $values->id) }}"> {{$values->name}}</a></h4>
+                     <small><i class="far fa-clock"></i> june 16, 2022</small>
+                    </div>
+                    <div class="card-footer">
+                     <div class="media">
+
+            <div class="media-body text-center">
+              <h6 class="my-0 text-white d-block ">{{$values->desc}}</h6>
+              <small >New Categories Will Be Added</small>
+            </div>
+          </div>
+                    </div>
+                  </div>
+                </div></div>
+
                 @endforeach
 
 
-            </div>
-          </div>
-        </section> --}}
+
 
 
 
 
           </div>
-        </div>
-      </div>
-    </div>
-  </div> <!-- .section -->
+
+          </div>
+          </section>
+
+
+
+
 
 
 
@@ -123,104 +192,62 @@
       <div class="row mb-3 justify-content-center">
         <div class="col-md-8 text-center">
           <h2>Latest Collaborations</h2>
-          <p class="lead">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="lead">Help others without any reason and give without the expectation of receiving anything in return</p>
           <p><a href="#" class="link-underline">Take A Look At Our Trusted Partners!</p>
         </div>
       </div>
     </div>
 
-    <div class="container-fluid">
 
-      <!-- <div class="row"> -->
 
-        <div class="col-md-12 block-11">
-          <div class="loop-block-11 owl-carousel">
 
-            <div class="card fundraise-item">
-              <a href="#"><img class="card-img-top" src="images/img_1.jpg" alt="Image placeholder"></a>
-              <div class="card-body">
-                <h3 class="card-title"><a href="#">Water Is Life. Clean Water In Urban Area</a></h3>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-                <div class="progress custom-progress-success">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
+
+    <div class="site-section bg-light">
+        <div class="container">
+
+
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+              <div class="post-entry">
+                <a href="blog-single.html" class="mb-3 img-wrap">
+                  <img src="images/a.png" alt="Image placeholder" class="img-fluid">
+                </a>
+                <h3><a href="#">Hope Organization</a></h3>
+                <span class="date mb-4 d-block text-muted">collaboration Since April 19, 2016</span>
+
+                <p>Furniture aid for the needywhich is provided to many families who can nolonger afford expenses.</p>
+                <p><a href="#" class="link-underline">Located In Irbid</a></p>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+              <div class="post-entry">
+                <a href="blog-single.html" class="mb-3 img-wrap">
+                  <img src="images/s.png" alt="Image placeholder" class="img-fluid">
+                </a>
+                <h3><a href="#">Bunyan</a></h3>
+                <span class="date mb-4 d-block text-muted">collaboration Since May 17, 2021</span>
+                <p>publications with the aim of upgrading people, their societies and institutions of nature.</p>
+                <p><a href="#" class="link-underline">Located In Amman</a></p>
               </div>
             </div>
 
 
-            <div class="card fundraise-item">
-              <a href="#"><img class="card-img-top" src="images/img_1.jpg" alt="Image placeholder"></a>
-              <div class="card-body">
-                <h3 class="card-title"><a href="#">Need Shelter for Children in Africa</a></h3>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-                <div class="progress custom-progress-success">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+              <div class="post-entry">
+                <a href="blog-single.html" class="mb-3 img-wrap">
+                  <img src="images/ch.jpg" alt="Image placeholder" class="img-fluid">
+                </a>
+                <h3><a href="#">The Green Crescent Society</a></h3>
+                <span class="date mb-4 d-block text-muted"> collaboration Since July 26, 2018</span>
+                <p>Relief with a common character with a humanitarian character and Islamic values.</p>
+                <p><a href="#" class="link-underline">Located In Zarqa</a></p>
               </div>
             </div>
-
-            <div class="card fundraise-item">
-              <a href="#"><img class="card-img-top" src="images/img_3.jpg" alt="Image placeholder"></a>
-              <div class="card-body">
-                <h3 class="card-title"><a href="#">Children Needs Education</a></h3>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-                <div class="progress custom-progress-success">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
-              </div>
-            </div>
-
-
-            <div class="card fundraise-item">
-              <a href="#"><img class="card-img-top" src="images/img_4.jpg" alt="Image placeholder"></a>
-              <div class="card-body">
-                <h3 class="card-title"><a href="#">Refugees Needs Food</a></h3>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-                <div class="progress custom-progress-success">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
-              </div>
-            </div>
-
-
-            <div class="card fundraise-item">
-              <a href="#"><img class="card-img-top" src="images/img_6.jpg" alt="Image placeholder"></a>
-              <div class="card-body">
-                <h3 class="card-title"><a href="#">Voluteer </a></h3>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-                <div class="progress custom-progress-success">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
-              </div>
-            </div>
-
-            <div class="card fundraise-item">
-              <a href="#"><img class="card-img-top" src="images/img_3.jpg" alt="Image placeholder"></a>
-              <div class="card-body">
-                <h3 class="card-title"><a href="#">Children Needs Food</a></h3>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-                <div class="progress custom-progress-success">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
-              </div>
-            </div>
-
           </div>
         </div>
-      <!-- </div> -->
-    </div>
+      </div>
+
   </div> <!-- .section -->
 
 
@@ -252,46 +279,7 @@
 
   <!-- .featured-donate -->
 
-  <div class="site-section border-top">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-md-4">
-          <div class="media block-6">
-            <div class="icon"><span class="ion-ios-bulb"></span></div>
-            <div class="media-body">
-              <h3 class="heading">Our Mission</h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              <p><a href="#" class="link-underline">Learn More</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="media block-6">
-            <div class="icon"><span class="ion-ios-cash"></span></div>
-            <div class="media-body">
-              <h3 class="heading">Make Donations</h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              <p><a href="#" class="link-underline">Learn More</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="media block-6">
-            <div class="icon"><span class="ion-ios-contacts"></span></div>
-            <div class="media-body">
-              <h3 class="heading">We Need Volunteers</h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              <p><a href="#" class="link-underline">Learn More</a></p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div> <!-- .site-section -->
+   <!-- .site-section -->
 
 
 

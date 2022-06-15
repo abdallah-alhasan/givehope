@@ -15,7 +15,7 @@
 
     <style>
         body{
-    background: -webkit-linear-gradient(left, #f3f3f4, #edece7);
+    /* background: -webkit-linear-gradient(left, #f3f3f4, #edece7); */
 }
 .ftco-navbar-light {
 
@@ -121,32 +121,33 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!------ Include the above in your HEAD tag ---------->
 
-    <div class="container emp-profile">
+    <div class="container-fluid emp-profile">
         {{-- {{dd($user->name)}} --}}
                 <form method="post">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="profile-img">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
-                                <div class="file btn btn-lg btn-warning">
+                                <img style="width: 250px; height: 250px" src="{{url('Image/'.$user->logo) }}" alt=""/>
+
+                                {{-- <div class="file btn btn-lg btn-warning">
                                     Change Photo
                                     <input type="file" name="file"/>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="profile-head">
                                         <h5>
-                                            Kshiti Ghelani
+                                            Welcome To Your Profile
                                         </h5>
                                         <h6>
-                                            Web Developer and Designer
+                                            {{auth()->user()->name}}
                                         </h6>
                                         {{-- <p class="proile-rating">RANKINGS : <span>8/10</span></p> --}}
                                         <br><br>
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">MY INFO</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"></a>

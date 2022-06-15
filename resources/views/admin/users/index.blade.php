@@ -8,6 +8,7 @@
                 </div>
               @endif
               <div class="card">
+                <a href="users/approve-all"><div class="btn btn-success mb-3">Approve All Users</div></a>
                 <div class="table-responsive text-nowrap">
                   <table class="table table-hover">
                     <thead>
@@ -16,6 +17,7 @@
                         <th>Email</th>
                         <th>City</th>
                         <th>Role</th>
+                        <th>Status</th>
                         <th>Image</th>
                         <th>Actions</th>
                       </tr>
@@ -30,6 +32,7 @@
                         <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$user->email}}</strong></td>
                         <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$user_city[$user->id - 1]->name ?? 'none'}}</strong></td>
                         <td><span class="badge bg-label-{{$user->roles == 0 ? 'primary': 'danger'}} me-1">{{$user->roles == 0 ? 'user': 'admin'}}</span></td>
+                        <td><span class="badge bg-label-{{$user->status == 0 ? 'warning': 'success'}} me-1">{{$user->status == 0 ? 'Pending': 'Approved'}}</span></td>
                         <td>
                           <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
                             <li
@@ -52,6 +55,11 @@
                               <a class="dropdown-item" href="{{route('users.edit' , $user->id)}}"
                                 ><i class="bx bx-edit-alt me-1"></i> Edit</a
                               >
+                              @if ($user->status == 0)
+                              <a class="dropdown-item" href="{{'user/approve/' . $user->id}}"
+                                ><i class="bx bx-check me-1"></i> Approve User</a
+                              >
+                              @endif
                               <form action="{{ route('users.destroy' , $user->id)}}" method="POST" class="d-inline">
                                 @method('DELETE')
                                 @csrf

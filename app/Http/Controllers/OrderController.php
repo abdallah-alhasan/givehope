@@ -111,8 +111,11 @@ class OrderController extends Controller
         ->with('message', 'Order deleted successfully');
     }
 
-    public function approve(Order $order)
+    public function approve($id)
     {
-
+        $Order = new Order;
+        $Order->where('id', $id)->update(['status' => 1]);
+        return redirect()->route('orders.index')
+        ->with('message', 'Order has been approved successfully');
     }
 }

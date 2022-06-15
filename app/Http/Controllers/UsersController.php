@@ -84,10 +84,22 @@ class UsersController extends Controller
         ->with('message', 'user deleted successfully');
     }
 
+    public function approve($id)
+    {
+        $user = new User;
+        $user->where('id', $id)->update(['status' => 1]);
+        return redirect()->route('users.index')
+        ->with('message', 'User has been approved successfully');
+    }
 
-
-
-
+    public function approveAll()
+    {
+        DB::table('users')->update(['status' => 1]);
+        // $user = new User;
+        // $user->update(['status' => 1]);
+        return redirect()->route('users.index')
+        ->with('message', 'All users have been approved successfully');
+    }
 
 
     //profile
@@ -110,19 +122,28 @@ class UsersController extends Controller
 
     public function updateProfile(Request $request, User $user)
     {
-        $data = $request->validate([
-            'name' => ' ',
-            'email' =>  ' ',
-            'phonenumber' => 'regex:/^([0-9\s\-\+\(\)]*)$/|min:10'
+        // $data = $request->validate([
+        //     'name' => ' ',
+        //     'email' =>  ' ',
+        //     'phonenumber' => 'regex:/^([0-9\s\-\+\(\)]*)$/|min:10'
 
 
-        ]);
-        // $imagePath = request('image')->store('uploads', 'public');
-        // $user->update(array_merge($data,['image' => $imagePath]));
+
+        // ]);
+        // dd($request->file('logo'));
+        // $filename= "";
+        if($request->file('logo')){
+            $file= $request->file('logo');
+            $filename= date('YmdHi').$file->getClientOriginalName();
+            $file-> move(public_path('Image'), $filename);
+            // $input['image'] = "$filename";
+
+        }
         $user->name = $request->name;
         $user->email = $request->email;
         $user->phonenumber = $request->phonenumber;
-        $user->save();
+        $user->logo = $filename;
+        $user->update();
         return redirect("profile/$user->id")
         ->with('message', 'user updated successfully');
     }

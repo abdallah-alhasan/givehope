@@ -45,6 +45,15 @@
                             <a class="dropdown-item" href="{{'/delete/' . $orders_package[$i]->id}}"
                                 ><i class="bx bx-trash me-1"></i> Delete</a
                             >
+
+                            <form action="{{ route('orders.destroy' ,  $orders_package[$i]->id)}}" method="POST" class="d-inline">
+                              @method('DELETE')
+                              @csrf
+                              <span  class="dropdown-item"
+                              ><i class="bx bx-trash me-1"></i> <button style="border: none; background-color:transparent;margin:0;padding:0;font-weight: 400;
+                              color: #697a8d;">Delete</button></span
+                              >
+                            </form>
                             </div>
                         </div>
                         </td>
@@ -53,7 +62,7 @@
                           $i++;
                       @endphp
                       @endforeach
-                      
+
                     </tbody>
                   </table>
                 </div>
