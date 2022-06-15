@@ -1,7 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
-
+@if ($message = Session::get('donation'))
+<script>
+    swal("Your Donation Is Pending Until Approval.", " ", "success");
+</script>
+@endif
     <div class="block-31" style="position: relative;">
         <div class="loop-block-31 ">
             <div class="block-30 block-30-sm item" style="background-image: url({{ url('images/donate.jpg') }});"
