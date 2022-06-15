@@ -126,7 +126,7 @@ border-bottom-right-radius: 15px;
               </div>
               <div class="col-lg-6 bg-indigo text-white" style="height: 650px">
                 <div class="p-5">
-                  <h3 class="fw-normal mb-3">Creddentail Information</h3>
+                  <h3 class="fw-normal mb-3">credential Information</h3>
 
                   <div class="row">
                     <div class=" mb-4 pb-2">
@@ -140,7 +140,7 @@ border-bottom-right-radius: 15px;
 
                        <div class="form-outline form-white mb-4 pb-2">
 
-                        <label for="image" class=" col-form-label text-md-end">Identification papers</label>
+                        <label for="image" class=" col-form-label text-md-end">Identification Papers</label>
                         <input class="form-control form-control-lg" type="file" id="image" name="image">
 
                        </div>

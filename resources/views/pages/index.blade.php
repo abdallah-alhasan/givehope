@@ -126,7 +126,7 @@
           <h2 class="display-4 mb-3">Who Are We?</h2>
           <p class="lead">More than 1,000 donors have trusted GiveHope to direct their donations. Together, they have given over 5000 to the organizations we recommend. These donations will save many families and provide cfurinter for global poor.</p>
           <p class="mb-4">Be The One Who Make The Difference . </p>
-          <p class="mb-0"><a href="/about" class="btn btn-primary px-3 py-2">Donate Now</a></p>
+          <p class="mb-0"><a href="/about" class="btn btn-primary px-3 py-2">Read More</a></p>
         </div>
       </div>
     </div>
@@ -267,7 +267,7 @@
           <p class="mb-3">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
           <span class="fund-raised d-block mb-5">Want To Be Part Of Our Success Stories? </span>
 
-          <p><a href="#" class="btn btn-success btn-hover-white py-3 px-5" style=" color:#f7ca44; background-color: rgba(255, 255, 255, 0.952); border:white">Donate Now!</a></p>
+          <p><a href="/donations/create" class="btn btn-success btn-hover-white py-3 px-5" style=" color:#f7ca44; background-color: rgba(255, 255, 255, 0.952); border:white">Donate Now!</a></p>
         </div>
 
       </div>
