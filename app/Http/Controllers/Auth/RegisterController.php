@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
+    
+
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -23,6 +25,7 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
+
 
     use RegistersUsers;
 
@@ -55,7 +58,10 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'phonenumber' => ['required', 'max:10', 'min:10']
+            'phonenumber' => ['required', 'max:10', 'min:10'],
+            'image'=>['required'],
+            'logo'=>['required'],
+            'city_id'=>['required']
         ]);
     }
 

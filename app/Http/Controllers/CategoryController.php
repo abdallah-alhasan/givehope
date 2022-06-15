@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Package;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use PHPUnit\TextUI\XmlConfiguration\CodeCoverage\Report\Php;
 
 class CategoryController extends Controller
 {
@@ -103,12 +104,12 @@ class CategoryController extends Controller
     {
 
 
-        // $validation = $request->validate([
-        //     'name' => 'required',
-        //     'desc' => 'required',
-        //     'image' => 'image',
+      $request->validate([
+            'name' => 'required',
+            'desc' => 'required',
+            'image' => 'image',
 
-        // ]);
+        ]);
 
         $input = $request->all();
 
@@ -128,6 +129,10 @@ class CategoryController extends Controller
 
     }
 
+
+
+
+
     /**
      * Remove the specified resource from storage.
      *
@@ -140,4 +145,15 @@ class CategoryController extends Controller
         return redirect()->route('categories.index')
         ->with('message', 'category deleted successfully');
     }
+
+
+
+
+
 }
+
+
+
+
+
+

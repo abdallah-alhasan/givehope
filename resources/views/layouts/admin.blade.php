@@ -154,7 +154,7 @@ data-template="vertical-menu-template-free"
             </li>
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons bx bx-layout"></i>
+            <i class="menu-icon tf-icons bx bx-user"></i>
             <div data-i18n="Layouts">Manage Users</div>
             </a>
 
@@ -207,7 +207,7 @@ data-template="vertical-menu-template-free"
                     </li>
                     <li class="menu-item">
                     <a href="javascript:void(0);" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                        <i class="menu-icon tf-icons bx bx-category"></i>
                         <div data-i18n="Account Settings">Manage Categories</div>
                     </a>
                     <ul class="menu-sub">
@@ -229,6 +229,29 @@ data-template="vertical-menu-template-free"
                     </ul>
                     </li>
 
+
+                    <li class="menu-header small text-uppercase">
+                        <span class="menu-header-text">Messages</span>
+                        </li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons bx bx-message"></i>
+                        <div data-i18n="Layouts">Manage Messages</div>
+                        </a>
+
+                        <ul class="menu-sub">
+                        <li class="menu-item">
+                            <a href="{{route('messages.index')}}" class="menu-link">
+                            <div data-i18n="Without menu">View Messages</div>
+                            </a>
+                        </li>
+
+                        </ul>
+                    </li>
+
+
+
+
         <!-- Cities -->
 
         <li class="menu-header small text-uppercase">
@@ -236,7 +259,7 @@ data-template="vertical-menu-template-free"
             </li>
             <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                <i class="menu-icon tf-icons bx bx-pin"></i>
                 <div data-i18n="Account Settings">Manage Cities</div>
             </a>
             <ul class="menu-sub">

@@ -10,9 +10,8 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Donation_FormController;
-
+use App\Http\Controllers\MessageController;
 use Illuminate\Routing\RouteRegistrar;
-
 use App\Models\Category;
 
 
@@ -84,6 +83,7 @@ Route::get('admin/order/approve/{id}', [OrderController::class,'approve']);
 Route::resource('admin/users' , 'App\Http\Controllers\UsersController')->middleware('auth');
 Route::resource('admin/packages' , 'App\Http\Controllers\PackageController')->middleware('auth');
 Route::resource('admin/categories' , 'App\Http\Controllers\CategoryController')->middleware('auth');
+Route::resource('admin/messages' , 'App\Http\Controllers\MessageController')->middleware('auth');
 Route::resource('admin/cities' , 'App\Http\Controllers\CityController')->middleware('auth');
 Route::get('items/{id}' , 'App\Http\Controllers\OrderController@orderItems');
 
@@ -113,3 +113,5 @@ Route::get('/signup' ,  [RegisterController::class, 'index']);
 //// Donation Form
 Route::resource('donations', Donation_FormController::class);
 
+//contact page
+Route::resource('pages/contact', MessageController::class);
