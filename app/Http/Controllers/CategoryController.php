@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Package;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use PHPUnit\TextUI\XmlConfiguration\CodeCoverage\Report\Php;
 
 class CategoryController extends Controller
@@ -17,7 +18,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        
+
         $data= Category::orderBy('id', 'ASC')->filter(request(['search']))->oldest()->paginate(10);
         return view("admin.categories.index",compact("data"));
     }
