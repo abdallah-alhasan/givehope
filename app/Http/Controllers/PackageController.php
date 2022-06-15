@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\City;
-
 use App\Models\Package;
+
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class PackageController extends Controller
@@ -147,6 +148,23 @@ class PackageController extends Controller
         ->with('message', 'Donation deleted successfully');
     }
 
+    public function approve($id)
+    {
+        $Package = new Package;
+        $Package->where('id', $id)->update(['status' => 1]);
+        return redirect()->route('packages.index')
+        ->with('message', 'Package has been approved successfully');
+    }
+
+    public function approveAll()
+    {
+        DB::table('packages')->update(['status' => 1]);
+        // $user = new User;
+        // $user->update(['status' => 1]);
+        return redirect()->route('packages.index')
+        ->with('message', 'All packages have been approved successfully');
+    }
+    
     public function softDelete(Package $package)
     {
         //

@@ -22,6 +22,7 @@ class CreatePackagesTable extends Migration
             $table->string('title');
             $table->string('image');
             $table->text('description');
+            $table->boolean('status')->default(0);
             $table->string('products_number');
             $table->string('condition');
             $table->timestamps();
