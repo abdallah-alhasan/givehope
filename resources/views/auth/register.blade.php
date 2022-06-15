@@ -45,6 +45,7 @@ border-bottom-right-radius: 15px;
 .card-registration-2 .bg-indigo {
 border-bottom-left-radius: 15px;
 border-bottom-right-radius: 15px;
+
 }
 }
 </style>
@@ -60,8 +61,9 @@ border-bottom-right-radius: 15px;
         <div class="card card-registration card-registration-2" style="border-radius: 15px; height:650px">
           <div class="card-body p-0">
             <div class="row g-0">
-              <div class="col-lg-6">
-                <div class="p-5">
+              <div class="col-lg-6" style="background-image: url('https://images.unsplash.com/photo-1494386346843-e12284507169?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZG9uYXRpb258ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
+              border-bottom-left-radius: 15px; border-top-left-radius: 15px; background-size: cover;">
+                <div class="p-5" >
                   <h3 class="fw-normal mb-4" style="color:black;">General Infomation</h3>
 
                   <div class="row">
