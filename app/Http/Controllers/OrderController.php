@@ -36,6 +36,27 @@ class OrderController extends Controller
         return view('admin.orders.items',compact('items' , 'orders_package'));
     }
 
+    public function orders($id)
+    {
+        $orders_doners = Order::orderBy('id', 'ASC')->join('users', 'orders.user_id', '=', 'users.id')
+        ->paginate(10,['orders.id', 'users.name']);
+        $orders_package = Order::orderBy('id', 'ASC')->join('packages', 'orders.package_id', '=', 'packages.id')
+        ->paginate(10,['orders.id','packages.title']);
+        // dd($orders_doners);
+        $orders = Order::where('user_id' , $id)->filter(request(['search']))->oldest()->paginate(10);
+        // dd($orders);
+        // dd($orders_package);
+        // dd($user_city);
+        return view('pages.orders',compact('orders_package', 'orders_doners' ,'orders' ));
+    }
+
+    public function profileItems($id)
+    {
+        $items = Order::where('user_id' , $id)->paginate(10);
+        $orders_package = Order::where('user_id' , $id)->join('packages', 'orders.package_id', '=', 'packages.id')
+        ->get(['orders.id', 'packages.title' , 'packages.image' , 'packages.description' , 'packages.condition']);
+        return view('pages.order-items',compact('items' , 'orders_package'));
+    }
     /**
      * Show the form for creating a new resource.
      *
