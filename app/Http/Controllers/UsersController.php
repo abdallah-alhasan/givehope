@@ -122,9 +122,9 @@ class UsersController extends Controller
 
     public function updateProfile(Request $request, User $user)
     {
-        // $data = $request->validate([
-        //     'name' => ' ',
-        //     'email' =>  ' ',
+        //  $request->validate([
+        //     'name' => 'required',
+        //     'email' =>  'required',
         //     'phonenumber' => 'regex:/^([0-9\s\-\+\(\)]*)$/|min:10'
 
 
@@ -138,6 +138,8 @@ class UsersController extends Controller
             $file-> move(public_path('Image'), $filename);
             // $input['image'] = "$filename";
 
+        }else{
+            $filename=$request->hiddenlogo;
         }
         $user->name = $request->name;
         $user->email = $request->email;
