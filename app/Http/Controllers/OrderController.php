@@ -19,7 +19,8 @@ class OrderController extends Controller
         ->get(['users.id', 'users.name']);
         $orders_package = Order::orderBy('id', 'ASC')->join('packages', 'orders.package_id', '=', 'packages.id')
         ->get(['orders.id', 'packages.title']);
-        $orders = Order::orderBy('created_at', 'ASC')->filter(request(['search']))->oldest()->paginate(10);
+        // dd($orders_doners);
+        $orders = Order::orderBy('id', 'ASC')->filter(request(['search']))->oldest()->paginate(10);
 
         // dd($orders_package);
         // dd($user_city);
@@ -30,7 +31,7 @@ class OrderController extends Controller
     public function orderItems($id)
     {
         $items = Order::where('user_id' , $id)->paginate(10);
-        $orders_package = Order::orderBy('id', 'ASC')->join('packages', 'orders.package_id', '=', 'packages.id')
+        $orders_package = Order::where('user_id' , $id)->join('packages', 'orders.package_id', '=', 'packages.id')
         ->get(['orders.id', 'packages.title' , 'packages.image' , 'packages.description' , 'packages.condition']);
         return view('admin.orders.items',compact('items' , 'orders_package'));
     }
