@@ -47,7 +47,6 @@ border-bottom-left-radius: 15px;
 border-bottom-right-radius: 15px;
 
 
-
 }
 }
 </style>
@@ -63,7 +62,8 @@ border-bottom-right-radius: 15px;
         <div class="card card-registration card-registration-2" style="border-radius: 15px; height:550px">
           <div class="card-body p-0">
             <div class="row g-0">
-              <div class="col-lg-6" style="background-image: url('https://media.istockphoto.com/photos/mother-and-son-preparing-a-box-of-clothes-for-donation-picture-id1338654343?b=1&k=20&m=1338654343&s=170667a&w=0&h=8wk3fbsmI7Jk9z6QB-CUAZo3vON_oRyKHObG50c7Gsk='); background-repeat: no-repeat; margin-top:100px;">
+              <div class="col-lg-6" style="background-image: url('https://images.unsplash.com/photo-1608535002897-27b2aa592456?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHZvbHVudGVlcnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60');
+              border-bottom-left-radius: 15px; border-top-left-radius: 15px; background-size: cover;">
 
               </div>
 

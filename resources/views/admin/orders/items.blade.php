@@ -33,7 +33,7 @@
                         <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$orders_package[$i]->title}}</strong></td>
                         <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{substr($orders_package[$i]->description,0,50)}}</strong></td>
                         <td><span class="badge bg-label-{{$orders_package[$i]->condition == 'Poor' ? 'warning' : 'success'}} me-1">{{$orders_package[$i]->condition}}</span></td>
-                        <td><img src="/storage/{{$orders_package[$i]->image}}" alt="Avatar" class="" width="100" height="100" /></td>
+                        <td><img src="/image/{{$orders_package[$i]->image}}" alt="Avatar" class="" width="100" height="100" /></td>
                         {{-- <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$items_package[$i]->title ?? 'none'}}</strong></td> --}}
 
                         <td>
@@ -42,10 +42,6 @@
                             <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{'/delete/' . $orders_package[$i]->id}}"
-                                ><i class="bx bx-trash me-1"></i> Delete</a
-                            >
-
                             <form action="{{ route('orders.destroy' ,  $orders_package[$i]->id)}}" method="POST" class="d-inline">
                               @method('DELETE')
                               @csrf

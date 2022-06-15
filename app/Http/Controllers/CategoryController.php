@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Package;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use PHPUnit\TextUI\XmlConfiguration\CodeCoverage\Report\Php;
 
 class CategoryController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -16,6 +18,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
+
         $data= Category::orderBy('id', 'ASC')->filter(request(['search']))->oldest()->paginate(10);
         return view("admin.categories.index",compact("data"));
     }
@@ -72,10 +75,10 @@ class CategoryController extends Controller
         //
         $categories = Category::all();
         if (auth()->user()){
-            $packages = Package::where('city_id', auth()->user()->city_id)->Where('category_id', $category->id)->latest()->paginate(12);
+            $packages = Package::where('city_id', auth()->user()->city_id)->Where('category_id', $category->id)->Where('status', 1)->latest()->paginate(12);
             return view('pages.donations', compact('packages','category','categories'));
         }
-            $packages = Package::Where('category_id',  $category->id)->latest()->paginate(12);
+            $packages = Package::Where('category_id',  $category->id)->Where('status', 1)->latest()->paginate(12);
             return view('pages.donations', compact('packages','category','categories'));
 
     }
@@ -102,12 +105,12 @@ class CategoryController extends Controller
     {
 
 
-        // $validation = $request->validate([
-        //     'name' => 'required',
-        //     'desc' => 'required',
-        //     'image' => 'image',
+      $request->validate([
+            'name' => 'required',
+            'desc' => 'required',
+            'image' => 'image',
 
-        // ]);
+        ]);
 
         $input = $request->all();
 
