@@ -13,7 +13,7 @@
                 </div>
               @endif
               <div class="card">
-                <a href="admin/packages/approve-all"><div class="btn btn-success mb-3">Approve All Packages</div></a>
+                <a href="admin/packages/approve-all"><div class="btn btn-success mb-3 approve">Approve All Packages</div></a>
                 <div class="table-responsive text-nowrap">
                   <table class="table table-hover">
                     <thead>
