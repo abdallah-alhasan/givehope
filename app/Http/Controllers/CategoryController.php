@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        
         $data= Category::orderBy('id', 'ASC')->filter(request(['search']))->oldest()->paginate(10);
         return view("admin.categories.index",compact("data"));
     }
