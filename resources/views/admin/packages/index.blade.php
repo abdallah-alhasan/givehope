@@ -13,14 +13,16 @@
                 </div>
               @endif
               <div class="card">
+                <a href="admin/packages/approve-all"><div class="btn btn-success mb-3">Approve All Packages</div></a>
                 <div class="table-responsive text-nowrap">
                   <table class="table table-hover">
                     <thead>
                       <tr>
-                        <th>Name</th>
-                        <th>Email</th>
+                        <th>Doner Name</th>
+                        <th>Title</th>
                         <th>City</th>
-                        <th>Role</th>
+                        <th>Condition</th>
+                        <th>Status</th>
                         <th>Image</th>
                         <th>Actions</th>
                       </tr>
@@ -32,8 +34,9 @@
                       @foreach ($donations as  $donation)
                       <tr>
                         <td>{{$donation->doner_name}}</td>
-                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$donation->title}}</strong></td>
+                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{substr($donation->title , 0 , 40)}}</strong></td>
                         <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$donation_city[$donation->id - 1]->name ?? 'none'}}</strong></td>
+                        <td><span class="badge bg-label-{{$donation->status == 0 ? 'warning': 'success'}} me-1">{{$donation->status == 0 ? 'Pending': 'Approved'}}</span></td>
                         <td><span class="badge bg-label-success me-1">{{$donation->condition}}</span></td>
                         <td>
                           <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
@@ -57,6 +60,11 @@
                               <a class="dropdown-item" href="{{route('packages.edit' , $donation->id)}}"
                                 ><i class="bx bx-edit-alt me-1"></i> Edit</a
                               >
+                              @if ($donation->status == 0)
+                                <a class="dropdown-item" href="{{'admin/package/approve/' . $donation->id }}"
+                                  ><i class="bx bx-check me-1"></i> Approve</a
+                                >
+                              @endif
                               <form action="{{ route('packages.destroy' , $donation->id)}}" method="POST" class="d-inline">
                                 @method('DELETE')
                                 @csrf

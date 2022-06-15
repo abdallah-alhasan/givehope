@@ -42,10 +42,6 @@
                             <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{'/delete/' . $orders_package[$i]->id}}"
-                                ><i class="bx bx-trash me-1"></i> Delete</a
-                            >
-
                             <form action="{{ route('orders.destroy' ,  $orders_package[$i]->id)}}" method="POST" class="d-inline">
                               @method('DELETE')
                               @csrf

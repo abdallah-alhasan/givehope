@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->unsignedBigInteger('package_id');
             $table->unsignedBigInteger('user_id');
-            $table->boolean('status');
+            $table->boolean('status')->default(0);
             $table->timestamps();
 
 

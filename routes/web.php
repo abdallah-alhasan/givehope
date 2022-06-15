@@ -80,12 +80,19 @@ Route::get('/profile/{user}', ['App\Http\Controllers\UsersController', 'showProf
 Route::get('admin/user/approve/{id}', [UsersController::class,'approve']);
 Route::get('admin/users/approve-all', [UsersController::class,'approveAll']);
 Route::get('admin/order/approve/{id}', [OrderController::class,'approve']);
+Route::get('admin/package/approve/{id}', [PackageController::class,'approve']);
+Route::get('admin/packages/approve-all', [PackageController::class,'approveAll']);
+
 Route::resource('admin/users' , 'App\Http\Controllers\UsersController')->middleware('auth');
 Route::resource('admin/packages' , 'App\Http\Controllers\PackageController')->middleware('auth');
 Route::resource('admin/categories' , 'App\Http\Controllers\CategoryController')->middleware('auth');
 Route::resource('admin/messages' , 'App\Http\Controllers\MessageController')->middleware('auth');
 Route::resource('admin/cities' , 'App\Http\Controllers\CityController')->middleware('auth');
 Route::get('items/{id}' , 'App\Http\Controllers\OrderController@orderItems');
+
+Route::get('orders/{id}' , 'App\Http\Controllers\OrderController@orders');
+Route::get('order/items/{id}' , 'App\Http\Controllers\OrderController@profileItems');
+
 
 Route::resource('categories', CategoryController::class);
 Route::get('categories/{packages}', [CategoryController::class,'show'])->name('categories.show');

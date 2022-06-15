@@ -43,9 +43,11 @@
                             <a class="dropdown-item" href="/items/{{$order->user_id}}"{{--pass the user id--}}
                             ><i class="bx bx-show me-1"></i> View</a
                             >
-                            <a class="dropdown-item" href="{{'admin/order/approve/' . $order->id }}"
-                            ><i class="bx bx-check me-1"></i> Approve</a
-                        >
+                            @if ($order->status == 0)
+                                <a class="dropdown-item" href="{{'admin/order/approve/' . $order->id }}"
+                                ><i class="bx bx-check me-1"></i> Approve</a
+                                >
+                            @endif
                         <form action="{{ route('orders.destroy' , $order->id)}}" method="POST" class="d-inline">
                             @method('DELETE')
                             @csrf

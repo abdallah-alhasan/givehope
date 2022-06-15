@@ -44,6 +44,21 @@
 	 -o-filter: grayscale(100%);
 	 filter: grayscale(100%);
 }
+ .card.card-has-bg .yousef:after {
+    content: " (" attr(href) ")";
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 bottom: 0;
+	 left: 0;
+     color: transparent;
+	 background: inherit;
+	 -webkit-filter: grayscale(1);
+	 -moz-filter: grayscale(100%);
+	 -ms-filter: grayscale(100%);
+	 -o-filter: grayscale(100%);
+	 filter: grayscale(100%);
+}
  .card.card-has-bg:hover {
 	 transform: scale(0.98);
 	 box-shadow: 0 0 5px -2px rgba(0, 0, 0, 0.123);
@@ -151,7 +166,7 @@
                   <div class="card-img-overlay d-flex flex-column">
                    <div class="card-body">
                       <small class="card-meta mb-2" style="color: #f7ca44">New Donations Added Everyday</small>
-                      <h4 class="card-title mt-0 "><a class="text-white" herf="{{ route('categories.show', $values->id) }}"> {{$values->name}}</a></h4>
+                      <h4 class="card-title mt-0"><a class="text-light yousef" href="{{ route('categories.show', $values->id) }}">{{ $values->name }}</a></h4>
                      <small><i class="far fa-clock"></i> june 16, 2022</small>
                     </div>
                     <div class="card-footer">
