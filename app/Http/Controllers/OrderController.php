@@ -16,9 +16,9 @@ class OrderController extends Controller
     public function index()
     {
         $orders_doners = Order::orderBy('id', 'ASC')->join('users', 'orders.user_id', '=', 'users.id')
-        ->get(['users.id', 'users.name']);
+        ->paginate(10,['orders.id', 'users.name']);
         $orders_package = Order::orderBy('id', 'ASC')->join('packages', 'orders.package_id', '=', 'packages.id')
-        ->get(['orders.id', 'packages.title']);
+        ->paginate(10,['orders.id','packages.title']);
         // dd($orders_doners);
         $orders = Order::orderBy('id', 'ASC')->filter(request(['search']))->oldest()->paginate(10);
 

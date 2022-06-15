@@ -30,7 +30,7 @@
                     @foreach ($orders as  $order)
                     <tr>
                     <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$order->id}}</strong></td>
-                    <td>{{$orders_doners[$order->user_id - 1 ]->name}}</td>
+                    <td>{{$orders_doners[$i ]->name}}</td>
                     <td><span class="badge bg-label-{{$order->status == 0 ? 'warning' : 'success'}} me-1">{{$order->status == 0 ? 'Pending' : 'Approved'}}</span></td>
                     {{-- <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$orders_package[$i]->title ?? 'none'}}</strong></td> --}}
 
