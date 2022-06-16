@@ -32,7 +32,7 @@ background: -webkit-linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 
 
 .bg-indigo {
 /* background-color: #4835d4; */
-background-color: #f7ca44;
+background-color: #f7ca44d9;
 
 }
 @media (min-width: 992px) {
@@ -61,7 +61,7 @@ border-bottom-right-radius: 15px;
         <div class="card card-registration card-registration-2" style="border-radius: 15px; height:650px">
           <div class="card-body p-0">
             <div class="row g-0">
-              <div class="col-lg-6" style="background-image: url('https://images.unsplash.com/photo-1494386346843-e12284507169?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZG9uYXRpb258ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
+              <div class="col-lg-6" style="background-image: url('images/m.png');
               border-bottom-left-radius: 15px; border-top-left-radius: 15px; background-size: cover;">
                 <div class="p-5" >
                   <h3 class="fw-normal mb-4" style="color:black;">General Infomation</h3>
@@ -128,7 +128,7 @@ border-bottom-right-radius: 15px;
               </div>
               <div class="col-lg-6 bg-indigo text-white" style="height: 650px">
                 <div class="p-5">
-                  <h3 class="fw-normal mb-3">credential Information</h3>
+                  <h3 class="fw-normal mb-3">Credential Information</h3>
 
                   <div class="row">
                     <div class=" mb-4 pb-2">
