@@ -24,12 +24,12 @@
         @csrf
     <div class="form-group ">
       <label for="exampleFormControlInput1">Charitie Name:</label>
-      <input type="text" name="name" value="{{ $user->name }}" class="form-control" >
+      <input type="text" name="name" value="{{ $user->name }}" class="form-control" required >
     </div>
 
     <div class="form-group ">
       <label for="exampleFormControlInput1">Email:</label>
-      <input type="email" name="email" value="{{ $user->email }}" class="form-control" >
+      <input type="email" name="email" value="{{ $user->email }}" class="form-control" required >
     </div>
 
 
@@ -39,12 +39,16 @@
     </div>
     <div class="form-group ">
       <label for="exampleFormControlInput1">Phone Number:</label>
-      <input type="number" name="phonenumber" value="{{ $user->phonenumber }}" class="form-control" >
+      <input type="number" name="phonenumber" value="{{ $user->phonenumber }}" class="form-control" required >
     </div>
 
     <div class="form-group">
         <label for="exampleFormControlFile1">Profile Photo</label>
         <input type='file' name="logo" class="form-control-file" >
+      </div>
+    <div class="form-group">
+
+        <input type='hidden' name="hiddenlogo" value="{{$user->logo}}" class="form-control-file" >
       </div>
 
 

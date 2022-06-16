@@ -39,37 +39,37 @@ class Donation_FormController extends Controller
 
             //Validate the input
             $request->validate([
-               
+
                'doner_name'=> 'required',
                'phone_number'=> 'required',
                'city_id'=> 'required',
                'products_number'=> 'required',
                ]);
-       
+
             //    //Create a new donation in the database
             //    //$request->all(): Retreiving all input data
             //    Package::create($request->all());
-       
 
-   
-            
+
+
+
             if($request->file('image')){
                 $file= $request->file('image');
                 $filename= date('YmdHi').$file->getClientOriginalName();
                 $file-> move(public_path('Image'), $filename);
                 $input['image'] = "$filename";
-    
+
             }
-    
-    
+
+
             Package::create($input);
 
                       //Redirect the user and send friendly message
                           return redirect()->route('donations.create')
-                        ->with('success','Donation created successfully.');
-   
+                        ->with('donation','Your donation is pending until approval.');
+
        }
     }
 
-   
+
 }
