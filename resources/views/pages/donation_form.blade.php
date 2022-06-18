@@ -3,7 +3,7 @@
 @section('content')
 @if ($message = Session::get('donation'))
 <script>
-    swal("Your Donation Is Pending Until Approval.", " ", "success");
+    swal("Thank you", "Your Donation Is Pending Until Approval.", "success");
 </script>
 @endif
     <div class="block-31" style="position: relative;">
