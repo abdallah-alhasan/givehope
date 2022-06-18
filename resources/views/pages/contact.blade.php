@@ -22,19 +22,19 @@
     <div class="container">
       <div class="row block-9">
         <div class="col-md-6 pr-md-5">
-          <form action="{{route('contact.store')}}" method="POST" enctype="multipart/form-data">
+          <form action="{{route('contact.store')}}" method="POST" enctype="multipart/form-data" required>
             @csrf
             <div class="form-group">
-              <input type="text" name="name" class="form-control px-3 py-3" placeholder="Your Name">
+              <input type="text" name="name" class="form-control px-3 py-3" placeholder="Your Name" required>
             </div>
             <div class="form-group">
-              <input type="text"  name="email"class="form-control px-3 py-3" placeholder="Your Email">
+              <input type="text"  name="email"class="form-control px-3 py-3" placeholder="Your Email" required>
             </div>
             <div class="form-group">
-              <input type="text"  name="subject"class="form-control px-3 py-3" placeholder="Subject">
+              <input type="text"  name="subject"class="form-control px-3 py-3" placeholder="Subject" required>
             </div>
             <div class="form-group">
-              <textarea name="message" id="" cols="30" rows="7" class="form-control px-3 py-3" placeholder="Message"></textarea>
+              <textarea name="message" id="" cols="30" rows="7" class="form-control px-3 py-3" placeholder="Message" required></textarea>
             </div>
             <div class="form-group">
               <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
